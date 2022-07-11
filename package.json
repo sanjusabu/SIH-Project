@@ -46,5 +46,8 @@
     "url": "https://github.com/sanjusabu/SIH-Project/issues"
   },
   "homepage": "https://github.com/sanjusabu/SIH-Project#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
 }
