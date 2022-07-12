@@ -1,12 +1,19 @@
-import { useState} from 'react'
+// import { useState,useEffect} from 'react'
 // import validator from 'validator';
 import useInput from '../../hooks/useInput';
 
 const isNotEmpty = value =>value.trim() !== '';
 const isEmail = value => value.includes('@');
+const isPassword = value => value.trim().length >= 3;
+console.log(isPassword.value)
+
 let formValid = false;
+// let conPass = true;
 
 const Register = (props) => {
+
+  // const [enteredConfirmedPassword,setConfirmPassword] = useState('');
+  // const [isTouched,setisTouched] = useState(false)
 
   const {
     value: nameValue,
@@ -14,7 +21,7 @@ const Register = (props) => {
     hasError:nameError,
     valueChangeHandler: nameChangeHandler,
     BlurHandler: nameBlurHandler,
-    reset : restName
+    reset : resetName
 
   } = useInput(isNotEmpty);
 
@@ -24,13 +31,51 @@ const Register = (props) => {
     hasError:emailError,
     valueChangeHandler: emailChangeHandler,
     BlurHandler: emailBlurHandler,
-    reset : restEmail
+    reset : resetEmail
 
   } = useInput(isEmail);
+
+  const {
+    value: passwordValue,
+    isValid: passwordisValid,
+    hasError:passwordError,
+    valueChangeHandler: passwordChangeHandler,
+    BlurHandler: passwordBlurHandler,
+    reset : resetPassword
+
+  } = useInput(isPassword);
+ 
+//  const confirmPasswordChangeHandler=(e)=>
+// {
+//     setConfirmPassword(e.target.value)
+// }
+
+// const confirmPasswordBlurHandler = ()=>
+//   {
+//     setisTouched(true)
+//   }
+
+// useEffect(()=>{
+  
+//     if(enteredConfirmedPassword === passwordValue)
+//     {
+//       conPass= true
+//       formValid = false
+//     }
+//     if(enteredConfirmedPassword !== passwordValue)
+//     {
+//       conPass= false
+//     }
+
+// },[enteredConfirmedPassword,passwordValue])
+
   const nameClasses = !nameError ? 'form-control' : 'form-control-invalid'
   const emailClasses = !emailError ? 'form-control' : 'form-control-invalid'
-  
-  if(nameisValid && emailisValid)
+  const passwordClasses = !passwordError ? 'form-control' : 'form-control-invalid'
+  // const confirmPassClasses = conPass ? 'form-control' : 'form-control-invalid'
+
+
+  if(nameisValid && emailisValid && passwordisValid)
   {
     formValid = true
   }
@@ -43,9 +88,13 @@ const Register = (props) => {
       return;
     }
     console.log(nameValue,emailValue)
-    restName()
-    restEmail()
+    resetName()
+    resetEmail()
+    resetPassword()
+    // setConfirmPassword('')
   }
+
+
   return (
     <form onSubmit={submitHandler}>
       <div className={nameClasses}>
@@ -71,6 +120,30 @@ const Register = (props) => {
 
         {emailError && <p className='error-text'>Please Enter a valid Email!</p>}
       </div>
+
+      <div className={passwordClasses}>
+        <label htmlFor='password'>Set Password</label>
+        
+        <input type='password'
+         id='set_password'
+        onChange={passwordChangeHandler} 
+        onBlur={passwordBlurHandler} 
+        value={passwordValue} />
+
+        {passwordError && <p className='error-text'>Password should be atleast 3 characters long!</p>}
+      </div>
+
+      {/* <div className={passwordClasses}>
+        <label htmlFor='password'>Confirm Password</label>
+        
+        <input type='password'
+         id='confirm_password'
+        onChange={confirmPasswordChangeHandler} 
+        onBlur={confirmPasswordBlurHandler} 
+        value={enteredConfirmedPassword} />
+
+        {isTouched && !conPass && <p className='error-text'>Passwords are not the same!</p>}
+      </div> */}
 
 
       <div className="form-actions">
