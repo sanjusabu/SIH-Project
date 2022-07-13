@@ -6,7 +6,7 @@ const isNotEmpty = value =>value.trim() !== '';
 const isEmail = value => value.includes('@');
 const isPassword = value => value.trim().length >= 3;
 console.log(isPassword.value)
-
+const number = value => value.trim().length === 10;
 let formValid = false;
 // let conPass = true;
 
@@ -45,6 +45,16 @@ const Register = (props) => {
 
   } = useInput(isPassword);
  
+  const {
+    value: numberValue,
+    isValid: numberisValid,
+    hasError:numberError,
+    valueChangeHandler: numberChangeHandler,
+    BlurHandler: numberBlurHandler,
+    reset : resetNumber
+
+  } = useInput(number);
+
 //  const confirmPasswordChangeHandler=(e)=>
 // {
 //     setConfirmPassword(e.target.value)
@@ -60,11 +70,14 @@ const Register = (props) => {
 //     if(enteredConfirmedPassword === passwordValue)
 //     {
 //       conPass= true
-//       formValid = false
+//       // formValid = true
+//       console.log("right",enteredConfirmedPassword,passwordValue,conPass)
 //     }
 //     if(enteredConfirmedPassword !== passwordValue)
 //     {
 //       conPass= false
+//       console.log(enteredConfirmedPassword,passwordValue,conPass)
+//       formValid = false
 //     }
 
 // },[enteredConfirmedPassword,passwordValue])
@@ -73,11 +86,15 @@ const Register = (props) => {
   const emailClasses = !emailError ? 'form-control' : 'form-control-invalid'
   const passwordClasses = !passwordError ? 'form-control' : 'form-control-invalid'
   // const confirmPassClasses = conPass ? 'form-control' : 'form-control-invalid'
+  const numberClasses = !numberError ? 'form-control' : 'form-control-invalid'
 
-
-  if(nameisValid && emailisValid && passwordisValid)
+  if(nameisValid && emailisValid && passwordisValid && numberisValid )
   {
     formValid = true
+  }
+  if(!nameisValid || !emailisValid || !passwordisValid || !numberisValid)
+  {
+    formValid= false
   }
 
   const submitHandler =(event)=>
@@ -85,6 +102,7 @@ const Register = (props) => {
     event.preventDefault();
     if(!formValid)
     {
+      console.log(formValid)
       return;
     }
     console.log(nameValue,emailValue)
@@ -92,11 +110,15 @@ const Register = (props) => {
     resetEmail()
     resetPassword()
     // setConfirmPassword('')
+    resetNumber()
   }
 
 
   return (
     <form onSubmit={submitHandler}>
+      <div>
+        Registration Form
+      </div>
       <div className={nameClasses}>
         <label htmlFor='name'>Name</label>
         <input
@@ -132,8 +154,8 @@ const Register = (props) => {
 
         {passwordError && <p className='error-text'>Password should be atleast 3 characters long!</p>}
       </div>
-
-      {/* <div className={passwordClasses}>
+{/* 
+      <div className={passwordClasses}>
         <label htmlFor='password'>Confirm Password</label>
         
         <input type='password'
@@ -143,8 +165,20 @@ const Register = (props) => {
         value={enteredConfirmedPassword} />
 
         {isTouched && !conPass && <p className='error-text'>Passwords are not the same!</p>}
+        {isTouched && conPass && <p className='error-text'>Passwords are the same!</p>}
       </div> */}
 
+<div className={numberClasses}>
+        <label htmlFor='mobile'>Mobile Number</label>
+        
+        <input type='number'
+         id='mobile'
+        onChange={numberChangeHandler} 
+        onBlur={numberBlurHandler} 
+        value={numberValue} />
+
+        {numberError && <p className='error-text'>Mobile Number should have 10 digits!</p>}
+      </div>
 
       <div className="form-actions">
         <button disabled={!formValid}>Submit</button>
