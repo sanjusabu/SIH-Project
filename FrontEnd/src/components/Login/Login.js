@@ -1,9 +1,13 @@
 import useInput from "../../hooks/useInput";
+import { useRequest } from "../../hooks/request-hook";
+import ErrorModal from "../../Design/UIElements/ErrorModal";
 const isEmail = value => value.includes('@');
 const isPassword = value => value.trim().length >= 3;
 let formValid = false
 const Login = ()=>
 {
+  const {isError,sendRequest,clearError} = useRequest()
+
     const {
         value: emailValue,
         isValid: emailisValid,
@@ -37,17 +41,33 @@ const Login = ()=>
     formValid= false
   }
 
-  const submitHandler =(event)=>
+  const submitHandler =async(event)=>
   {
     event.preventDefault();
     if(!formValid)
     {
         return;
     }
+    const response = await sendRequest(
+      'http://localhost:5002/users/login',
+      'POST',
+      JSON.stringify({
+        email: emailValue,
+        password : passwordValue
+      }),
+      {
+        "Content-Type" : "application/json"
+      })
+    
+
+    console.log(response)
+
     resetEmail()
     resetPassword()
   }
 return(
+  <>
+  <ErrorModal error={isError} onClear ={clearError} />
   <form onSubmit={submitHandler}>
   <div>
     Login Form
@@ -80,6 +100,7 @@ return(
 
 <button disabled={!formValid}>Submit</button>
 </form>
+</>
 )
 }
 

@@ -40,7 +40,7 @@ const dbUrl = "mongodb+srv://SANJU:sanju_123456@cluster0.f8yjf.mongodb.net/SIHPr
 mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true }).
   then(() => {
     console.log("MongoDB connected")
-    app.listen(5000);
+    app.listen(5002);
   })
   .catch(err => {
     console.log(err);

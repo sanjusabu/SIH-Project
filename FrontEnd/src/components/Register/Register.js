@@ -1,6 +1,8 @@
 // import { useState,useEffect} from 'react'
 // import validator from 'validator';
 import useInput from '../../hooks/useInput';
+import { useRequest } from '../../hooks/request-hook';
+import ErrorModal from '../../Design/UIElements/ErrorModal'
 
 const isNotEmpty = value =>value.trim() !== '';
 const isEmail = value => value.includes('@');
@@ -14,6 +16,7 @@ const Register = (props) => {
 
   // const [enteredConfirmedPassword,setConfirmPassword] = useState('');
   // const [isTouched,setisTouched] = useState(false)
+  const {isError,clearError,sendRequest} =  useRequest()
 
   const {
     value: nameValue,
@@ -55,32 +58,7 @@ const Register = (props) => {
 
   } = useInput(number);
 
-//  const confirmPasswordChangeHandler=(e)=>
-// {
-//     setConfirmPassword(e.target.value)
-// }
 
-// const confirmPasswordBlurHandler = ()=>
-//   {
-//     setisTouched(true)
-//   }
-
-// useEffect(()=>{
-  
-//     if(enteredConfirmedPassword === passwordValue)
-//     {
-//       conPass= true
-//       // formValid = true
-//       console.log("right",enteredConfirmedPassword,passwordValue,conPass)
-//     }
-//     if(enteredConfirmedPassword !== passwordValue)
-//     {
-//       conPass= false
-//       console.log(enteredConfirmedPassword,passwordValue,conPass)
-//       formValid = false
-//     }
-
-// },[enteredConfirmedPassword,passwordValue])
 
   const nameClasses = !nameError ? 'form-control' : 'form-control-invalid'
   const emailClasses = !emailError ? 'form-control' : 'form-control-invalid'
@@ -97,7 +75,7 @@ const Register = (props) => {
     formValid= false
   }
 
-  const submitHandler =(event)=>
+  const submitHandler =async (event)=>
   {
     event.preventDefault();
     if(!formValid)
@@ -105,7 +83,22 @@ const Register = (props) => {
       console.log(formValid)
       return;
     }
-    console.log(nameValue,emailValue)
+    console.log(nameValue,emailValue,passwordValue,numberValue)
+
+    const response = await sendRequest(
+    'http://localhost:5002/users/signup',  
+    'POST',
+    JSON.stringify({
+      name: nameValue,
+      email: emailValue,
+      password: passwordValue,
+      mobile: numberValue
+    }),
+   {'Content-Type': 'application/json'}
+    )
+    console.log(isError)
+    console.log(response,"checking response at signup")
+
     resetName()
     resetEmail()
     resetPassword()
@@ -115,6 +108,10 @@ const Register = (props) => {
 
 
   return (
+    <>
+    <ErrorModal error={isError} onClear={clearError} />
+    {/* <Modal /> */}
+    {/* {console.log(error)} */}
     <form onSubmit={submitHandler}>
       <div>
         Registration Form
@@ -184,7 +181,8 @@ const Register = (props) => {
         <button disabled={!formValid}>Submit</button>
       </div>
     </form>
-  );
+    </>);
+  
 
 };
 
