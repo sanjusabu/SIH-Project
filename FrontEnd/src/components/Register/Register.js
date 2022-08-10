@@ -1,13 +1,15 @@
-// import { useState,useEffect} from 'react'
+import { useContext} from 'react'
 // import validator from 'validator';
 import useInput from '../../hooks/useInput';
 import { useRequest } from '../../hooks/request-hook';
 import ErrorModal from '../../Design/UIElements/ErrorModal'
+import { Link } from 'react-router-dom';
+import {AuthContext} from '../../context/authcontext'
 
 const isNotEmpty = value =>value.trim() !== '';
 const isEmail = value => value.includes('@');
 const isPassword = value => value.trim().length >= 3;
-console.log(isPassword.value)
+// console.log(isPassword.value)
 const number = value => value.trim().length === 10;
 let formValid = false;
 // let conPass = true;
@@ -17,7 +19,7 @@ const Register = (props) => {
   // const [enteredConfirmedPassword,setConfirmPassword] = useState('');
   // const [isTouched,setisTouched] = useState(false)
   const {isError,clearError,sendRequest} =  useRequest()
-
+  const auth = useContext(AuthContext)
   const {
     value: nameValue,
     isValid: nameisValid,
@@ -96,6 +98,7 @@ const Register = (props) => {
     }),
    {'Content-Type': 'application/json'}
     )
+    auth.login(response.user.id)
     console.log(isError)
     console.log(response,"checking response at signup")
 
@@ -181,6 +184,7 @@ const Register = (props) => {
         <button disabled={!formValid}>Submit</button>
       </div>
     </form>
+    <Link to = '/login'><button>Signup</button> </Link>
     </>);
   
 

@@ -1,11 +1,14 @@
 import useInput from "../../hooks/useInput";
 import { useRequest } from "../../hooks/request-hook";
 import ErrorModal from "../../Design/UIElements/ErrorModal";
+import {AuthContext} from '../../context/authcontext' 
+import { useContext } from "react";
 const isEmail = value => value.includes('@');
-const isPassword = value => value.trim().length >= 3;
+const isPassword = value => value.trim().length >= 6;
 let formValid = false
 const Login = ()=>
 {
+  const auth = useContext(AuthContext)
   const {isError,sendRequest,clearError} = useRequest()
 
     const {
@@ -58,8 +61,7 @@ const Login = ()=>
       {
         "Content-Type" : "application/json"
       })
-    
-
+    auth.login(response.user.id)
     console.log(response)
 
     resetEmail()
@@ -94,7 +96,7 @@ return(
   onBlur={passwordBlurHandler} 
   value={passwordValue} />
 
-  {passwordError && <p className='error-text'>Password should be atleast 3 characters long!</p>}
+  {passwordError && <p className='error-text'>Password should be atleast 6 characters long!</p>}
 
 </div>
 
