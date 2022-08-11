@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 body {
@@ -51,7 +51,7 @@ body {
   border-color: #240370;
   background-color: #e0d4fd;
 }
-.form-control-invalid{
+.form-control-invalid {
   border: 1px solid #b40e0e;
   background-color: #fddddd;
 }
@@ -95,8 +95,7 @@ button:active {
   color: #b40e0e;
 }
 
-button:disabled
-{
+button:disabled {
   background-color: #3f3f3f;
 }
 
@@ -126,4 +125,75 @@ button:disabled
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.containers {
+  display: flex;
+  flex-direction: row;
+}
+.right,
+.left {
+  margin: 1rem;
+  margin-top: 1rem;
+}
+.left {
+  width: 70%;
+}
+.right {
+  width: 30%;
+}
+.search {
+  width: 50%;
+}
+.contain {
+  display: flex;
+  justify-content: center;
+}
+.head {
+  margin-left: 1rem;
+  text-align: left;
+}
+.options {
+  padding: 1rem 2rem;
+  margin: 1rem;
+  box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
+}
+.ima {
+  display: flex;
+  justify-content: center;
+}
+.image {
+  /* position: relative;
+  left: 108px;
+  bottom: 40px; */
+  /* transform: translate(227%, -85%); */
+  position: relative;
+  bottom: 2.6rem;
+  width: 50px;
+  height: 50px;
+  background-color: #adadad;
+  border-radius: 80px;
+}
+.prof {
+  position: relative;
+  left: 15px;
+  top: 12px;
+  font-size: 1.5rem;
+}
+.name {
+  position: relative;
+  bottom: 1.5rem;
+  text-align: center;
+}
+.text {
+  position: relative;
+  bottom: 1.8rem;
+  text-align: center;
+}
+.card-text {
+  text-align: center;
+}
+.butt {
+  position: relative;
+  bottom: 1.5rem;
 }
