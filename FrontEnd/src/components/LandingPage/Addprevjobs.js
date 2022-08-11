@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 
 const Addprevjobs = () => {
   const [job, setJob] = useState({
@@ -10,56 +9,26 @@ const Addprevjobs = () => {
     location: "",
   });
 
-  // useEffect(() => {
-  //   getPrevJobs();
-  //   // eslint-disable-next-line
-  // }, []);
-
-  // const getPrevJobs = () => {
-  //   axios
-  //     .get("/addjob")
-  //     .then((response) => {
-  //       const data = response.data;
-  //       setJob({ posts: data });
-  //       console.log(job.posts);
-  //     })
-  //     .catch(() => {
-  //       alert("Error retrieving jobs");
-  //     });
-  // };
-
   const handleChange = (e) => {
     setJob({ ...job, [e.target.name]: e.target.value });
   };
 
   const submit = (e) => {
     e.preventDefault();
-    const payload = {
-      compname: job.compname,
-      duration: job.duration,
-      salary: job.salary,
-      position: job.position,
-      location: job.location,
-    };
-
-    axios({
-      url: "/addjob/save",
-      method: "POST",
-      data: payload,
-    })
-      .then(() => {
-        console.log("Data has been sent to the server");
-        setJob({
-          compname: "",
-          duration: "",
-          salary: 0,
-          position: "",
-          location: "",
-        });
-      })
-      .catch(() => {
-        console.log("Internal Server Error");
-      });
+    setJob({
+      compname: "",
+      duration: "",
+      salary: 0,
+      position: "",
+      location: "",
+    });
+    // const payload = {
+    //   compname: job.compname,
+    //   duration: job.duration,
+    //   salary: job.salary,
+    //   position: job.position,
+    //   location: job.location,
+    // };
   };
 
   return (
