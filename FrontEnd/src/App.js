@@ -7,7 +7,7 @@ import { useCallback, useState } from "react";
 import Search from "./components/Home/search";
 import Addprevjobs from "./components/LandingPage/Addprevjobs";
 import Landingpage from "./components/LandingPage/Landingpage";
-
+import Profile from "./components/Profile/profile";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userId, setuserId] = useState("");
@@ -47,6 +47,8 @@ function App() {
           }
         ></Route>
         <Route path="/landingpage" element={<Landingpage />}></Route>
+        <Route path="/profile" element={<Profile />}></Route>
+
         <Route exact path="/addpreviousjobs" element={<Addprevjobs />}></Route>
       </Routes>
     );

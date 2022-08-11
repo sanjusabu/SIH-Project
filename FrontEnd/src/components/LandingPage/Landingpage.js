@@ -61,7 +61,9 @@ const Landingpage = () => {
                   <small className="text-muted">B.Tech From IIIT SriCity</small>
                 </p>
                 <div className="butt d-flex justify-content-md-center">
-                  <button className="btn btn-primary">Update Profile</button>
+                  <Link to="/profile">
+                    <button className="btn btn-primary">Update Profile</button>
+                  </Link>
                 </div>
               </div>
               <br />
