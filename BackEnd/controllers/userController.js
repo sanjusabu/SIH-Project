@@ -99,7 +99,7 @@ const search = (req, res, next) => {
   axios.get(targetURL)
     .then(response => {
       // res.writeHead(200, headers);
-      console.log(response.data);
+      // console.log(response.data);
       const sendResponse = response.data.results
       // res.json({sendResponse})
       // console.log(sendResponse)
@@ -110,6 +110,7 @@ const search = (req, res, next) => {
           company: i.company.display_name,
           description: i.description,
           location: i.location.display_name,
+          url:i.redirect_url
         })
       })
       res.json({ requiredinfo })
