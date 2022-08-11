@@ -46,7 +46,7 @@ function App() {
             </>
           }
         ></Route>
-        <Route exact path="/landingpage" element={<Landingpage />}></Route>
+        <Route path="/landingpage" element={<Landingpage />}></Route>
         <Route exact path="/addpreviousjobs" element={<Addprevjobs />}></Route>
       </Routes>
     );

@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Landingpage = () => {
   return (
     <div>
@@ -20,7 +20,13 @@ const Landingpage = () => {
         <div className="containers">
           <div className="left">
             <div className="jobs">
-              <h2 className="head">Jobs</h2>
+              <div className="conta d-flex">
+                <h2 className="head">Jobs</h2>
+                <Link to="/addpreviousjobs">
+                  <button className="btn btn-primary">+</button>
+                </Link>
+              </div>
+
               <div className="options">
                 <h3 className="title">CillyFox</h3>
                 <p className="service">Liquid eLearning Services</p>
@@ -58,6 +64,7 @@ const Landingpage = () => {
                   <button className="btn btn-primary">Update Profile</button>
                 </div>
               </div>
+              <br />
             </div>
           </div>
         </div>
