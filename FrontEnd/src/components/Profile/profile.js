@@ -2,7 +2,9 @@ import React, { useState } from "react";
 // import userImg from "./userProfile.png";
 import "./Profile.css";
 import FormInput from "./FormInput";
+import SkillPanel from "./SkillPanel";
 // import UploadAndDisplayImage from "./UploadAndDisplayImage";
+import Pastjobs from "../LandingPage/Pastjobs";
 
 export default function Profile(props) {
   const showForm = () => {
@@ -161,6 +163,14 @@ export default function Profile(props) {
           </button>
           {/* <input type="submit">Save Changes</input> */}
         </form>
+      </div>
+
+      <div className="SkillPanel">
+        <SkillPanel />
+      </div>
+
+      <div className="pastJobs">
+        <Pastjobs />
       </div>
 
       {/* <FormInput /> */}
