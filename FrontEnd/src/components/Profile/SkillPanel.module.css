@@ -51,7 +51,7 @@
   padding: 1em;
 }
 
-/* ul {
+.sKillUL {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,7 +61,7 @@
   padding: 1rem;
 }
 
-ul li {
+.sKillUL li {
   border-radius: 20px;
   border: 1px solid #ddd;
   margin-top: -1px;
@@ -73,7 +73,7 @@ ul li {
   display: block;
   margin: 1rem;
   position: relative;
-} */
+}
 
 /* Add a light grey background color on hover */
 /* ul li:hover {

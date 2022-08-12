@@ -31,7 +31,7 @@ function SkillPanel() {
       </div>
 
       <div className={classes.tagDiv}>
-        <ul>
+        <ul className={classes.sKillUL}>
           {skills.map((skill, index) => (
             <div>
               <li key={index}>
