@@ -95,7 +95,7 @@ button:active {
   color: #b40e0e;
 }
 
-  /* button:disabled {
+/* button:disabled {
     background-color: #3f3f3f;
   } */
 
@@ -197,7 +197,7 @@ button:active {
   position: relative;
   bottom: 1.5rem;
 }
-/* .details {
+.deta {
   display: flex;
   flex-direction: column;
-} */
+}
