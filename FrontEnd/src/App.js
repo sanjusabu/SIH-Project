@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import { AuthContext } from "./context/authcontext";
-import { useCallback, useState } from "react";
+import { useCallback, useId, useState, useEffect } from "react";
 import Search from "./components/Home/search";
 import Addprevjobs from "./components/LandingPage/Addprevjobs";
 import Landingpage from "./components/LandingPage/Landingpage";
@@ -13,8 +13,9 @@ function App() {
   const [userId, setuserId] = useState("");
 
   const login = useCallback((uid) => {
+    localStorage.setItem("userid", uid);
     setIsLoggedIn(true);
-    setuserId(uid);
+    setuserId(localStorage.getItem("userid"));
   }, []);
 
   const logout = useCallback(() => {
@@ -22,63 +23,77 @@ function App() {
     setuserId(null);
   }, []);
 
+  useEffect(() => {
+    if (localStorage.hasOwnProperty("userid")) {
+      setuserId(localStorage.getItem("userid"));
+      setIsLoggedIn(true);
+    }
+  }, []);
+
   let routes;
   if (isLoggedIn) {
     routes = (
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <>
-              <Headers />
-              <Search />
-            </>
-          }
-        ></Route>
-        <Route
-          exact
-          path="/Home"
-          element={
-            <>
-              <Headers />
-              <Search />
-            </>
-          }
-        ></Route>
-        <Route path="/landingpage" element={<Landingpage />}></Route>
-        <Route path="/profile" element={<Profile />}></Route>
+      <Router>
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <>
+                <Headers />
+                <Search />
+              </>
+            }
+          ></Route>
+          <Route
+            exact
+            path="/Home"
+            element={
+              <>
+                <Headers />
+                <Search />
+              </>
+            }
+          ></Route>
+          <Route path="/landingpage" element={<Landingpage />}></Route>
+          <Route path="/profile" element={<Profile />}></Route>
 
-        <Route exact path="/addpreviousjobs" element={<Addprevjobs />}></Route>
-      </Routes>
+          <Route
+            exact
+            path="/addpreviousjobs"
+            element={<Addprevjobs />}
+          ></Route>
+        </Routes>
+      </Router>
     );
   } else {
     routes = (
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <>
-              <Headers />
-              <Search />
-            </>
-          }
-        ></Route>
-        <Route
-          exact
-          path="/Home"
-          element={
-            <>
-              <Headers />
-              <Search />
-            </>
-          }
-        ></Route>
-
-        <Route exact path="/login" element={<Login />}></Route>
-        <Route exact path="/register" element={<Register />}></Route>
-      </Routes>
+      <Router>
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <>
+                <Headers />
+                <Search />
+              </>
+            }
+          ></Route>
+          <Route
+            exact
+            path="/Home"
+            element={
+              <>
+                <Headers />
+                <Search />
+              </>
+            }
+          ></Route>
+          <Route exact path="/login" element={<Login />}></Route>
+          <Route exact path="/register" element={<Register />}></Route>
+        </Routes>
+      </Router>
     );
   }
   return (

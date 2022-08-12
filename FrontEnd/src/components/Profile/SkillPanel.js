@@ -48,7 +48,7 @@ function SkillPanel() {
                 type="text"
                 id="addSkill"
                 name="addSkill"
-                placeHolder="add a skill"
+                placeholder="add a skill"
               />
             </div>
           <button className={[classes.close, classes.skillBtn].join(' ')} role="button">

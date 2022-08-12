@@ -22,7 +22,8 @@ const Search = ()=>
         JSON.stringify({search:Search,place:Place}),
         {'Content-Type': 'application/json'}
         )
-        setLoading(false)
+        
+    setLoading(false)
     setDetails(response)
     
     resetLocation()
