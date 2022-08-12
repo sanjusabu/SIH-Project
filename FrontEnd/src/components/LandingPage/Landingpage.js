@@ -25,9 +25,7 @@ const Landingpage = () => {
               <div className="jobs">
                 <div className="conta d-flex">
                   <h2 className="head">Jobs</h2>
-                  <Link to="/addpreviousjobs">
-                    <button className="btn btn-primary">+</button>
-                  </Link>
+               
                 </div>
 
                 <div className="options">

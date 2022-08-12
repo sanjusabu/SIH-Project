@@ -1,6 +1,7 @@
 import React from "react";
 import Jobdetails from "./Jobdetails";
-
+import { Link } from "react-router-dom";
+import Addprevjobs from "./Addprevjobs";
 const Pastjobs = () => {
   const jobs = [
     {
@@ -35,7 +36,7 @@ const Pastjobs = () => {
   return (
     <>
       <div className="addjobs d-flex justify-content-center m-4">
-        <button className="btn btn-primary">Add Previous Jobs</button>
+       <Link to='/addpreviousjobs'><button className="btn btn-primary">Add Previous Jobs</button></Link>
       </div>
       <div className="container">
         <div className="row">

@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-
+const jobRoutes = require('./routes/jobs')
 const usersRoutes = require('./routes/user');
 const HttpError = require('./models/http-error');
 
@@ -21,6 +21,7 @@ app.use((req, res, next) => {
 }); //cors error
 
 app.use('/users', usersRoutes);
+app.use('/jobs',  jobRoutes);
 
 app.use((req, res, next) => {
   const error = new HttpError('Could not find this route.', 404);

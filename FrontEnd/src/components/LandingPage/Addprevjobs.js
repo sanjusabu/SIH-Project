@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import {useRequest} from '../../hooks/request-hook'
 const Addprevjobs = () => {
   const [job, setJob] = useState({
     compname: "",
@@ -8,27 +8,30 @@ const Addprevjobs = () => {
     position: "",
     location: "",
   });
-
+const {sendRequest} =  useRequest()
   const handleChange = (e) => {
     setJob({ ...job, [e.target.name]: e.target.value });
   };
 
-  const submit = (e) => {
+  const submit = async(e) => {
     e.preventDefault();
-    setJob({
-      compname: "",
-      duration: "",
-      salary: 0,
-      position: "",
-      location: "",
-    });
-    // const payload = {
-    //   compname: job.compname,
-    //   duration: job.duration,
-    //   salary: job.salary,
-    //   position: job.position,
-    //   location: job.location,
-    // };
+    console.log(job.compname)
+   const response = await sendRequest(
+    'http://localhost:5002/jobs/addprevjobs',
+    'POST',
+    JSON.stringify( {
+      compname: job.compname,
+      duration: job.duration,
+      salary  : job.salary,
+      position: job.position,
+      location: job.location
+    }),
+      {
+        "Content-Type": "application/json",
+      }
+   )
+
+   console.log(response)
   };
 
   return (
