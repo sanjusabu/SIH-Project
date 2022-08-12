@@ -64,7 +64,7 @@ export default function Profile(props) {
               />
             </p>
 
-            <h3>User</h3>
+            <h3>User</h3> 
           </div>
           <div className="details">
             <div className="col-1">
