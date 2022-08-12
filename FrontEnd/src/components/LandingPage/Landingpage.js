@@ -56,7 +56,7 @@ const Landingpage = () => {
                     <i className="fa-solid fa-user prof"></i>
                   </div>
                 </div>
-                <div className="details">
+                <div className="deta">
                   <h3 className="name">Meet Jain</h3>
                   <p className="text">
                     <small className="text-muted">

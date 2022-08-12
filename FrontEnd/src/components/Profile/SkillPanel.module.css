@@ -1,7 +1,4 @@
 .bg {
-  height: 80vh;
-  width: 40vw;
-  background-color: #c8c3cc;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +20,7 @@
   justify-content: center;
 }
 
-.tags {
+/* .tags {
   padding: 0.8rem;
   margin: 1rem;
   border-radius: 20px;
@@ -32,8 +29,8 @@
   border-style: solid;
   color: #8ca3a3;
   font-weight: 700;
-  background-color: #484f4f;     
-}
+  background-color: #484f4f;
+} */
 
 .skillBtn {
   border-style: none;
@@ -45,7 +42,7 @@
 
 .skillBtn:hover {
   padding: 1.5em;
-} 
+}
 
 .skillBtn:active {
   padding: 1em;
