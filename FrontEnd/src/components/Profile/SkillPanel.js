@@ -36,7 +36,7 @@ function SkillPanel() {
               <li key={index}>
                 {skill}
                 <button className="close" onClick={() => tempFunc(skill)}>
-                  <i class="fa-solid  fa-circle-xmark"></i>
+                  <i className="fa-solid  fa-circle-xmark"></i>
                 </button>
               </li>
             </div>
@@ -47,7 +47,7 @@ function SkillPanel() {
                 type="text"
                 id="addSkill"
                 name="addSkill"
-                placeHolder="add a skill"
+                placeholder="add a skill"
               />
             </div>
             <button className="close" role="button">

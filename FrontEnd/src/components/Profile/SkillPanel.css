@@ -43,15 +43,15 @@ button {
   transition: 0.5s;
 }
 
-button:hover {
+/* button:hover {
   padding: 1.5em;
-}
+} */
 
 button:active {
   padding: 1em;
 }
 
-ul {
+/* ul {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,12 +73,12 @@ ul li {
   display: block;
   margin: 1rem;
   position: relative;
-}
+} */
 
 /* Add a light grey background color on hover */
-ul li:hover {
+/* ul li:hover {
   background-color: #eee;
-}
+} */
 
 /* Style the close button (span) */
 .close {

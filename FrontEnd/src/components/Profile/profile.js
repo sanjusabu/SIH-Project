@@ -5,6 +5,7 @@ import FormInput from "./FormInput";
 import SkillPanel from "./SkillPanel";
 // import UploadAndDisplayImage from "./UploadAndDisplayImage";
 import Pastjobs from "../LandingPage/Pastjobs";
+import NavBar from "../NavBar/NavBar";
 
 export default function Profile(props) {
   const showForm = () => {
@@ -28,6 +29,7 @@ export default function Profile(props) {
 
   return (
     <>
+      <NavBar />
       <div id="profile">
         <div className="basic-info">
           <div className="profile-image">
