@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import "./SkillPanel.css";
-import classes from './SkillPanel.module.css';
+import classes from "./SkillPanel.module.css";
 
 var arr = [
   "css",
@@ -36,8 +36,11 @@ function SkillPanel() {
             <div>
               <li key={index}>
                 {skill}
-                <button className={[classes.close, classes.skillBtn].join(' ')}  onClick={() => tempFunc(skill)}>
-                  <i class="fa-solid  fa-circle-xmark" ></i>
+                <button
+                  className={[classes.close, classes.skillBtn].join(" ")}
+                  onClick={() => tempFunc(skill)}
+                >
+                  <i className="fa-solid  fa-circle-xmark"></i>
                 </button>
               </li>
             </div>
@@ -51,7 +54,10 @@ function SkillPanel() {
                 placeholder="add a skill"
               />
             </div>
-          <button className={[classes.close, classes.skillBtn].join(' ')} role="button">
+            <button
+              className={[classes.close, classes.skillBtn].join(" ")}
+              role="button"
+            >
               <i className="fa-solid fa-2x fa-plus" onClick={addTag}></i>
             </button>
           </li>

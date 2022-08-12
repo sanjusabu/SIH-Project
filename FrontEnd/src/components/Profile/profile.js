@@ -22,7 +22,6 @@ export default function Profile(props) {
     var image = document.getElementById("output");
     image.src = URL.createObjectURL(event.target.files[0]);
     console.log(image.src);
-    // image[0].innerHTML="<img class=\"output\" src=\"" + url + "\" alt=\"img\" >"
   };
 
   const [displayForm, setStyle] = useState("none");
@@ -33,10 +32,6 @@ export default function Profile(props) {
       <div id="profile">
         <div className="basic-info">
           <div className="profile-image">
-            {/* {UploadAndDisplayImage}; */}
-            {/* <UploadAndDisplayImage/> */}
-            {/* <img src={<UploadAndDisplayImage/>} alt="" /> */}
-
             <p>
               <input
                 type="file"
@@ -63,24 +58,20 @@ export default function Profile(props) {
                 }}
               />
             </p>
-
-            <h3>User</h3> 
           </div>
           <div className="details">
-            <div className="col-1">
-              <h2>Location</h2>
-              <h2>Gender</h2>
-            </div>
-
-            <div className="col-2">
-              <h2>Phone no</h2>
-              <h2>Email ID</h2>
-            </div>
+            <ul className="detailsul-1">
+              <li>Name</li>
+              <li>Email</li>
+            </ul>
+            <ul className="detailsul-2">
+              <li>Gender</li>
+              <li>Date Of Birth</li>
+              <button className="btn btn-primary detailedit" onClick={showForm}>
+                Edit
+              </button>
+            </ul>
           </div>
-          {/* <button className="edit-btn" ><to link="/FormInput" >Edit</to> </button> */}
-          <button className="edit-btn" onClick={showForm}>
-            Edit
-          </button>
         </div>
       </div>
 

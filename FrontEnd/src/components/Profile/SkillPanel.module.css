@@ -4,6 +4,8 @@
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: column;
+  padding-top: 1rem;
+  border-bottom: 0.5px solid #adadad;
 }
 .head {
   display: flex;
