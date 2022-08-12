@@ -6,6 +6,8 @@ const getprevjobs = async(req,res,next)=>
 {
     const getJobs = await Jobs.find({})
     console.log(getJobs) 
+
+    res.json({jobs: getJobs})
 }
 const prevjobs = async(req,res,next)=>
 {

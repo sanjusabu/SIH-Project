@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {useRequest} from '../../hooks/request-hook'
+import { useNavigate } from "react-router-dom";
 const Addprevjobs = () => {
+  const navigate = useNavigate()
   const [job, setJob] = useState({
     compname: "",
     duration: "",
@@ -30,7 +33,7 @@ const {sendRequest} =  useRequest()
         "Content-Type": "application/json",
       }
    )
-
+      navigate('/profile')
    console.log(response)
   };
 
