@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./SkillPanel.css";
+// import "./SkillPanel.css";
+import classes from './SkillPanel.module.css';
 
 var arr = [
   "css",
@@ -21,28 +22,28 @@ function SkillPanel() {
     console.log("hello");
   };
 
-  const [displayInputField, setStyle] = useState("none");
+  // const [displayInputField, setStyle] = useState("none");
 
   return (
-    <div className="bg">
-      <div className="head">
+    <div className={classes.bg}>
+      <div className={classes.head}>
         <h1>Skills</h1>
       </div>
 
-      <div className="tagDiv">
+      <div className={classes.tagDiv}>
         <ul>
           {skills.map((skill, index) => (
             <div>
               <li key={index}>
                 {skill}
-                <button className="close" onClick={() => tempFunc(skill)}>
-                  <i class="fa-solid  fa-circle-xmark"></i>
+                <button className={[classes.close, classes.skillBtn].join(' ')}  onClick={() => tempFunc(skill)}>
+                  <i class="fa-solid  fa-circle-xmark" ></i>
                 </button>
               </li>
             </div>
           ))}
           <li>
-            <div className="inputField">
+            <div className={classes.inputField}>
               <input
                 type="text"
                 id="addSkill"
@@ -50,7 +51,7 @@ function SkillPanel() {
                 placeHolder="add a skill"
               />
             </div>
-            <button className="close" role="button">
+          <button className={[classes.close, classes.skillBtn].join(' ')} role="button">
               <i className="fa-solid fa-2x fa-plus" onClick={addTag}></i>
             </button>
           </li>

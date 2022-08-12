@@ -32,10 +32,10 @@
   border-style: solid;
   color: #8ca3a3;
   font-weight: 700;
-  background-color: #484f4f;
+  background-color: #484f4f;     
 }
 
-button {
+.skillBtn {
   border-style: none;
   border-radius: 100px;
   padding: 1rem;
@@ -43,11 +43,11 @@ button {
   transition: 0.5s;
 }
 
-button:hover {
+.skillBtn:hover {
   padding: 1.5em;
 }
 
-button:active {
+.skillBtn:active {
   padding: 1em;
 }
 
@@ -80,7 +80,7 @@ ul li:hover {
   background-color: #eee;
 }
 
-/* Style the close button (span) */
+/* Style the close skillBtn (span) */
 .close {
   display: flex;
   justify-content: center;

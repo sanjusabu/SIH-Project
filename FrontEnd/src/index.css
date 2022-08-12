@@ -67,7 +67,7 @@ body {
   flex: 1;
 }
 
-button {
+/* button {
   font: inherit;
   background-color: #240370;
   color: white;
@@ -81,7 +81,7 @@ button:hover,
 button:active {
   background-color: #33059e;
   border-color: #33059e;
-}
+} */
 
 .form-actions {
   text-align: left;
@@ -95,9 +95,9 @@ button:active {
   color: #b40e0e;
 }
 
-button:disabled {
-  background-color: #3f3f3f;
-}
+  /* button:disabled {
+    background-color: #3f3f3f;
+  } */
 
 .slide-in-left-enter {
   transform: translateX(-100%);
