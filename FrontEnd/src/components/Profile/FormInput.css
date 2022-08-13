@@ -47,7 +47,7 @@ input[type="radio"] {
 input[type="radio"] + label,
 select {
   display: inline-block;
-  width: 50%;
+  width: 43%;
   text-align: center;
   float: left;
   border-radius: 0;
@@ -140,6 +140,10 @@ select option {
 .input-group-icon input {
   padding-left: 4.4em;
 }
+
+.iconissue input{
+  padding-right: 4.4em;
+}
 .input-group-icon .input-icon {
   position: absolute;
   top: 0;
@@ -177,9 +181,9 @@ select option {
   margin: 0em auto;
   background-color: #fff;
   border-radius: 4.2px;
-  top: 20px;
-  left: 28%;
-  box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
+  /* top: 20px;
+  left: 28%; */
+  box-shadow: 0px 3px 10px -2px rgba(0, 0.2, 0.2, 0);
 }
 .row {
   zoom: 1;
@@ -213,4 +217,22 @@ select option {
     width: 100%;
     padding-right: 0;
   }
+  .form-container{
+    left: 0%;
+    top: 8%;
+  }
 }
+
+
+
+
+
+/* input[type="text"] {
+  border-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #f6f6f6;
+  width: fit-content;
+  padding: 0.8rem 0.8rem 0.8rem 3.8rem;
+  border: none;
+} */

@@ -99,7 +99,7 @@
   padding: 1rem;
 }
 
-input[type="text"] {
+.skillInput[type="text"] {
   border-radius: 20px;
   background-color: #f6f6f6;
   width: auto;
