@@ -47,7 +47,7 @@ function SkillPanel() {
           ))}
           <li>
             <div className={classes.inputField}>
-              <input
+              <input className={classes.skillInput}
                 type="text"
                 id="addSkill"
                 name="addSkill"
