@@ -181,3 +181,19 @@ body {
   display: flex;
   flex-direction: column;
 }
+.logg {
+  width: 6rem;
+}
+.loggout {
+  position: relative;
+  right: 1rem;
+}
+.collapse {
+  display: flex;
+  flex-direction: row;
+}
+
+.rightside {
+  position: relative;
+  right: 2rem;
+}
