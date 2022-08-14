@@ -6,7 +6,6 @@ import SkillPanel from "./SkillPanel";
 // import UploadAndDisplayImage from "./UploadAndDisplayImage";
 import Pastjobs from "../LandingPage/Pastjobs";
 import NavBar from "../NavBar/NavBar";
-import EditInfo from "./EditInfo";
 
 export default function Profile(props) {
   const showForm = () => {
