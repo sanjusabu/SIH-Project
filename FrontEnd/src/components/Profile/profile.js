@@ -109,7 +109,7 @@ export default function Profile(props) {
           <div className="details">
             <ul className="detailsul-1">
               <li>{EnteredName}</li>
-              <li>Email</li>
+              <li>Location</li>
             </ul>
             <ul className="detailsul-2">
               <li>{EnteredGender}</li>
