@@ -109,7 +109,7 @@ export default function Profile(props) {
           <div className="details">
             <ul className="detailsul-1">
               <li>{EnteredName}</li>
-              <li>Email</li>
+              <li>Location</li>
             </ul>
             <ul className="detailsul-2">
               <li>{EnteredGender}</li>
@@ -125,13 +125,11 @@ export default function Profile(props) {
       <div
         className="form-container container"
         style={{ display: `${displayForm}`, position: "relative" }}
-        >
+      >
         <form onSubmit={submitHandler}>
           <div className="row container">
             <h4>Edit Details</h4>
-            <div 
-            className=" input-group input-group-icon iconissue"
-            >
+            <div className=" input-group input-group-icon iconissue">
               <input
                 type="text"
                 placeholder="Full Name"

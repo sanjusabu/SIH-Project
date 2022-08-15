@@ -1,9 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/authcontext";
 import { useContext } from "react";
 const NavBar = () => {
   const auth = useContext(AuthContext);
+  const navigate = useNavigate();
+  const logoutHandler = () => {
+    if (auth.isLoggedIn) {
+      auth.logout();
+      localStorage.removeItem("userid");
+      navigate("/Home");
+    }
+  };
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -46,6 +54,11 @@ const NavBar = () => {
                 </Link>
               </li>
             </ul>
+            <li className="nav-item loggout">
+              <button className="btn btn-danger logg" onClick={logoutHandler}>
+                Logout
+              </button>
+            </li>
           </div>
         </div>
       </nav>
