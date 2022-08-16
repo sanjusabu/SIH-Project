@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 // import "./SkillPanel.css";
 import classes from "./SkillPanel.module.css";
+import { useRequest } from "../../hooks/request-hook";
+import { useNavigate } from "react-router-dom";
 
 var arr = [
   "css",
@@ -10,6 +12,10 @@ var arr = [
   "cpp",
   "java",
   "python",
+  "javascript",
+  "meet",
+  "noob",
+  "nothing",
 ];
 
 function SkillPanel() {
@@ -21,8 +27,27 @@ function SkillPanel() {
   const addTag = () => {
     console.log("hello");
   };
-
+  const navigate = useNavigate();
+  const uid = localStorage.getItem("userid");
+  const [addskill, setAddskill] = useState(arr);
+  const { sendRequest } = useRequest();
   // const [displayInputField, setStyle] = useState("none");
+  const submitSkills = async (e) => {
+    e.preventDefault();
+    const response = await sendRequest(
+      "http://localhost:5002/skills/addskills",
+      "POST",
+      JSON.stringify({
+        userid: uid,
+        skills: addskill,
+      }),
+      {
+        "Content-Type": "application/json",
+      }
+    );
+    navigate("/profile");
+    // console.log(response.skill.skills);
+  };
 
   return (
     <div className={classes.bg}>
@@ -47,7 +72,8 @@ function SkillPanel() {
           ))}
           <li>
             <div className={classes.inputField}>
-              <input className={classes.skillInput}
+              <input
+                className={classes.skillInput}
                 type="text"
                 id="addSkill"
                 name="addSkill"
@@ -61,6 +87,12 @@ function SkillPanel() {
               <i className="fa-solid fa-2x fa-plus" onClick={addTag}></i>
             </button>
           </li>
+          <button
+            className="btn btn-primary saveskills mx-2"
+            onClick={submitSkills}
+          >
+            Save Skills
+          </button>
         </ul>
       </div>
     </div>
