@@ -17,11 +17,20 @@ function SkillPanel() {
   const tempFunc = (skill) => {
     setSkill(skills.filter((skills) => skills != skill));
   };
-
+  
   const addTag = () => {
-    console.log("hello");
+    console.log(EnteredSkill);
+    arr.push(EnteredSkill)
+    console.log(arr)
+    setEnteredSkill("")
   };
+  
+  const addSkill = (event) =>{
+      setEnteredSkill(event.target.value);
+  }
 
+
+  const [EnteredSkill, setEnteredSkill] = useState("");
   // const [displayInputField, setStyle] = useState("none");
 
   return (
@@ -52,6 +61,7 @@ function SkillPanel() {
                 id="addSkill"
                 name="addSkill"
                 placeholder="add a skill"
+                onChange={addSkill}
               />
             </div>
             <button

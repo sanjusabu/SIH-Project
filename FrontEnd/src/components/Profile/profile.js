@@ -13,10 +13,7 @@ export default function Profile(props) {
     setStyle("block");
   };
 
-  const saveChanges = () => {
-    console.log(displayForm);
-    setStyle("none");
-  };
+  
 
   const loadFile = function (event) {
     var image = document.getElementById("output");
@@ -64,14 +61,29 @@ export default function Profile(props) {
     console.log(event.target.value);
   };
 
+  const saveChanges = () => {
+    setFilledName(EnteredName)
+    setFilledLocation(EnteredLocation)
+    setFilledPhoneNo(EnteredPhoneNo)
+    setFilledDate(EnteredDate)
+    setFilledGender(EnteredGender)
+    console.log(displayForm);
+    setStyle("none");
+  };
+
   const [displayForm, setStyle] = useState("none");
   const [EnteredName, setEnteredName] = useState("Name");
+  const [FilledName, setFilledName] = useState("Name");
   const [EnteredLocation, setEnteredLocation] = useState("Location");
-  const [EnteredPhoneNo, setEnteredPhoneNo] = useState("Phone no");
+  const [FilledLocation, setFilledLocation] = useState("Location");
+  const [EnteredPhoneNo, setEnteredPhoneNo] = useState("Phone");
+  const [FilledPhoneNo, setFilledPhoneNo] = useState("Phone");
   const [EnteredDate, setEnteredDate] = useState("DOB");
+  const [FilledDate, setFilledDate] = useState("DOB");
   // const [EnteredMonth, setEnteredMonth] = useState("");
   // const [EnteredYear, setEnteredYear] = useState("");
   const [EnteredGender, setEnteredGender] = useState("Gender");
+  const [FilledGender, setFilledGender] = useState("Gender");
 
   return (
     <>
@@ -108,12 +120,12 @@ export default function Profile(props) {
           </div>
           <div className="details">
             <ul className="detailsul-1">
-              <li>{EnteredName}</li>
-              <li>Location</li>
+              <li>{FilledName}</li>
+              <li>{FilledLocation}</li>
             </ul>
             <ul className="detailsul-2">
-              <li>{EnteredGender}</li>
-              <li>{EnteredDate}</li>
+              <li>{FilledPhoneNo}</li>
+              <li>{FilledDate}</li>
               <button className="btn btn-primary detailedit" onClick={showForm}>
                 Edit
               </button>
