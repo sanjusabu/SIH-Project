@@ -5,7 +5,7 @@ import { useRequest } from '../../hooks/request-hook';
 import ErrorModal from '../../Design/UIElements/ErrorModal'
 import { Link } from 'react-router-dom';
 import {AuthContext} from '../../context/authcontext'
-
+import { useNavigate } from 'react-router-dom';
 const isNotEmpty = value =>value.trim() !== '';
 const isEmail = value => value.includes('@');
 const isPassword = value => value.trim().length >= 3;
@@ -15,7 +15,7 @@ let formValid = false;
 // let conPass = true;
 
 const Register = (props) => {
-
+const navigate = useNavigate()
   // const [enteredConfirmedPassword,setConfirmPassword] = useState('');
   // const [isTouched,setisTouched] = useState(false)
   const {isError,clearError,sendRequest} =  useRequest()
@@ -101,7 +101,7 @@ const Register = (props) => {
     auth.login(response.user.id)
     console.log(isError)
     console.log(response,"checking response at signup")
-
+    navigate('/landingpage')
     resetName()
     resetEmail()
     resetPassword()

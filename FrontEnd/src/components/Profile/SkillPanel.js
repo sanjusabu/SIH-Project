@@ -25,12 +25,21 @@ function SkillPanel() {
   };
 
   const addTag = () => {
-    console.log("hello");
+    console.log(EnteredSkill);
+    arr.push(EnteredSkill);
+    console.log(arr);
+    setEnteredSkill("");
   };
   const navigate = useNavigate();
   const uid = localStorage.getItem("userid");
   const [addskill, setAddskill] = useState(arr);
   const { sendRequest } = useRequest();
+
+  const addSkill = (event) => {
+    setEnteredSkill(event.target.value);
+  };
+
+  const [EnteredSkill, setEnteredSkill] = useState("");
   // const [displayInputField, setStyle] = useState("none");
   const submitSkills = async (e) => {
     e.preventDefault();
@@ -78,6 +87,7 @@ function SkillPanel() {
                 id="addSkill"
                 name="addSkill"
                 placeholder="add a skill"
+                onChange={addSkill}
               />
             </div>
             <button

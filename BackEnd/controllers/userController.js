@@ -3,7 +3,7 @@ const HttpError = require('../models/http-error');
 const UserModel = require('../models/UserModel');
 const express = require('express')
 const axios = require('axios')
-
+const bcrypt = require('bcrypt')
 const signup = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -75,13 +75,26 @@ const login = async (req, res, next) => {
     return next(error);
   }
   // console.log(existingUser)
-  if (!existingUser || existingUser.password !== password) {
+  if (!existingUser ) {
     // console.log(password,existingUser.password)
     const error = new HttpError(
       'Invalid credentials, could not log you in.',
       401
     );
+   
     return next(error);
+  }
+  else{
+      const pass =await bcrypt.compare(password,existingUser.password)
+      console.log(pass)
+    if(!pass)
+         {
+          const error = new HttpError(
+            'Invalid credentials, could not log you in.',
+            401
+          );
+          return next(error);
+         }
   }
 
 
