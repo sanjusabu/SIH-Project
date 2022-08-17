@@ -1,7 +1,36 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
+import { useEffect,useState } from "react";
+import { useRequest } from "../../hooks/request-hook";
+
 const Landingpage = () => {
+  const {sendRequest} = useRequest()
+  const [data,setData] = useState([])
+  let dat
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        if (localStorage.hasOwnProperty("userid")) {
+        const responseData = await sendRequest(
+          'http://localhost:5002/users/details',
+          'POST',
+          JSON.stringify({
+            user: localStorage.getItem("userid")
+          }),
+          {
+            "Content-Type": "application/json",
+          }
+        );
+        responseData.info.map(data=>setData(data))
+      //  setData(responseData.info)
+      } }catch (err) {
+        console.log(err)
+      }
+    };
+    fetchUsers();
+  }, [sendRequest]);
+
   return (
     <>
       <NavBar />
@@ -57,10 +86,10 @@ const Landingpage = () => {
                   </div>
                 </div>
                 <div className="deta">
-                  <h3 className="name">Meet Jain</h3>
+                  <h3 className="name">{data.name}</h3>
                   <p className="text">
                     <small className="text-muted">
-                      B.Tech From IIIT SriCity
+                       {data.email}
                     </small>
                   </p>
                   <div className="butt d-flex justify-content-md-center">

@@ -4,6 +4,22 @@ const UserModel = require('../models/UserModel');
 const express = require('express')
 const axios = require('axios')
 const bcrypt = require('bcrypt')
+const {ObjectId} = require('mongodb')
+const details = async (req,res)=>
+{
+  const {user} = req.body
+  const id = ObjectId(user)
+  console.log(id)
+  const dets = await UserModel.find({_id:id})
+  console.log(dets)
+  if(dets)
+  {
+    res.json({info:dets})
+  }
+  else{
+    res.json({info:'No user found'})
+  }
+}
 const signup = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -138,3 +154,4 @@ const search = (req, res, next) => {
 exports.signup = signup;
 exports.login = login;
 exports.search = search
+exports.details = details
