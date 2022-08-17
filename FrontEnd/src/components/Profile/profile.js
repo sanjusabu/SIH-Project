@@ -101,8 +101,8 @@ export default function Profile(props) {
                 style={{ display: "none" }}
               />
             </p>
-            <p>
-              <label htmlFor="file" style={{ cursor: "pointer" }}>
+            <p className="upload-btn">
+              <label htmlFor="file" style={{ cursor: "pointer"}}>
                 Upload Image
               </label>
             </p>
