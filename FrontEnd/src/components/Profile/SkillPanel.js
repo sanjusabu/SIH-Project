@@ -13,9 +13,6 @@ var arr = [
   "java",
   "python",
   "javascript",
-  "meet",
-  "noob",
-  "nothing",
 ];
 
 function SkillPanel() {
