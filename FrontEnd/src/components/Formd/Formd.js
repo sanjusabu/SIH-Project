@@ -10,33 +10,21 @@ const Formd = () => {
       <h1>Form table</h1>
       <table>
         <tr>
-          <br></br>
-          <h5 className={classes.sp}>QUESTIONS</h5>
+          <th className={classes.sp}>QUESTIONS</th>
           <td> 1</td>
-          <br></br>
           <td> 2</td>
-          <br></br>
           <td> 3</td>
-          <br></br>
           <td> 4</td>
-          <br></br>
           <td> 5</td>
-          <br></br>
           <td> 6</td>
-          <br></br>
           <td> 7</td>
-          <br></br>
           <td> 8</td>
-          <br></br>
           <td> 9</td>
-          <br></br>
           <td> 10</td>
-          <br></br>
         </tr>
 
         <tr>
-          <br></br>
-          <h5>Job Satisfaction</h5>
+          <th>Job Satisfaction</th>
 
           <td>
             <input
@@ -47,7 +35,6 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
 
           <td>
             <input
@@ -58,7 +45,7 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -68,7 +55,7 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -78,7 +65,7 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -88,7 +75,7 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -98,7 +85,7 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -108,7 +95,7 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -118,7 +105,7 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -128,7 +115,7 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -138,10 +125,9 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
         </tr>
         <tr>
-          <h5>How hepful was the job suggestion?</h5>
+          <th>How hepful was the job suggestion?</th>
           <td>
             <input
               className={classes.th1}
@@ -151,7 +137,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -161,7 +147,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -171,7 +157,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -181,7 +167,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -191,7 +177,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -201,7 +187,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -211,7 +197,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -221,7 +207,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -231,7 +217,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -241,10 +227,9 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
         </tr>
         <tr>
-          <h5>xyz</h5>
+          <th>xyz</th>
           <td>
             <input
               className={classes.th1}
@@ -254,7 +239,7 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -264,7 +249,7 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -274,7 +259,7 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -284,7 +269,7 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -294,7 +279,7 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -304,7 +289,7 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -314,7 +299,7 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -324,7 +309,7 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -334,7 +319,7 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -344,10 +329,9 @@ const Formd = () => {
               value="1"
             />
           </td>
-          <br></br>
         </tr>
         <tr>
-          <h5>ZYX</h5>
+          <th>ZYX</th>
           <td>
             <input
               className={classes.th1}
@@ -357,7 +341,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -367,7 +351,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -377,7 +361,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -387,7 +371,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -397,7 +381,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -407,7 +391,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -417,7 +401,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -427,7 +411,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -437,7 +421,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -447,10 +431,9 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
         </tr>
         <tr>
-          <h5>How much would you like to rate our portal</h5>
+          <th>How much would you like to rate our portal</th>
           <td>
             <input
               className={classes.th1}
@@ -460,7 +443,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -470,7 +453,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -480,7 +463,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -490,7 +473,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -500,7 +483,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -510,7 +493,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -520,7 +503,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -530,7 +513,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -540,7 +523,7 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
+
           <td>
             <input
               className={classes.th1}
@@ -550,10 +533,9 @@ const Formd = () => {
               value="30"
             />
           </td>
-          <br></br>
         </tr>
       </table>
-      <br></br>
+
       <div className={classes.cont1}>
         <input type="submit" value="Submit" />
       </div>
