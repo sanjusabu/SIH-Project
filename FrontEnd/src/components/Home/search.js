@@ -2,7 +2,7 @@ import { useRequest } from "../../hooks/request-hook";
 import useInput from "../../hooks/useInput";
 import { useState } from "react";
 import Joblist from "./Joblist";
-import LoadingSpinner from "../../Design/UIElements/LoadingSpinner";
+// import LoadingSpinner from "../../Design/UIElements/LoadingSpinner";
 
 const isSearch = value => value.trim() !== '';
 const Search = ()=>
@@ -17,14 +17,15 @@ const Search = ()=>
       // console.log(Search)
       setLoading(true)
       const response = await sendRequest(
-        'http://localhost:5002/users/search',  
+        'http://localhost:5002/jobs/search',  
         'POST',
         JSON.stringify({search:Search,place:Place}),
         {'Content-Type': 'application/json'}
         )
-        
-    setLoading(false)
-    setDetails(response)
+        console.log(response)
+        // const display = response.ma 
+    // setLoading(false)
+    // setDetails(response)
     
     resetLocation()
     resetSearch()
@@ -37,10 +38,10 @@ const Search = ()=>
         <input type="text" placeholder="Location" value={Place} onChange={searchLocation} />
         <button onClick={submitHandler}>Search</button>
         </div>
-        {Loading && <LoadingSpinner />}
+        {/* {Loading && <LoadingSpinner />} */}
         <div>
           
-         <Joblist details={details.requiredinfo}/>
+         {/* <Joblist details={details.requiredinfo}/> */}
    
         </div>
         </>

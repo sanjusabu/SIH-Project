@@ -9,7 +9,7 @@ const isPassword = (value) => value.trim().length >= 6;
 let formValid = false;
 const Login = () => {
   const auth = useContext(AuthContext);
-  const { isError, sendRequest, clearError } = useRequest();
+  const { isError, sendRequest, clearError,exists } = useRequest();
 
   const {
     value: emailValue,
@@ -66,7 +66,8 @@ const Login = () => {
   };
   return (
     <>
-      <ErrorModal error={isError} onClear={clearError} />
+    {console.log(isError)}
+       <ErrorModal error={isError} onClear={clearError} />
       <form onSubmit={submitHandler}>
         <div>Login Form</div>
 
