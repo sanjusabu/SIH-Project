@@ -10,12 +10,13 @@ const Joblist = (props)=>
             props.details?.map((i)=>
             (
                 <Jobs 
-                id={i.id}
+                fromSalary={i.fromSalary}
+                toSalary = {i.toSalary}
                 title={i.title}
                 company= {i.company}
-                description= {i.description}
-                location = {i.location}
-                url='www.youtube.com'
+                category= {i.category}
+                location = {i.city}
+                
                 />
             ))}
         </ul>

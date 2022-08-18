@@ -1,5 +1,5 @@
 import React from "react";
-import "react-table-6/react-table.css";
+// import "react-table-6/react-table.css";
 import classes from "./Formd.module.css";
 //import App from './App';
 //import * as React from 'react';

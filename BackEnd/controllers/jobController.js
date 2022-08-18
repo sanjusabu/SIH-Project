@@ -12,17 +12,20 @@ const search = (req, res, next) => {
   const place = req.body.place
 
   const response = Dataset.filter(data=>
-    data.city === place || data.job_title ===toSearch || data.job_title.includes(toSearch))
-    // const details = response.map((data)=>
-    // {
-    //   return({
-    //   title:data.title,
-    //   salary:data.salary,
-
-    //   })
-    // })
-  console.log(response)
-    res.json(response)
+   (data.city === place && data.job_title.includes(toSearch)))
+    const details = response.map((data)=>
+    {
+      return({
+      company:data.company_name,
+      title:data.job_title,
+      fromSalary:data.inferred_salary_from,
+      toSalary:data.inferred_salary_to,
+      city: data.city,
+      category: data.category
+      })
+    })
+  console.log(details)
+    res.json(details)
   // const targetURL = `https://api.adzuna.com/v1/api/jobs/in/search/1?&results_per_page=20&content-type=application/json&app_id=da3b4b1b&app_key=36a0c2ed8bb2374466527f58761a7f3d&what=${toSearch}&where=${place}`;
 
   // axios.get(targetURL)

@@ -9,9 +9,10 @@ const Jobs = (props) => {
       <h1>{props.title}</h1>
       <h2>{props.company}</h2>
       <h4>{props.location}</h4>
-      <p>{props.description}</p>
+      <p>{props.category}</p>
+      <h5>{props.fromSalary} - {props.toSalary}</h5>
       <br />
-      <button><Link to={props.url}>More Info</Link></button>
+      {/* <button><Link to={props.url}>More Info</Link></button> */}
     </li>
   );
 };

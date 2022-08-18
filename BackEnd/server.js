@@ -38,11 +38,9 @@ app.use((error, req, res, next) => {
   res.json({ message: error.message || "An unknown error occurred!" });
 });
 
-const dbUrl =
-  "mongodb+srv://SANJU:sanju_123456@cluster0.f8yjf.mongodb.net/SIHProject?retryWrites=true&w=majority";
+const dbUrl ="mongodb+srv://SANJU:sanju_123456@cluster0.f8yjf.mongodb.net/SIHProject?retryWrites=true&w=majority";
 
-mongoose
-  .connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("MongoDB connected");
     app.listen(5002);
