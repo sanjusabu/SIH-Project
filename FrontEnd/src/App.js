@@ -8,6 +8,7 @@ import Search from "./components/Home/search";
 import Addprevjobs from "./components/LandingPage/Addprevjobs";
 import Landingpage from "./components/LandingPage/Landingpage";
 import Profile from "./components/Profile/profile";
+import Formd from "./components/Formd/Formd";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userId, setuserId] = useState("");
@@ -91,6 +92,7 @@ function App() {
             }
           ></Route>
           <Route exact path="/login" element={<Login />}></Route>
+          <Route exact path="/formd" element={<Formd />}></Route>
           <Route exact path="/register" element={<Register />}></Route>
         </Routes>
       </Router>

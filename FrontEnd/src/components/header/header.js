@@ -56,6 +56,15 @@ const Headers = () => {
                     Register
                   </Link>
                 </li>
+                <li className="nav-item1">
+                  <Link
+                    className="nav-link active"
+                    aria-current="page"
+                    to="/formd"
+                  >
+                    Form
+                  </Link>
+                </li>
               </ul>
             </div>
           )}
