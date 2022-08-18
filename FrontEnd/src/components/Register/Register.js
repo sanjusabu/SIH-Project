@@ -6,6 +6,7 @@ import ErrorModal from '../../Design/UIElements/ErrorModal'
 import { Link } from 'react-router-dom';
 import {AuthContext} from '../../context/authcontext'
 import { useNavigate } from 'react-router-dom';
+import classes from './Register.module.css';
 const isNotEmpty = value =>value.trim() !== '';
 const isEmail = value => value.includes('@');
 const isPassword = value => value.trim().length >= 3;
@@ -62,11 +63,11 @@ const navigate = useNavigate()
 
 
 
-  const nameClasses = !nameError ? 'form-control' : 'form-control-invalid'
-  const emailClasses = !emailError ? 'form-control' : 'form-control-invalid'
-  const passwordClasses = !passwordError ? 'form-control' : 'form-control-invalid'
+  const nameClasses = !nameError ? 'form-control-plaintext' : 'form-control-invalid'
+  const emailClasses = !emailError ? 'form-control-plaintext' : 'form-control-invalid'
+  const passwordClasses = !passwordError ? 'form-control-plaintext' : 'form-control-invalid'
   // const confirmPassClasses = conPass ? 'form-control' : 'form-control-invalid'
-  const numberClasses = !numberError ? 'form-control' : 'form-control-invalid'
+  const numberClasses = !numberError ? 'form-control-plaintext' : 'form-control-invalid'
 
   if(nameisValid && emailisValid && passwordisValid && numberisValid )
   {
@@ -115,15 +116,20 @@ const navigate = useNavigate()
     <ErrorModal error={isError} onClear={clearError} />
     {/* <Modal /> */}
     {/* {console.log(error)} */}
+    <div className={classes.main1}>
     <form onSubmit={submitHandler}>
-      <div>
+    <div className={classes.reg} >
         Registration Form
-      </div>
+      </div><br></br>
       <div className={nameClasses}>
-        <label htmlFor='name'>Name</label>
+        <label htmlFor='name' className={classes.em1}>Name</label><br></br>
         <input
          type='text'
+         className={classes.textUL}
+         size ='38'
           id='name'
+          background-color= "#f9f9f9"
+  
           onChange={nameChangeHandler} 
           onBlur={nameBlurHandler} 
           value={nameValue} />
@@ -132,10 +138,13 @@ const navigate = useNavigate()
       </div>
 
       <div className={emailClasses}>
-        <label htmlFor='email'>Email</label>
+        <label htmlFor='email' className={classes.em1}>Email</label><br></br>
         
         <input type='text'
+        className={classes.textUL}
          id='email'
+         size='38'
+        
         onChange={emailChangeHandler} 
         onBlur={emailBlurHandler} 
         value={emailValue} />
@@ -144,10 +153,12 @@ const navigate = useNavigate()
       </div>
 
       <div className={passwordClasses}>
-        <label htmlFor='password'>Set Password</label>
+        <label htmlFor='password' className={classes.em1}>Set Password</label><br></br>
         
         <input type='password'
+        className={classes.passUL}
          id='set_password'
+         size='38'
         onChange={passwordChangeHandler} 
         onBlur={passwordBlurHandler} 
         value={passwordValue} />
@@ -169,22 +180,27 @@ const navigate = useNavigate()
       </div> */}
 
 <div className={numberClasses}>
-        <label htmlFor='mobile'>Mobile Number</label>
+        <label htmlFor='mobile' className={classes.em1}>Mobile Number</label><br></br>
         
         <input type='number'
+        className={classes.numberUL}
          id='mobile'
+         size = '38'
         onChange={numberChangeHandler} 
         onBlur={numberBlurHandler} 
         value={numberValue} />
 
         {numberError && <p className='error-text'>Mobile Number should have 10 digits!</p>}
       </div>
-
+      <br></br>
+<div class="action_btn">
       <div className="form-actions">
-        <button disabled={!formValid}>Submit</button>
+        <button disabled={!formValid} className={classes.submit1}>Submit</button>
       </div>
+    <Link to = '/login'><button className={classes.submit2}>Signup</button> </Link>
+    </div>
     </form>
-    <Link to = '/login'><button>Signup</button> </Link>
+    </div>
     </>);
   
 

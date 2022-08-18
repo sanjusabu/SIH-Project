@@ -4,6 +4,7 @@ import ErrorModal from "../../Design/UIElements/ErrorModal";
 import { AuthContext } from "../../context/authcontext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import classes from "./Login.module.css";
 const isEmail = (value) => value.includes("@");
 const isPassword = (value) => value.trim().length >= 6;
 let formValid = false;
@@ -29,9 +30,11 @@ const Login = () => {
     reset: resetPassword,
   } = useInput(isPassword);
 
-  const emailClasses = !emailError ? "form-control" : "form-control-invalid";
+  const emailClasses = !emailError
+    ? "form-control-inputtext"
+    : "form-control-invalid";
   const passwordClasses = !passwordError
-    ? "form-control"
+    ? "form-control-inputtext"
     : "form-control-invalid";
 
   if (emailisValid && passwordisValid) {
@@ -69,41 +72,60 @@ const Login = () => {
     {console.log(isError)}
        <ErrorModal error={isError} onClear={clearError} />
       <form onSubmit={submitHandler}>
-        <div>Login Form</div>
+        <br></br>
+        <div className={classes.main}>
+          <div className={classes.log}>Login Form</div>
+          <br></br>
+          <div className={emailClasses}>
+            <label htmlFor="Email" className={classes.em}>
+              Email
+            </label>
+            <br></br>
+            <div className={classes.in}>
+              <input
+                className={classes.textUL}
+                type="text"
+                size="38"
+                id="email"
+                onChange={emailChangeHandler}
+                onBlur={emailBlurHandler}
+                value={emailValue}
+              />
+            </div>
 
-        <div className={emailClasses}>
-          <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            id="email"
-            onChange={emailChangeHandler}
-            onBlur={emailBlurHandler}
-            value={emailValue}
-          />
+            {emailError && (
+              <p className="error-text">Please Enter a valid Email!</p>
+            )}
+          </div>
 
-          {emailError && (
-            <p className="error-text">Please Enter a valid Email!</p>
-          )}
+          <div className={passwordClasses}>
+            <label htmlFor="password" className={classes.pw}>
+              Password
+            </label>
+            <div className={classes.inpw}>
+              <input
+                className={classes.passUL}
+                type="password"
+                id="set_password"
+                border-radius="8em"
+                size="38"
+                onChange={passwordChangeHandler}
+                onBlur={passwordBlurHandler}
+                value={passwordValue}
+              />
+            </div>
+
+            {passwordError && (
+              <p className="error-text">
+                Password should be atleast 6 characters long!
+              </p>
+            )}
+          </div>
+          <br></br>
+          <button disabled={!formValid} className={classes.submit}>
+            Sign In
+          </button>
         </div>
-
-        <div className={passwordClasses}>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="set_password"
-            onChange={passwordChangeHandler}
-            onBlur={passwordBlurHandler}
-            value={passwordValue}
-          />
-
-          {passwordError && (
-            <p className="error-text">
-              Password should be atleast 6 characters long!
-            </p>
-          )}
-        </div>
-
-        <button disabled={!formValid}>Submit</button>
       </form>
     </>
   );
