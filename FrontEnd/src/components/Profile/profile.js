@@ -29,7 +29,7 @@ useEffect(() => {
         }
       );
       // responseData.info.map(data=>setData(data))
-    // console.log(responseData)
+     console.log(responseData.info)
     } }catch (err) {
       console.log(err)
     }
@@ -144,11 +144,13 @@ useEffect(() => {
           </div>
           <div className="details">
             <ul className="detailsul-1">
-              <li>{FilledName}</li>
+              {/* <li>{FilledName}</li> */}
+              <li>{data.name}</li>
               <li>{FilledLocation}</li>
             </ul>
             <ul className="detailsul-2">
-              <li>{FilledPhoneNo}</li>
+              {/* <li>{FilledPhoneNo}</li> */}
+              <li>{data.mobilenumber}</li>
               <li>{FilledDate}</li>
               <button className="btn btn-primary detailedit" onClick={showForm}>
                 Edit

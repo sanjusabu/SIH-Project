@@ -130,9 +130,9 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-input,
-input[type="radio"] + label,
-input[type="checkbox"] + label:before,
+.th1,
+.th1[type="radio"] + label,
+.th1[type="checkbox"] + label:before,
 select option,
 select {
   width: 25%;
