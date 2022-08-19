@@ -6,7 +6,8 @@ const JobSchema = new Schema({
   duration:  {type: String, required: true},
    position: {type: String, required: true},
   salary:    {type:Number, required:true},
-  location:  {type:String,required:true}
+  location:  {type:String,required:true},
+  userid :    {type:String,required:true}
 });
 
 

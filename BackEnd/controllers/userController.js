@@ -11,7 +11,7 @@ const details = async (req,res)=>
   const id = ObjectId(user)
   // console.log(id)
   const dets = await UserModel.find({_id:id})
-  // console.log(dets)
+  console.log(dets)
   if(dets)
   {
     res.json({info:dets})

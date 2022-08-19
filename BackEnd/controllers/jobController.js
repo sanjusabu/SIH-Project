@@ -54,14 +54,17 @@ const search = (req, res, next) => {
 }
 
 const getprevjobs = async (req, res, next) => {
-  const getJobs = await Jobs.find({});
-  console.log(getJobs);
+  const {userid} = req.body
+  console.log(userid)
+  const getJobs = await Jobs.find({userid:userid});
+  // console.log(getJobs,"checking");
 
-  res.json({ jobs: getJobs });
+  res.json(getJobs);
 };
+
 const prevjobs = async (req, res, next) => {
   console.log(req.body);
-  const { compname, duration, salary, position, location } = req.body;
+  const { compname, duration, salary, position, location,userid } = req.body;
   let previousJobs;
   previousJobs = await Jobs.findOne({ compname: compname });
   if (previousJobs) {
@@ -78,6 +81,7 @@ const prevjobs = async (req, res, next) => {
     position: position,
     salary: salary,
     location: location,
+    userid: userid
   });
   try {
     await addJob.save();

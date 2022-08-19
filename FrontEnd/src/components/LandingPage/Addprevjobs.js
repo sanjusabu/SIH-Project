@@ -19,6 +19,8 @@ const {sendRequest} =  useRequest()
   const submit = async(e) => {
     e.preventDefault();
     console.log(job.compname)
+    if(localStorage.hasOwnProperty("userid"))
+    {
    const response = await sendRequest(
     'http://localhost:5002/jobs/addprevjobs',
     'POST',
@@ -27,14 +29,15 @@ const {sendRequest} =  useRequest()
       duration: job.duration,
       salary  : job.salary,
       position: job.position,
-      location: job.location
+      location: job.location,
+      userid: localStorage.getItem("userid")
     }),
       {
         "Content-Type": "application/json",
       }
-   )
+   )}
       navigate('/profile')
-   console.log(response)
+  //  console.log(response)
   };
 
   return (

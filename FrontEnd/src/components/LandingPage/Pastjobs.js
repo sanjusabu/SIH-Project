@@ -7,23 +7,34 @@ import { useRequest } from "../../hooks/request-hook";
 
 const Pastjobs = () => {
   const {sendRequest} = useRequest()
-  const [prevJobs,setprevJobs] = useState([])
+  const [prevJobs,setJobs] = useState([])
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const responseData = await sendRequest(
-          'http://localhost:5002/jobs/addprevjobs'
-        );
-        console.log(responseData.jobs)
-        setprevJobs(responseData.jobs)
-      } catch (err) {
-        console.log(err)
-      }
-    };
-    fetchUsers();
+      const fetchJobs = async () => {
+        try {
+          if (localStorage.hasOwnProperty("userid")) {
+          const responseData = await sendRequest(
+            'http://localhost:5002/jobs/getprevjobs',
+            'POST',
+            JSON.stringify({
+              userid: localStorage.getItem("userid")
+            }),
+            {
+              "Content-Type": "application/json",
+            }
+          );
+          // responseData.info.map(data=>setData(data))
+          // console.log(responseData)
+        //  setData(responseData.info)
+        setJobs(responseData)
+        } }catch (err) {
+          console.log(err)
+        }
+      };
+      fetchJobs();
+    
+  
   }, [sendRequest]);
-
 
 
   return (

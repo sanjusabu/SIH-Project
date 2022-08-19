@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 // import userImg from "./userProfile.png";
 import "./Profile.css";
 import FormInput from "./FormInput";
@@ -6,14 +6,38 @@ import SkillPanel from "./SkillPanel";
 // import UploadAndDisplayImage from "./UploadAndDisplayImage";
 import Pastjobs from "../LandingPage/Pastjobs";
 import NavBar from "../NavBar/NavBar";
-
+import { useRequest } from "../../hooks/request-hook";
 export default function Profile(props) {
   const showForm = () => {
     console.log(displayForm);
     setStyle("block");
   };
+const {sendRequest} = useRequest()
+const [data,setData]  = useState([])
+useEffect(() => {
+  const fetchUsers = async () => {
+    try {
+      if (localStorage.hasOwnProperty("userid")) {
+      const responseData = await sendRequest(
+        'http://localhost:5002/users/details',
+        'POST',
+        JSON.stringify({
+          user: localStorage.getItem("userid")
+        }),
+        {
+          "Content-Type": "application/json",
+        }
+      );
+      // responseData.info.map(data=>setData(data))
+     console.log(responseData.info)
+    } }catch (err) {
+      console.log(err)
+    }
+  };
 
-  
+
+  fetchUsers();
+}, [sendRequest]);
 
   const loadFile = function (event) {
     var image = document.getElementById("output");

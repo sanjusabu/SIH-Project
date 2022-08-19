@@ -7,6 +7,7 @@ import { useRequest } from "../../hooks/request-hook";
 const Landingpage = () => {
   const {sendRequest} = useRequest()
   const [data,setData] = useState([])
+
   let dat
   useEffect(() => {
     const fetchUsers = async () => {
@@ -28,8 +29,11 @@ const Landingpage = () => {
         console.log(err)
       }
     };
+ 
+
     fetchUsers();
   }, [sendRequest]);
+
 
   return (
     <>
