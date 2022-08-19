@@ -14,10 +14,10 @@ const details = async (req,res)=>
   console.log(dets)
   if(dets)
   {
-    res.json({info:dets})
+    res.json(dets)
   }
   else{
-    res.json({info:'No user found'})
+    res.json('No user found')
   }
 }
 const signup = async (req, res, next) => {
@@ -27,7 +27,7 @@ const signup = async (req, res, next) => {
       new HttpError('Invalid inputs passed, please check your data.', 422)
     );
   }
-  const { name, email, password, mobile } = req.body;
+  const { name, email, password, mobile, location } = req.body;
   console.log(req.body)
   let existingUser;
   try {
@@ -52,7 +52,8 @@ const signup = async (req, res, next) => {
     name: name,
     email: email,
     password: password,
-    mobilenumber: mobile
+    mobilenumber: mobile,
+    location: location
   });
   console.log(createdUser)
   try {

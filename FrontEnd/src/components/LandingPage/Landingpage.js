@@ -23,7 +23,8 @@ const Landingpage = () => {
             "Content-Type": "application/json",
           }
         );
-        responseData.info.map(data=>setData(data))
+        responseData.map(data=>setData(data))
+        // setData(responseData)
       //  setData(responseData.info)
       } }catch (err) {
         console.log(err)

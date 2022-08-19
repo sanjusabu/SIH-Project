@@ -12,7 +12,7 @@ const search = (req, res, next) => {
   const place = req.body.place
 
   const response = Dataset.filter(data=>
-   (data.city === place && data.job_title.includes(toSearch)))
+   data.job_description.includes(toSearch))
     const details = response.map((data)=>
     {
       return({

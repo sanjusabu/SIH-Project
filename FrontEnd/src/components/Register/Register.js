@@ -61,19 +61,29 @@ const navigate = useNavigate()
 
   } = useInput(number);
 
+  const {
+    value: locationValue,
+    isValid: locationValid,
+    hasError:locationError,
+    valueChangeHandler: locationchangeHandler,
+    BlurHandler: locationBlurHandler,
+    reset : resetlocation
+
+  } = useInput(isNotEmpty);
 
 
   const nameClasses = !nameError ? 'form-control-plaintext' : 'form-control-invalid'
   const emailClasses = !emailError ? 'form-control-plaintext' : 'form-control-invalid'
+  const locationClasses = !locationError ? 'form-control-plaintext' : 'form-control-invalid'
   const passwordClasses = !passwordError ? 'form-control-plaintext' : 'form-control-invalid'
   // const confirmPassClasses = conPass ? 'form-control' : 'form-control-invalid'
   const numberClasses = !numberError ? 'form-control-plaintext' : 'form-control-invalid'
 
-  if(nameisValid && emailisValid && passwordisValid && numberisValid )
+  if(nameisValid && emailisValid && passwordisValid && numberisValid && locationValid )
   {
     formValid = true
   }
-  if(!nameisValid || !emailisValid || !passwordisValid || !numberisValid)
+  if(!nameisValid || !emailisValid || !passwordisValid || !numberisValid || !locationValid)
   {
     formValid= false
   }
@@ -95,14 +105,15 @@ const navigate = useNavigate()
       name: nameValue,
       email: emailValue,
       password: passwordValue,
-      mobile: numberValue
+      mobile: numberValue,
+      location: locationValue
     }),
    {'Content-Type': 'application/json'}
     )
-    auth.login(response.user.id)
+    // auth.login(response.user.id)
     console.log(isError)
     console.log(response,"checking response at signup")
-    navigate('/landingpage')
+    navigate('/login')
     resetName()
     resetEmail()
     resetPassword()
@@ -191,14 +202,29 @@ const navigate = useNavigate()
         value={numberValue} />
 
         {numberError && <p className='error-text'>Mobile Number should have 10 digits!</p>}
+</div>
+        <div className={locationClasses}>
+        <label htmlFor='location' className={classes.em1}>Location</label><br></br>
+        
+        <input type='text'
+        className={classes.textUL}
+         id='location'
+         size='38'
+        onChange={locationchangeHandler} 
+        onBlur={locationBlurHandler} 
+        value={locationValue} />
+
+        {locationError && <p className='error-text'>Please Enter a valid Location!</p>}
       </div>
-      <br></br>
-<div class="action_btn">
-      <div className="form-actions">
-        <button disabled={!formValid} className={classes.submit1}>Submit</button>
-      </div>
-    <Link to = '/login'><button className={classes.submit2}>Signup</button> </Link>
-    </div>
+      {/* <br></br> */}
+      {/* <br></br> */}
+
+{/* <div class="action_btn"> */}
+      {/* <div className="form-actions"> */}
+    <button disabled={!formValid}>Submit</button>
+      {/* </div> */}
+    <Link to = '/login'><button>Login</button> </Link>
+    {/* </div> */}
     </form>
     </div>
     </>);

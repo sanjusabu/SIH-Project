@@ -29,7 +29,7 @@ useEffect(() => {
         }
       );
       // responseData.info.map(data=>setData(data))
-     console.log(responseData.info)
+    // console.log(responseData)
     } }catch (err) {
       console.log(err)
     }
