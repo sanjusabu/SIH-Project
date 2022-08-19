@@ -28,8 +28,8 @@ useEffect(() => {
           "Content-Type": "application/json",
         }
       );
-      // responseData.info.map(data=>setData(data))
-     console.log(responseData.info)
+      responseData.map(data=>setData(data))
+    //  console.log(responseData.info)
     } }catch (err) {
       console.log(err)
     }

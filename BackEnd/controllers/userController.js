@@ -11,7 +11,7 @@ const details = async (req,res)=>
   const id = ObjectId(user)
   // console.log(id)
   const dets = await UserModel.find({_id:id})
-  console.log(dets)
+  // console.log(dets)
   if(dets)
   {
     res.json(dets)
@@ -28,7 +28,7 @@ const signup = async (req, res, next) => {
     );
   }
   const { name, email, password, mobile, location } = req.body;
-  console.log(req.body)
+  // console.log(req.body)
   let existingUser;
   try {
     existingUser = await UserModel.findOne({ email: email });
@@ -55,7 +55,7 @@ const signup = async (req, res, next) => {
     mobilenumber: mobile,
     location: location
   });
-  console.log(createdUser)
+  // console.log(createdUser)
   try {
     const newuser = await createdUser.save();
     // console.log(newuser,'no new user error')
@@ -73,7 +73,7 @@ const signup = async (req, res, next) => {
 
 const login = async (req, res, next) => {
   const { email, password } = req.body;
-  console.log(req.body)
+  // console.log(req.body)
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return next(
@@ -103,7 +103,7 @@ const login = async (req, res, next) => {
   }
   else{
       const pass =await bcrypt.compare(password,existingUser.password)
-      console.log(pass)
+      // console.log(pass)
     if(!pass)
          {
           const error = new HttpError(

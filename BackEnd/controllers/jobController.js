@@ -55,7 +55,7 @@ const search = (req, res, next) => {
 
 const getprevjobs = async (req, res, next) => {
   const {userid} = req.body
-  console.log(userid)
+  // console.log(userid)
   const getJobs = await Jobs.find({userid:userid});
   // console.log(getJobs,"checking");
 
