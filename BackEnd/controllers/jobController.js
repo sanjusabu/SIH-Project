@@ -79,8 +79,28 @@ const getprevjobs = async (req, res, next) => {
   // console.log(userid)
   const getjobs = await Jobs.find({ userid: userid });
   // console.log(getJobs,"checking");
+  console.log(getJobs);
+  res.json(getJobs);
+};
 
-  res.json(getjobs);
+const getjobssalary = async (req, res, next) => {
+  const { userid } = req.body;
+  const getjobssalary = await Jobs.find({ userid: userid });
+  let salaryarray = [];
+  for (let i = 0; i < getjobssalary.length; i++) {
+    salaryarray.push(getjobssalary[i].salary);
+  }
+  res.json(salaryarray);
+};
+
+const getjobsname = async (req, res, next) => {
+  const { userid } = req.body;
+  const getjobsname = await Jobs.find({ userid: userid });
+  let namearray = [];
+  for (let i = 0; i < getjobsname.length; i++) {
+    namearray.push(getjobsname[i].compname);
+  }
+  res.json(namearray);
 };
 
 const prevjobs = async (req, res, next) => {
@@ -120,5 +140,7 @@ const prevjobs = async (req, res, next) => {
 
 exports.prevjobs = prevjobs;
 exports.getprevjobs = getprevjobs;
-exports.search = search
+exports.search = search;
+exports.getjobssalary = getjobssalary;
+exports.getjobsname = getjobsname;
 exports.loginsearch = loginsearch
