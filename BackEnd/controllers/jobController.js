@@ -1,8 +1,8 @@
 const Jobs = require("../models/JobModel");
 const HttpError = require("../models/http-error");
 const express = require("express");
-const fs = require('fs')
-const Dataset = require("../JsonData/jobs.json")
+const fs = require("fs");
+const Dataset = require("../JsonData/jobs.json");
 
 const search = (req, res, next) => {
   // console.log("sanju")
@@ -47,19 +47,39 @@ const search = (req, res, next) => {
   // })
   // res.json({ requiredinfo })
 
-    // }).catch(response => {
-      // res.writeHead(500, headers);
-    //   console.log('error');
-    // });
-}
+  // }).catch(response => {
+  // res.writeHead(500, headers);
+  //   console.log('error');
+  // });
+};
 
 const getprevjobs = async (req, res, next) => {
   const { userid } = req.body;
   // console.log(userid)
-  const getJobsSalary = await Jobs.find({ userid: userid });
+  const getJobs = await Jobs.find({ userid: userid });
   // console.log(getJobs,"checking");
-
+  console.log(getJobs);
   res.json(getJobs);
+};
+
+const getjobssalary = async (req, res, next) => {
+  const { userid } = req.body;
+  const getjobssalary = await Jobs.find({ userid: userid });
+  let salaryarray = [];
+  for (let i = 0; i < getjobssalary.length; i++) {
+    salaryarray.push(getjobssalary[i].salary);
+  }
+  res.json(salaryarray);
+};
+
+const getjobsname = async (req, res, next) => {
+  const { userid } = req.body;
+  const getjobsname = await Jobs.find({ userid: userid });
+  let namearray = [];
+  for (let i = 0; i < getjobsname.length; i++) {
+    namearray.push(getjobsname[i].compname);
+  }
+  res.json(namearray);
 };
 
 const prevjobs = async (req, res, next) => {
@@ -99,4 +119,6 @@ const prevjobs = async (req, res, next) => {
 
 exports.prevjobs = prevjobs;
 exports.getprevjobs = getprevjobs;
-exports.search = search
+exports.search = search;
+exports.getjobssalary = getjobssalary;
+exports.getjobsname = getjobsname;
