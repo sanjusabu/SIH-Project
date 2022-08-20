@@ -53,6 +53,11 @@ const NavBar = () => {
                   Profile
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/progresstrack">
+                  Progress
+                </Link>
+              </li>
             </ul>
             <li className="nav-item loggout">
               <button className="btn btn-danger logg" onClick={logoutHandler}>
