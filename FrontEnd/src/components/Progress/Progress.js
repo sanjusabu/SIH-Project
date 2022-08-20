@@ -64,8 +64,10 @@ const Progress = () => {
         <div className={classes.containers}>
           <div className={classes.lefttt}>
             Salary Graph Here
-            <BarGraph/>
+            <div className="container">
+              <BarGraph />
             </div>
+          </div>
           <div className={classes.rightss}>
             <div className={classes.box}>
               <div className={classes.percent}>
