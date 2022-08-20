@@ -49,12 +49,12 @@ const NavBar = () => {
                 )}
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/profile">
+                <Link className="nav-link active" to="/profile">
                   Profile
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/progresstrack">
+                <Link className="nav-link active" to="/progresstrack">
                   Progress
                 </Link>
               </li>

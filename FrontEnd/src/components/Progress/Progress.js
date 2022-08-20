@@ -105,7 +105,7 @@ const Progress = () => {
                   With supporting text below as a natural lead-in to additional
                   content.
                 </p>
-                <Link to="/" className="btn btn-primary">
+                <Link to="/skillsrecommend" className="btn btn-primary">
                   Go somewhere
                 </Link>
               </div>
@@ -120,7 +120,7 @@ const Progress = () => {
                   With supporting text below as a natural lead-in to additional
                   content.
                 </p>
-                <Link to="/" className="btn btn-primary">
+                <Link to="/skillsrecommend" className="btn btn-primary">
                   Go somewhere
                 </Link>
               </div>
@@ -135,7 +135,7 @@ const Progress = () => {
                   With supporting text below as a natural lead-in to additional
                   content.
                 </p>
-                <Link to="/" className="btn btn-primary">
+                <Link to="/skillsrecommend" className="btn btn-primary">
                   Go somewhere
                 </Link>
               </div>
