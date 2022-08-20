@@ -7,6 +7,8 @@ import SkillPanel from "./SkillPanel";
 import Pastjobs from "../LandingPage/Pastjobs";
 import NavBar from "../NavBar/NavBar";
 import { useRequest } from "../../hooks/request-hook";
+
+
 export default function Profile(props) {
   const showForm = () => {
     console.log(displayForm);
@@ -14,6 +16,8 @@ export default function Profile(props) {
   };
 const {sendRequest} = useRequest()
 const [data,setData]  = useState([])
+
+
 useEffect(() => {
   const fetchUsers = async () => {
     try {

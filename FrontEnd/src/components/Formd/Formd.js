@@ -9,9 +9,9 @@ const Formd = () => {
     <>
       <h1>Form table</h1>
       <table>
-        <tr>
-          <th className={classes.sp}>QUESTIONS</th>
-          <td> 1</td>
+        <tr className={classes.tdItem}>
+          <th style = {{textAlign:"center"}}>QUESTIONS</th>
+          <td className="tdItem"> 1</td>
           <td> 2</td>
           <td> 3</td>
           <td> 4</td>
@@ -42,7 +42,7 @@ const Formd = () => {
               type="radio"
               id="age1"
               name="age"
-              value="1"
+              value="2"
             />
           </td>
 
@@ -52,7 +52,7 @@ const Formd = () => {
               type="radio"
               id="age1"
               name="age"
-              value="1"
+              value="3"
             />
           </td>
 
@@ -62,7 +62,7 @@ const Formd = () => {
               type="radio"
               id="age1"
               name="age"
-              value="1"
+              value="4"
             />
           </td>
 
@@ -72,7 +72,7 @@ const Formd = () => {
               type="radio"
               id="age1"
               name="age"
-              value="1"
+              value="5"
             />
           </td>
 
@@ -82,7 +82,7 @@ const Formd = () => {
               type="radio"
               id="age1"
               name="age"
-              value="1"
+              value="6"
             />
           </td>
 
@@ -92,7 +92,7 @@ const Formd = () => {
               type="radio"
               id="age1"
               name="age"
-              value="1"
+              value="7"
             />
           </td>
 
@@ -102,7 +102,7 @@ const Formd = () => {
               type="radio"
               id="age1"
               name="age"
-              value="1"
+              value="8"
             />
           </td>
 
@@ -112,7 +112,7 @@ const Formd = () => {
               type="radio"
               id="age1"
               name="age"
-              value="1"
+              value="9"
             />
           </td>
 
@@ -122,7 +122,7 @@ const Formd = () => {
               type="radio"
               id="age1"
               name="age"
-              value="1"
+              value="10"
             />
           </td>
         </tr>

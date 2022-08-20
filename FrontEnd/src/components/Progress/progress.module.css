@@ -7,7 +7,7 @@
   box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
 }
 .rightss {
-  width: 30%;
+  width: 50%;
   box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
 }
 .rightss,
@@ -21,72 +21,50 @@
   align-items: center;
   min-height: 40vh;
 }
-.box {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.percent {
-  position: relative;
-  width: 150px;
-  height: 150px;
-}
-.progressvg {
-  position: relative;
-  width: 150px;
-  height: 150px;
-}
-.progcircle {
-  width: 150px;
-  height: 150px;
-  fill: none;
-  stroke-width: 10;
-  stroke: #000;
-  transform: translate(4.75px, 5px);
-  stroke-dasharray: 440;
-  /* stroke-dashoffset: 176; */
-}
-
-/* stroke-dasharray: calc(440 - (440 * 60) / 100); */
-
-.box .percent .progressvg .progcircle:nth-of-type(1) {
-  stroke-dashoffset: 0;
-  stroke: #f3f3f3;
-}
-.box .percent .progressvg .progcircle:nth-of-type(2) {
-  stroke: #03a9f4;
-}
-
-.percentnumber {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #999;
-}
-
-.box .percent .percentnumber h2 {
-  font-size: 48px;
-}
-.box .percent .percentnumber h2 span {
-  font-size: 24px;
-}
-
-.box .texttt {
-  padding: 10px 0 0;
-  color: #111;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
 
 .footcontainer {
   margin: 0.5rem;
   margin-bottom: 2rem;
   box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
+  padding: 15px 20px;
+}
+
+.skillcontainer {
+  display: inline-block;
+}
+
+.skillcard {
+  margin: 1rem;
+}
+.containers {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 1300px) {
+  .lefttt {
+    width: 67%;
+    /* box-shadow: 0 0 20px rgb(0, 0, 0, 0.2); */
+  }
+  .rightss {
+    width: 30%;
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
+  }
+}
+
+@media (max-width: 1020px) {
+  .containers {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+  .lefttt {
+    width: 100%;
+    /* box-shadow: 0 0 20px rgb(0, 0, 0, 0.2); */
+  }
+  .rightss {
+    width: 100%;
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
+  }
 }

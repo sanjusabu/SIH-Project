@@ -1,34 +1,29 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 // import "./SkillPanel.css";
 import classes from "./SkillPanel.module.css";
 import { useRequest } from "../../hooks/request-hook";
 import { useNavigate } from "react-router-dom";
 
 function SkillPanel() {
-
-  const [data,setData] = useState([])
-  const [index,setIndex] = useState(1000)
+  const [data, setData] = useState([]);
   const navigate = useNavigate();
-  const [EnteredSkill, setEnteredSkill] = useState("");
   const uid = localStorage.getItem("userid");
   // const [addskill, setAddskill] = useState(arr);
   const { sendRequest } = useRequest();
-
-  const tempFunc = (index,skill) => {
+  const tempFunc = (skill) => {
     setData(data.filter((skills) => skills != skill));
-    // setIndex(index)
-    // console.log(index)
   };
-  
+
+  const [EnteredSkill, setEnteredSkill] = useState("");
   const addTag = () => {
     console.log(EnteredSkill);
     // arr.push(EnteredSkill);
     // setAddskill(arr)
     // console.log(arr);
-    setData(prevstate=> {
-      let newState = [...prevstate, EnteredSkill]
-      return newState
-    })
+    setData((prevstate) => {
+      let newState = [...prevstate, EnteredSkill];
+      return newState;
+    });
     // setEnteredSkill(" ");
   };
 
@@ -40,45 +35,45 @@ function SkillPanel() {
     const fetchUsers = async () => {
       try {
         if (localStorage.hasOwnProperty("userid")) {
-        const responseData = await sendRequest(
-          'http://localhost:5002/skills/getSkills',
-          'POST',
-          JSON.stringify({
-            userid: localStorage.getItem("userid")
-          }),
-          {
-            "Content-Type": "application/json",
-          }
-        );
-        // console.log(responseData)
-        setData(responseData)
-        // setData(responseData)
-      //  setData(responseData.info)
-      } }catch (err) {
-        console.log(err)
+          const responseData = await sendRequest(
+            "http://localhost:5002/skills/getSkills",
+            "POST",
+            JSON.stringify({
+              userid: localStorage.getItem("userid"),
+            }),
+            {
+              "Content-Type": "application/json",
+            }
+          );
+          // console.log(responseData)
+          setData(responseData);
+          // setData(responseData)
+          //  setData(responseData.info)
+        }
+      } catch (err) {
+        console.log(err);
       }
-    }
-    fetchUsers()
-  },[]);
+    };
+    fetchUsers();
+  }, []);
 
   // const [displayInputField, setStyle] = useState("none");
   const submitSkills = async (e) => {
     e.preventDefault();
-    setEnteredSkill("")
-    console.log(data)
+    setEnteredSkill(" ");
+    console.log(EnteredSkill);
     const response = await sendRequest(
       "http://localhost:5002/skills/addskills",
       "POST",
       JSON.stringify({
         userid: uid,
         skills: data,
-      
       }),
       {
         "Content-Type": "application/json",
       }
     );
-    console.log(response)
+    console.log(response);
     navigate("/profile");
     // console.log(response.skill.skills);
   };
@@ -93,12 +88,11 @@ function SkillPanel() {
         <ul className={classes.sKillUL}>
           {data.map((skill, index) => (
             <div>
-              <li key={index} >
+              <li key={index}>
                 {skill}
-                
                 <button
                   className={[classes.close, classes.skillBtn].join(" ")}
-                  onClick={() => tempFunc(index,skill)}
+                  onClick={() => tempFunc(skill)}
                 >
                   <i className="fa-solid  fa-circle-xmark"></i>
                 </button>
