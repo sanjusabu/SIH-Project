@@ -4,23 +4,66 @@ import React from "react";
 // Bar.register(CategoryScale);
 import Chart from "chart.js/auto";
 import classes from "./BarGraph.module.css";
+import { useRequest } from "../../hooks/request-hook";
+import { useEffect, useState } from "react";
 
 function BarGraph() {
+  const { sendRequest } = useRequest();
+  const [jobsSalary, setJobsSalary] = useState([]);
+  const [jobsname, setJobsname] = useState([]);
+
+  useEffect(() => {
+    const fetchJobsSalary = async () => {
+      try {
+        if (localStorage.hasOwnProperty("userid")) {
+          const responseData = await sendRequest(
+            "http://localhost:5002/jobs/getjobssalary/",
+            "POST",
+            JSON.stringify({
+              userid: localStorage.getItem("userid"),
+            }),
+            {
+              "Content-Type": "application/json",
+            }
+          );
+          setJobsSalary(responseData);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchJobsSalary();
+    const fetchJobsName = async () => {
+      try {
+        if (localStorage.hasOwnProperty("userid")) {
+          const responseData = await sendRequest(
+            "http://localhost:5002/jobs/getjobsname/",
+            "POST",
+            JSON.stringify({
+              userid: localStorage.getItem("userid"),
+            }),
+            {
+              "Content-Type": "application/json",
+            }
+          );
+          setJobsname(responseData);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchJobsName();
+  }, [sendRequest]);
   return (
     <div className={classes.barCont}>
       <div>
         <Bar
           data={{
-            labels: [
-              "IIITS(2011-2015)",
-              "Flipkart(2015-2017)",
-              "Amazon(2017-2021)",
-              "Microsoft(2021-current)",
-            ],
+            labels: jobsname,
             datasets: [
               {
                 label: "Salary (in lpa)",
-                data: [7.5, 20, 25, 40],
+                data: jobsSalary,
                 backgroundColor: ["aqua", "green", "red", "yellow"],
                 borderColor: ["aqua", "green", "red", "yellow"],
                 borderWidth: 0.5,
