@@ -11,6 +11,9 @@ h5 {
 
   color: black;
 }
+.tdItem td{
+  text-align: center;
+}
 
 .th1 {
   width: 15px;
