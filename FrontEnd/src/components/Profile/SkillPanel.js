@@ -5,17 +5,21 @@ import { useRequest } from "../../hooks/request-hook";
 import { useNavigate } from "react-router-dom";
 
 function SkillPanel() {
-  
+
   const [data,setData] = useState([])
+  const [index,setIndex] = useState(1000)
   const navigate = useNavigate();
+  const [EnteredSkill, setEnteredSkill] = useState("");
   const uid = localStorage.getItem("userid");
   // const [addskill, setAddskill] = useState(arr);
   const { sendRequest } = useRequest();
-  const tempFunc = (skill) => {
+
+  const tempFunc = (index,skill) => {
     setData(data.filter((skills) => skills != skill));
+    // setIndex(index)
+    // console.log(index)
   };
   
-  const [EnteredSkill, setEnteredSkill] = useState("");
   const addTag = () => {
     console.log(EnteredSkill);
     // arr.push(EnteredSkill);
@@ -61,13 +65,14 @@ function SkillPanel() {
   const submitSkills = async (e) => {
     e.preventDefault();
     setEnteredSkill("")
-    console.log(EnteredSkill)
+    console.log(data)
     const response = await sendRequest(
       "http://localhost:5002/skills/addskills",
       "POST",
       JSON.stringify({
         userid: uid,
         skills: data,
+      
       }),
       {
         "Content-Type": "application/json",
@@ -88,11 +93,12 @@ function SkillPanel() {
         <ul className={classes.sKillUL}>
           {data.map((skill, index) => (
             <div>
-              <li key={index}>
+              <li key={index} >
                 {skill}
+                
                 <button
                   className={[classes.close, classes.skillBtn].join(" ")}
-                  onClick={() => tempFunc(skill)}
+                  onClick={() => tempFunc(index,skill)}
                 >
                   <i className="fa-solid  fa-circle-xmark"></i>
                 </button>
