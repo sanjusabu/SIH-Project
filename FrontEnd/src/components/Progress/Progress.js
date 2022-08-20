@@ -15,14 +15,14 @@ const Progress = () => {
       location: "Mumbai",
     },
     {
-      compname: "Amazon",
+      compname: "Amazonn",
       duration: "3 Months",
       salary: "100000",
       position: "Software Developer",
       location: "Mumbai",
     },
     {
-      compname: "Amazon",
+      compname: "Amazonnn",
       duration: "3 Months",
       salary: "100000",
       position: "Software Developer",
