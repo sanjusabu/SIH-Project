@@ -3,6 +3,7 @@ import NavBar from "../NavBar/NavBar";
 import CurrJobdetails from "./CurrJobdetails";
 import { Link } from "react-router-dom";
 import classes from "./progress.module.css";
+import BarGraph from "./BarGraph";
 
 const Progress = () => {
   const currJobs = [
@@ -60,8 +61,11 @@ const Progress = () => {
         </div>
       </div>
       <div className="container my-3">
-        <div className="containers">
-          <div className={classes.lefttt}>Salary Graph Here</div>
+        <div className={classes.containers}>
+          <div className={classes.lefttt}>
+            Salary Graph Here
+            <BarGraph/>
+            </div>
           <div className={classes.rightss}>
             <div className={classes.box}>
               <div className={classes.percent}>

@@ -7,7 +7,7 @@
   box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
 }
 .rightss {
-  width: 30%;
+  width: 50%;
   box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
 }
 .rightss,
@@ -98,4 +98,26 @@
 
 .skillcard {
   margin: 1rem;
+}
+.containers{
+  display: flex;
+  flex-direction: row;
+  
+}
+
+@media (max-width: 770px) {
+  .containers {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+  .lefttt {
+    width: 100%;
+    /* box-shadow: 0 0 20px rgb(0, 0, 0, 0.2); */
+  }
+  .rightss {
+    width: 100%;
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
+  }
 }
