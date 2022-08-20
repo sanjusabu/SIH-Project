@@ -4,6 +4,7 @@ import CurrJobdetails from "./CurrJobdetails";
 import { Link } from "react-router-dom";
 import classes from "./progress.module.css";
 import BarGraph from "./BarGraph";
+import Progressbar from "../ProgressBar./Progressbar";
 
 const Progress = () => {
   const currJobs = [
@@ -63,38 +64,13 @@ const Progress = () => {
       <div className="container my-3">
         <div className={classes.containers}>
           <div className={classes.lefttt}>
-            Salary Graph Here
             <div className="container">
               <BarGraph />
             </div>
           </div>
           <div className={classes.rightss}>
-            <div className={classes.box}>
-              <div className={classes.percent}>
-                <svg className={classes.progressvg}>
-                  <circle
-                    className={classes.progcircle}
-                    style={mystyle}
-                    cx="70"
-                    cy="70"
-                    r="70"
-                  ></circle>
-                  <circle
-                    className={classes.progcircle}
-                    style={mystyle}
-                    cx="70"
-                    cy="70"
-                    r="70"
-                  ></circle>
-                </svg>
-                <div className={classes.percentnumber}>
-                  <h2>
-                    {satisfaction}
-                    <span>%</span>
-                  </h2>
-                </div>
-              </div>
-              <h2 className={classes.texttt}> Current Job Satisfaction </h2>
+            <div className="container">
+              <Progressbar />
             </div>
           </div>
         </div>
