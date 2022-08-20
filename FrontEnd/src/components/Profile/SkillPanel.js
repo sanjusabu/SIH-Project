@@ -1,12 +1,11 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 // import "./SkillPanel.css";
 import classes from "./SkillPanel.module.css";
 import { useRequest } from "../../hooks/request-hook";
 import { useNavigate } from "react-router-dom";
 
 function SkillPanel() {
-  
-  const [data,setData] = useState([])
+  const [data, setData] = useState([]);
   const navigate = useNavigate();
   const uid = localStorage.getItem("userid");
   // const [addskill, setAddskill] = useState(arr);
@@ -14,17 +13,17 @@ function SkillPanel() {
   const tempFunc = (skill) => {
     setData(data.filter((skills) => skills != skill));
   };
-  
+
   const [EnteredSkill, setEnteredSkill] = useState("");
   const addTag = () => {
     console.log(EnteredSkill);
     // arr.push(EnteredSkill);
     // setAddskill(arr)
     // console.log(arr);
-    setData(prevstate=> {
-      let newState = [...prevstate, EnteredSkill]
-      return newState
-    })
+    setData((prevstate) => {
+      let newState = [...prevstate, EnteredSkill];
+      return newState;
+    });
     // setEnteredSkill(" ");
   };
 
@@ -36,32 +35,33 @@ function SkillPanel() {
     const fetchUsers = async () => {
       try {
         if (localStorage.hasOwnProperty("userid")) {
-        const responseData = await sendRequest(
-          'http://localhost:5002/skills/getSkills',
-          'POST',
-          JSON.stringify({
-            userid: localStorage.getItem("userid")
-          }),
-          {
-            "Content-Type": "application/json",
-          }
-        );
-        // console.log(responseData)
-        setData(responseData)
-        // setData(responseData)
-      //  setData(responseData.info)
-      } }catch (err) {
-        console.log(err)
+          const responseData = await sendRequest(
+            "http://localhost:5002/skills/getSkills",
+            "POST",
+            JSON.stringify({
+              userid: localStorage.getItem("userid"),
+            }),
+            {
+              "Content-Type": "application/json",
+            }
+          );
+          // console.log(responseData)
+          setData(responseData);
+          // setData(responseData)
+          //  setData(responseData.info)
+        }
+      } catch (err) {
+        console.log(err);
       }
-    }
-    fetchUsers()
-  },[]);
+    };
+    fetchUsers();
+  }, []);
 
   // const [displayInputField, setStyle] = useState("none");
   const submitSkills = async (e) => {
     e.preventDefault();
-    setEnteredSkill("")
-    console.log(EnteredSkill)
+    setEnteredSkill(" ");
+    console.log(EnteredSkill);
     const response = await sendRequest(
       "http://localhost:5002/skills/addskills",
       "POST",
@@ -73,7 +73,7 @@ function SkillPanel() {
         "Content-Type": "application/json",
       }
     );
-    console.log(response)
+    console.log(response);
     navigate("/profile");
     // console.log(response.skill.skills);
   };

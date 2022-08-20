@@ -93,9 +93,54 @@ const Progress = () => {
           </div>
         </div>
       </div>
-      <div className="container my-3">
-        <div className={classes.footcontainer}>
-          <h2 className="p-2">Skills You should Learn</h2>
+      <div className={["container", classes.skillcontainer].join(" ")}>
+        <div className={["row", classes.footcontainer].join(" ")}>
+          <h2 className="p-2 mb-3">Skills You should Learn</h2>
+          <div className="col-md-4">
+            <div className={["card", classes.skillcard].join(" ")}>
+              <div className="card-header">Featured</div>
+              <div className="card-body">
+                <h5 className="card-title">Special title treatment</h5>
+                <p className="card-text">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+                <Link to="/" className="btn btn-primary">
+                  Go somewhere
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className={["card", classes.skillcard].join(" ")}>
+              <div className="card-header">Featured</div>
+              <div className="card-body">
+                <h5 className="card-title">Special title treatment</h5>
+                <p className="card-text">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+                <Link to="/" className="btn btn-primary">
+                  Go somewhere
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4">
+            <div className={["card", classes.skillcard].join(" ")}>
+              <div className="card-header">Featured</div>
+              <div className="card-body">
+                <h5 className="card-title">Special title treatment</h5>
+                <p className="card-text">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+                <Link to="/" className="btn btn-primary">
+                  Go somewhere
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
