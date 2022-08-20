@@ -79,8 +79,8 @@ const getprevjobs = async (req, res, next) => {
   // console.log(userid)
   const getjobs = await Jobs.find({ userid: userid });
   // console.log(getJobs,"checking");
-  console.log(getJobs);
-  res.json(getJobs);
+  console.log(getjobs);
+  res.json(getjobs);
 };
 
 const getjobssalary = async (req, res, next) => {

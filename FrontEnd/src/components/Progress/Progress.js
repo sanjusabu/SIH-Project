@@ -4,7 +4,7 @@ import CurrJobdetails from "./CurrJobdetails";
 import { Link } from "react-router-dom";
 import classes from "./progress.module.css";
 import BarGraph from "./BarGraph";
-import Progressbar from "../ProgressBar./Progressbar";
+import Progressbar from "../ProgressBar/Progressbar";
 
 const Progress = () => {
   const currJobs = [
@@ -70,7 +70,7 @@ const Progress = () => {
           </div>
           <div className={classes.rightss}>
             <div className="container">
-              {/* <Progressbar /> */}
+              <Progressbar />
             </div>
           </div>
         </div>
