@@ -50,7 +50,13 @@ const getSkills = async(req,res,next)=>{
   // console.log(userid,'hjfbhejbhj')
   let existingSkills
   existingSkills = await Skills.findOne({userid:userid}) 
+  if(existingSkills)
+  {
   res.json(existingSkills.skills)
+  }
+  else{
+    res.json([])
+  }
 }
 
 exports.addskill = addskill;
