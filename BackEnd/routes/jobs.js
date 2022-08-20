@@ -7,4 +7,6 @@ const jobController = require('../controllers/jobController')
 router.post('/addprevjobs',jobController.prevjobs)
 router.post('/getprevjobs',jobController.getprevjobs)
 router.post('/search',jobController.search)
+router.post('/loginsearch',jobController.loginsearch)
+
 module.exports = router

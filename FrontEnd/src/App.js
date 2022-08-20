@@ -10,6 +10,7 @@ import Landingpage from "./components/LandingPage/Landingpage";
 import Profile from "./components/Profile/profile";
 import Formd from "./components/Formd/Formd";
 import Progress from "./components/Progress/Progress";
+import Newsearch from "./components/newsearch/newsearch";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -59,6 +60,7 @@ function App() {
             }
           ></Route>
           <Route path="/landingpage" element={<Landingpage />}></Route>
+          <Route path="/newsearch" element={<Newsearch />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
 
           <Route

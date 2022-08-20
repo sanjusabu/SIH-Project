@@ -20,7 +20,7 @@ const navigate = useNavigate()
   // const [enteredConfirmedPassword,setConfirmPassword] = useState('');
   // const [isTouched,setisTouched] = useState(false)
   const {isError,clearError,sendRequest} =  useRequest()
-  const auth = useContext(AuthContext)
+  // const auth = useContext(AuthContext)
   const {
     value: nameValue,
     isValid: nameisValid,

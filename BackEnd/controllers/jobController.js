@@ -3,7 +3,7 @@ const HttpError = require("../models/http-error");
 const express = require("express");
 const fs = require('fs')
 const Dataset = require("../JsonData/jobs.json")
-
+const skillSearch = require("../JsonData/jobsearch.json")
 const search = (req, res, next) => {
   // console.log("sanju")
   console.log(req.body)
@@ -52,6 +52,28 @@ const search = (req, res, next) => {
     //   console.log('error');
     // });
 }
+const loginsearch= async(req,res,next)=>
+{
+// console.log(req.body)
+const search = req.body.search
+const place = req.body.place
+const response = skillSearch.filter(data=>data.joblocation_address.includes(place) && data.jobtitle.includes(search))
+
+// console.log(response)
+const details = response.map(
+       (data)=>
+    {
+      return({
+      company:data.company,
+      title:data.jobtitle,
+      salary:data.payrate,
+      city: data.joblocation_address,
+      skills: data.skills
+      })
+    })
+    console.log(details)
+    res.json(details)
+}
 
 const getprevjobs = async (req, res, next) => {
   const {userid} = req.body
@@ -99,4 +121,5 @@ const prevjobs = async (req, res, next) => {
 
 exports.prevjobs = prevjobs;
 exports.getprevjobs = getprevjobs;
-exports.search = search
+exports.search = search;
+exports.loginsearch = loginsearch;
