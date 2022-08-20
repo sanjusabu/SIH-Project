@@ -4,7 +4,7 @@ import CurrJobdetails from "./CurrJobdetails";
 import { Link } from "react-router-dom";
 import classes from "./progress.module.css";
 import BarGraph from "./BarGraph";
-import Progressbar from "../ProgressBar./Progressbar";
+import Progressbar from "../ProgressBar/Progressbar";
 
 const Progress = () => {
   const currJobs = [
@@ -80,13 +80,11 @@ const Progress = () => {
           <h2 className="p-2 mb-3">Skills You should Learn</h2>
           <div className="col-md-4">
             <div className={["card", classes.skillcard].join(" ")}>
-              <div className="card-header">Featured</div>
+              <div className="card-header">
+                <h2>Leadership</h2>
+              </div>
               <div className="card-body">
-                <h5 className="card-title">Special title treatment</h5>
-                <p className="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
+                <h5 className="card-title p-2">Special title treatment</h5>
                 <Link to="/skillsrecommend" className="btn btn-primary">
                   Go somewhere
                 </Link>
@@ -95,13 +93,11 @@ const Progress = () => {
           </div>
           <div className="col-md-4">
             <div className={["card", classes.skillcard].join(" ")}>
-              <div className="card-header">Featured</div>
+              <div className="card-header">
+                <h2>Communication Skills</h2>
+              </div>
               <div className="card-body">
-                <h5 className="card-title">Special title treatment</h5>
-                <p className="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
+                <h5 className="card-title p-2">Special title treatment</h5>
                 <Link to="/skillsrecommend" className="btn btn-primary">
                   Go somewhere
                 </Link>
@@ -110,13 +106,11 @@ const Progress = () => {
           </div>
           <div className="col-md-4">
             <div className={["card", classes.skillcard].join(" ")}>
-              <div className="card-header">Featured</div>
+              <div className="card-header">
+                <h2>Next.Js</h2>
+              </div>
               <div className="card-body">
-                <h5 className="card-title">Special title treatment</h5>
-                <p className="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
+                <h5 className="card-title p-2">Special title treatment</h5>
                 <Link to="/skillsrecommend" className="btn btn-primary">
                   Go somewhere
                 </Link>
