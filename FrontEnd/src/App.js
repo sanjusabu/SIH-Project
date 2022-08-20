@@ -9,6 +9,8 @@ import Addprevjobs from "./components/LandingPage/Addprevjobs";
 import Landingpage from "./components/LandingPage/Landingpage";
 import Profile from "./components/Profile/profile";
 import Formd from "./components/Formd/Formd";
+import Progress from "./components/Progress/Progress";
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userId, setuserId] = useState("");
@@ -64,6 +66,7 @@ function App() {
             path="/addpreviousjobs"
             element={<Addprevjobs />}
           ></Route>
+          <Route exact path="/progresstrack" element={<Progress />}></Route>
         </Routes>
       </Router>
     );
