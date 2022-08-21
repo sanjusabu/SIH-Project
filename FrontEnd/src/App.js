@@ -6,6 +6,7 @@ import { AuthContext } from "./context/authcontext";
 import { useCallback, useId, useState, useEffect } from "react";
 import Search from "./components/Home/search";
 import Addprevjobs from "./components/LandingPage/Addprevjobs";
+import Addcurrjobs from "./components/Progress/Addcurrjobs";
 import Landingpage from "./components/LandingPage/Landingpage";
 import Profile from "./components/Profile/profile";
 import Formd from "./components/Formd/Formd";
@@ -68,6 +69,7 @@ function App() {
             path="/addpreviousjobs"
             element={<Addprevjobs />}
           ></Route>
+          <Route exact path="/addcurrjobs" element={<Addcurrjobs />}></Route>
           <Route exact path="/progresstrack" element={<Progress />}></Route>
         </Routes>
       </Router>

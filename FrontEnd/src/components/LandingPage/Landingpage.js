@@ -1,89 +1,100 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import { useRequest } from "../../hooks/request-hook";
 import useInput from "../../hooks/useInput";
 import { useNavigate } from "react-router-dom";
-const isSearch = value => value.trim() !== '';
+const isSearch = (value) => value.trim() !== "";
 
 const Landingpage = () => {
-  const {sendRequest} = useRequest()
-  const [data,setData] = useState([])
-  const {value:Search,reset:resetSearch,valueChangeHandler:searchChange} = useInput(isSearch)
-  const {value:Place,reset:resetLocation,valueChangeHandler:searchLocation} = useInput(isSearch)
-  const navigate = useNavigate()
-  let dat
+  const { sendRequest } = useRequest();
+  const [data, setData] = useState([]);
+  const {
+    value: Search,
+    reset: resetSearch,
+    valueChangeHandler: searchChange,
+  } = useInput(isSearch);
+  const {
+    value: Place,
+    reset: resetLocation,
+    valueChangeHandler: searchLocation,
+  } = useInput(isSearch);
+  const navigate = useNavigate();
+  let dat;
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         if (localStorage.hasOwnProperty("userid")) {
-        const responseData = await sendRequest(
-          'http://localhost:5002/users/details',
-          'POST',
-          JSON.stringify({
-            user: localStorage.getItem("userid")
-          }),
-          {
-            "Content-Type": "application/json",
-          }
-        );
-        responseData.map(data=>setData(data))
-        // setData(responseData)
-      //  setData(responseData.info)
-      } }catch (err) {
-        console.log(err)
+          const responseData = await sendRequest(
+            "http://localhost:5002/users/details",
+            "POST",
+            JSON.stringify({
+              user: localStorage.getItem("userid"),
+            }),
+            {
+              "Content-Type": "application/json",
+            }
+          );
+          responseData.map((data) => setData(data));
+          // setData(responseData)
+          //  setData(responseData.info)
+        }
+      } catch (err) {
+        console.log(err);
       }
     };
- 
 
     fetchUsers();
   }, [sendRequest]);
 
-  const submitHandler =async (e)=>{
-    e.preventDefault()
+  const submitHandler = async (e) => {
+    e.preventDefault();
     const response = await sendRequest(
-      'http://localhost:5002/jobs/loginsearch',
-      'POST',
-      JSON.stringify({search:Search,place:Place}),
-      {'Content-Type': 'application/json'}
-      )
-      console.log(response)
-      navigate("/newsearch",{state:response})
+      "http://localhost:5002/jobs/loginsearch",
+      "POST",
+      JSON.stringify({ search: Search, place: Place }),
+      { "Content-Type": "application/json" }
+    );
+    console.log(response);
+    navigate("/newsearch", { state: response });
 
-    resetLocation()
-    resetSearch()
-  }
+    resetLocation();
+    resetSearch();
+  };
 
   return (
     <>
       <NavBar />
       <div>
         <div className="contain">
-          <form className="search d-flex my-5" role="search" onSubmit={submitHandler}>
+          <form
+            className="search d-flex my-5"
+            role="search"
+            onSubmit={submitHandler}
+          >
             <input
               className="form-control me-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
-              value={Search} 
+              value={Search}
               onChange={searchChange}
               autoComplete="on"
             />
             <div className="contain">
-          
-            <input
-              className="form-control"
-              type="search"
-              placeholder="Location"
-              aria-label="Search"
-              value={Place}
-              onChange={searchLocation}
-              autoComplete="on"
-            />
-           </div>
+              <input
+                className="form-control"
+                type="search"
+                placeholder="Location"
+                aria-label="Search"
+                value={Place}
+                onChange={searchLocation}
+                autoComplete="on"
+              />
+            </div>
             <button className="btn btn-outline-success" type="submit">
-              Search 
+              Search
             </button>
           </form>
         </div>
@@ -93,7 +104,6 @@ const Landingpage = () => {
               <div className="jobs">
                 <div className="conta d-flex">
                   <h2 className="head">Jobs</h2>
-               
                 </div>
 
                 <div className="options">
@@ -127,9 +137,7 @@ const Landingpage = () => {
                 <div className="deta">
                   <h3 className="name">{data.name}</h3>
                   <p className="text">
-                    <small className="text-muted">
-                       {data.email}
-                    </small>
+                    <small className="text-muted">{data.email}</small>
                   </p>
                   <div className="butt d-flex justify-content-md-center">
                     <Link to="/profile">

@@ -5,31 +5,58 @@ import { Link } from "react-router-dom";
 import classes from "./progress.module.css";
 import BarGraph from "./BarGraph";
 import Progressbar from "../ProgressBar/Progressbar";
+import { useEffect, useState } from "react";
+import { useRequest } from "../../hooks/request-hook";
 
 const Progress = () => {
-  const currJobs = [
-    {
-      compname: "Amazon",
-      duration: "3 Months",
-      salary: "100000",
-      position: "Software Developer",
-      location: "Mumbai",
-    },
-    {
-      compname: "Amazonn",
-      duration: "3 Months",
-      salary: "100000",
-      position: "Software Developer",
-      location: "Mumbai",
-    },
-    {
-      compname: "Amazonnn",
-      duration: "3 Months",
-      salary: "100000",
-      position: "Software Developer",
-      location: "Mumbai",
-    },
-  ];
+  const { sendRequest } = useRequest();
+  const [currJobs, setCurrJobs] = useState([]);
+
+  useEffect(() => {
+    const fetchcurrJobs = async () => {
+      try {
+        if (localStorage.hasOwnProperty("userid")) {
+          const responseData = await sendRequest(
+            "http://localhost:5002/jobs/getcurrjobs",
+            "POST",
+            JSON.stringify({
+              userid: localStorage.getItem("userid"),
+            }),
+            {
+              "Content-Type": "application/json",
+            }
+          );
+          setCurrJobs(responseData);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchcurrJobs();
+  }, [sendRequest]);
+  // const currJobs = [
+  //   {
+  //     compname: "Amazon",
+  //     duration: "3 Months",
+  //     salary: "100000",
+  //     position: "Software Developer",
+  //     location: "Mumbai",
+  //   },
+  //   {
+  //     compname: "Amazonn",
+  //     duration: "3 Months",
+  //     salary: "100000",
+  //     position: "Software Developer",
+  //     location: "Mumbai",
+  //   },
+  //   {
+  //     compname: "Amazonnn",
+  //     duration: "3 Months",
+  //     salary: "100000",
+  //     position: "Software Developer",
+  //     location: "Mumbai",
+  //   },
+  // ];
 
   let satisfaction = 75;
   let dashoffset = 440 - (440 * satisfaction) / 100;
@@ -40,7 +67,7 @@ const Progress = () => {
     <>
       <NavBar />
       <div className="addjobs d-flex justify-content-center m-4">
-        <Link to="/addpreviousjobs">
+        <Link to="/addcurrjobs">
           <button className="btn btn-primary">Add Current Job</button>
         </Link>
       </div>
