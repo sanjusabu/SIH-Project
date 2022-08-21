@@ -7,6 +7,7 @@ import BarGraph from "./BarGraph";
 import Progressbar from "../ProgressBar/Progressbar";
 import { useEffect, useState } from "react";
 import { useRequest } from "../../hooks/request-hook";
+// import SalarySatisfaction from "./SalarySatisfaction";
 
 const Progress = () => {
   const { sendRequest } = useRequest();
@@ -34,35 +35,7 @@ const Progress = () => {
     };
     fetchcurrJobs();
   }, [sendRequest]);
-  // const currJobs = [
-  //   {
-  //     compname: "Amazon",
-  //     duration: "3 Months",
-  //     salary: "100000",
-  //     position: "Software Developer",
-  //     location: "Mumbai",
-  //   },
-  //   {
-  //     compname: "Amazonn",
-  //     duration: "3 Months",
-  //     salary: "100000",
-  //     position: "Software Developer",
-  //     location: "Mumbai",
-  //   },
-  //   {
-  //     compname: "Amazonnn",
-  //     duration: "3 Months",
-  //     salary: "100000",
-  //     position: "Software Developer",
-  //     location: "Mumbai",
-  //   },
-  // ];
 
-  let satisfaction = 75;
-  let dashoffset = 440 - (440 * satisfaction) / 100;
-  let mystyle = {
-    strokeDashoffset: dashoffset,
-  };
   return (
     <>
       <NavBar />
@@ -86,6 +59,9 @@ const Progress = () => {
               </div>
             );
           })}
+          {/* <div className="col-md-4">
+            <SalarySatisfaction currentJob={currJobs[currJobs.length - 1]} />
+          </div> */}
         </div>
       </div>
       <div className="container my-3">
