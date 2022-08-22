@@ -9,8 +9,12 @@ function SalarySatisfaction(props) {
   const [bgColor,setbgColor] = useState("");
   useEffect(() => {
     setbgColor(bgCol)
+    console.log(bgCol);
+    satisfaction();
     // bgColor = ("blue")
-  },[bgColor]);
+  },[bgColor,satisfaction]);
+  // bgCol = "yellow";
+  // bgCol = "black";
     function avgSal(exp){
     let varSum = 0;
     let sz =0;
@@ -30,17 +34,24 @@ function SalarySatisfaction(props) {
   function satisfaction(){
 
     let temp="";
-    let averg =avgSal(props.currentJob.duration);
-    let currentSal =props.currentJob.salary;
+    // let averg =2;
+    //
+    // let currentSal =2;
+    // console.log(props?.currentJob?.salary);
+    const averg =  avgSal(Number(props?.currentJob?.duration));
+    const currentSal = props?.currentJob?.salary;
+    console.log(currentSal)
+    console.log("gcc");
     if(currentSal < (4*averg)/5){
       bgCol = "red"
-      temp ="Needed improvement"
+      temp ="Needed i mprovement"
 
     }
     else if(currentSal >= (4*averg)/5 && currentSal <averg){
       temp ="Decent"
       console.log("print blue");
       bgCol = "orange"
+
     }
     else if(currentSal < (6*averg)/5 && currentSal >=averg){
       temp ="Good"
@@ -49,6 +60,7 @@ function SalarySatisfaction(props) {
     else if(currentSal >= (6*averg)/5 ){
       temp ="Great!"
       bgCol = "green"
+      console.log("bgColor");
     }
     return temp;
   }

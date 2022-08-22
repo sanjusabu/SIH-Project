@@ -7,7 +7,7 @@ import BarGraph from "./BarGraph";
 import Progressbar from "../ProgressBar/Progressbar";
 import { useEffect, useState } from "react";
 import { useRequest } from "../../hooks/request-hook";
-// import SalarySatisfaction from "./SalarySatisfaction";
+import SalarySatisfaction from "./SalarySatisfaction";
 
 const Progress = () => {
   const { sendRequest } = useRequest();
@@ -59,9 +59,9 @@ const Progress = () => {
               </div>
             );
           })}
-          {/* <div className="col-md-4">
+           <div className="col-md-4">
             <SalarySatisfaction currentJob={currJobs[currJobs.length - 1]} />
-          </div> */}
+          </div>
         </div>
       </div>
       <div className="container my-3">
