@@ -91,7 +91,7 @@ const Search = ()=>
          
 
         {/* </div> */}
-        <Joblist details={details}/><br></br><br></br>
+        <Joblist details={details}/><br></br>
         <h3 >Explore Top Companies Hiring Now</h3>
         {/* <div className={classes.com}>
         <div className={classes.main1}>
