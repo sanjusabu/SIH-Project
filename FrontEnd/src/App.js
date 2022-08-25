@@ -1,15 +1,19 @@
 import Headers from "./components/header/header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./components/Register/Register";
+import RegE from "./components/RegE/RegE";
 import Login from "./components/Login/Login";
+import LoginE from "./components/LoginE/LoginE";
 import { AuthContext } from "./context/authcontext";
 import { useCallback, useId, useState, useEffect } from "react";
 import Search from "./components/Home/search";
 import Addprevjobs from "./components/LandingPage/Addprevjobs";
 import Addcurrjobs from "./components/Progress/Addcurrjobs";
 import Landingpage from "./components/LandingPage/Landingpage";
+import LandingEmployer from "./components/LandingEmployer/LandingEmployer";
 import Profile from "./components/Profile/profile";
-import Formd from "./components/Formd/Formd";
+// import Formd from "./components/Formd/Formd";
+import Formd from "./components/LandingPage/Formd";
 import Progress from "./components/Progress/Progress";
 import Newsearch from "./components/newsearch/newsearch";
 
@@ -61,8 +65,10 @@ function App() {
             }
           ></Route>
           <Route path="/landingpage" element={<Landingpage />}></Route>
+          <Route path="/landingEmployer" element={<LandingEmployer />}></Route>
           <Route path="/newsearch" element={<Newsearch />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
+          <Route exact path="/formd" element={<Formd />}></Route>
 
           <Route
             exact
@@ -99,8 +105,11 @@ function App() {
             }
           ></Route>
           <Route exact path="/login" element={<Login />}></Route>
+          <Route exact path="/loginemployer" element={<LoginE/>}></Route>
           <Route exact path="/formd" element={<Formd />}></Route>
           <Route exact path="/register" element={<Register />}></Route>
+          <Route exact path="/registeremployer" element={<RegE/>}></Route>
+          
         </Routes>
       </Router>
     );
