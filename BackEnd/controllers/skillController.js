@@ -3,7 +3,7 @@ const HttpError = require("../models/http-error");
 
 const addskill = async (req, res, next) => {
   const { userid, skills } = req.body;
-    // console.log(skills)
+    console.log(skills)
     let existingSkills
     existingSkills = await Skills.findOne({userid:userid})
     if(existingSkills){
@@ -13,7 +13,7 @@ const addskill = async (req, res, next) => {
           skills: skills
         }
       })
-      console.log(result)
+      // console.log(result)
     }
     catch(err){
         console.log(err)
@@ -42,14 +42,16 @@ else{
   }
 }
   const updatedSkills = await Skills.findOne({userid:userid})
+  console.log(updatedSkills)
   res.json({ skill: updatedSkills });
 };
 
 const getSkills = async(req,res,next)=>{
   const { userid} = req.body;
-  // console.log(userid,'hjfbhejbhj')
+  // console.log(user)
   let existingSkills
-  existingSkills = await Skills.findOne({userid:userid}) 
+  existingSkills = await Skills.findOne({userid}) 
+  console.log(existingSkills,"neww")
   if(existingSkills)
   {
   res.json(existingSkills.skills)

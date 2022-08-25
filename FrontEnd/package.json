@@ -15,13 +15,20 @@
     "react-dom": "^18.0.0",
     "react-places-autocomplete": "^7.3.0",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "^4.0.1",
+    "react-scripts": "^4.0.3",
     "react-transition-group": "^4.4.5",
+    "save": "^2.5.0",
     "validator": "^13.7.0",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+<<<<<<< HEAD
     "start": "set PORT=3006 && react-scripts start --openssl-legacy-provider",
+=======
+
+    "start": "set PORT=3006 && react-scripts start --openssl-legacy-provider",
+
+>>>>>>> a281d0514f19b91074d1434a7d2b867522e4983e
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

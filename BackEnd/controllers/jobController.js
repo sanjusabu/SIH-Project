@@ -78,7 +78,7 @@ const getprevjobs = async (req, res, next) => {
   // console.log(userid)
   const getjobs = await Jobs.find({ userid: userid });
   // console.log(getJobs,"checking");
-  console.log(getjobs);
+  // console.log(getjobs);
   res.json(getjobs);
 };
 
@@ -114,7 +114,7 @@ const prevjobs = async (req, res, next) => {
   console.log(req.body);
   const { compname, duration, salary, position, location, userid } = req.body;
   let previousJobs;
-  previousJobs = await Jobs.findOne({ compname: compname });
+  previousJobs = await Jobs.findOne({ compname: compname,userid:userid });
   if (previousJobs) {
     const error = new HttpError(
       "Job exists already, please add different job",
@@ -148,7 +148,7 @@ const prevjobs = async (req, res, next) => {
 const addcurrjobs = async (req, res, next) => {
   const { compname, duration, salary, position, location, userid } = req.body;
   let currentJobs;
-  currentJobs = await CurrJobs.findOne({ compname: compname });
+  currentJobs = await CurrJobs.findOne({ compname: compname,userid:userid });
   if (currentJobs) {
     const error = new HttpError(
       "Job exists already, please add different job",
@@ -156,7 +156,7 @@ const addcurrjobs = async (req, res, next) => {
     );
     return next(error);
   }
-
+else{
   const addcurJob = new CurrJobs({
     compname: compname,
     duration: duration,
@@ -175,9 +175,39 @@ const addcurrjobs = async (req, res, next) => {
     );
     return next(error);
   }
-  // console.log(newJob)
   res.json({ job: addcurJob });
+}
+  // console.log(newJob)
 };
+
+const recommendjobs = async(req,res)=>{
+const {user} =  req.body
+const skill = req.body.skill;
+console.log(skill,"mil gaya",user)
+const required_arr  = []
+skillSearch.map(data=>{
+  let matches = []
+  data.skills.filter(item=> {
+  let sumn = skill.filter(dat=>dat===item);
+  if(sumn.length > 0){
+    // console.log(sumn)
+    matches.push(sumn[0]);
+    return true;
+  }
+    return false;
+    })
+    if(matches.length > 0){
+      required_arr.push({...data, matched: matches.length})
+    }
+  }
+  )
+  console.log(required_arr)
+if(required_arr){
+  required_arr.sort((a, b) => b.sumn - a.sumn);
+}
+
+res.json({required_arr})
+}
 
 exports.prevjobs = prevjobs;
 exports.addcurrjobs = addcurrjobs;
@@ -189,6 +219,7 @@ exports.loginsearch = loginsearch;
 exports.getcurrjobs = getcurrjobs;
 exports.getsalaray = getsalaray;
 
+exports.recommendjobs = recommendjobs
 // const targetURL = `https://api.adzuna.com/v1/api/jobs/in/search/1?&results_per_page=20&content-type=application/json&app_id=da3b4b1b&app_key=36a0c2ed8bb2374466527f58761a7f3d&what=${toSearch}&where=${place}`;
 
 // axios.get(targetURL)
