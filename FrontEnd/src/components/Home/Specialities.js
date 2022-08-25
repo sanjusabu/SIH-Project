@@ -6,7 +6,7 @@ const Specialities = () => {
     <>
       <div className={classes.main}>
         <div className={classes.he}>
-          <h3>Job search according to the location</h3>
+          <h3>Job search according to the Location and Job Title</h3>
         </div>
         {/* <div className={classes.row}> */}
         <div className={classes.im}>
@@ -18,14 +18,13 @@ const Specialities = () => {
         </div>
         <div className={classes.para}>
           <h6>
-            Services to help you get hired, faster: from preparing your CV,
-            getting recruiter attention, finding the right jobs, and more!
+           This is a personalised website offering the users to search jobs according to their location and the required Job Title 
           </h6>
         </div>
       </div>
       <div className={classes.main}>
         <div className={classes.he}>
-          <h3>Recommending skills for a job</h3>
+          <h3>Recommending Job according to their skill</h3>
         </div>
         {/* <div className={classes.row}> */}
         <div className={classes.im}>
@@ -37,8 +36,7 @@ const Specialities = () => {
         </div>
         <div className={classes.para}>
           <h6>
-            Services to help you get hired, faster: from preparing your CV,
-            getting recruiter attention, finding the right jobs, and more!
+            We recommend jobs as per the skills the user has acquired, making it much easier for the user.
           </h6>
         </div>
       </div>
@@ -52,8 +50,7 @@ const Specialities = () => {
         </div>
         <div className={classes.para}>
           <h6>
-            Services to help you get hired, faster: from preparing your CV,
-            getting recruiter attention, finding the right jobs, and more!
+            We dont just leave our users after they get the job, we track their progress and see if the current job is according to their standard.
           </h6>
         </div>
       </div>

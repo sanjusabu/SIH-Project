@@ -48,6 +48,7 @@ const Landingpage = () => {
       } catch (err) {
         console.log(err);
       }
+    
     };
 
     const fetchSkills = async () => {
@@ -78,9 +79,9 @@ const Landingpage = () => {
       // console.log(getSkills)
     }, [sendRequest]);
 
-  // console.log(getSkills,"errfjwfkj")
-  useEffect(() => {
-    const fetchJobs = async () => {
+    // console.log(getSkills,"errfjwfkj")
+    useEffect(()=>{
+    const fetchJobs =async()=>{
       // setloading(true)
       try {
         if (localStorage.hasOwnProperty("userid")) {
@@ -146,7 +147,7 @@ const Landingpage = () => {
             />
             <div className="contain">
               <input
-                className="form-control me-2"
+                className="form-control"
                 type="search"
                 placeholder="Location"
                 aria-label="Search"
@@ -184,7 +185,7 @@ const Landingpage = () => {
                 
                 
               </div>
-            </div>
+            </div> 
             <div className="right">
               <h2 className="head">Profile</h2>
               <div className="options">
