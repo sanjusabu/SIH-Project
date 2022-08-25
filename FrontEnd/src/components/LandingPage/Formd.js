@@ -2,7 +2,7 @@ import React from "react";
 import FormComponent from "./FormComponent";
 // import "react-table-6/react-table.css";
 import classes from "./Formd.module.css";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 //import App from './App';
 //import * as React from 'react';
 import { useNavigate } from "react-router-dom";
@@ -12,9 +12,12 @@ let responseSum = 0;
 const Formd = () => {
   const navigate = useNavigate();
   const uid = localStorage.getItem("userid");
+  const companyName = localStorage.getItem("companyName");
+  // const jobId = localStorage.getItem("jobId");
+  // console.log("gje",jobId)
   // const [addskill, setAddskill] = useState(arr);
   const { sendRequest } = useRequest();
-  const [score, setScore] = useState();
+  // const [score, setScore] = useState();
 
   // useEffect(() => {
   //   const getJobScore = async () => {
@@ -61,43 +64,43 @@ const Formd = () => {
       "POST",
       JSON.stringify({
         userid: uid,
-        // companyName: companyName,
+        companyName: companyName,
         jobScore: responseSum,
       }),
       {
         "Content-Type": "application/json",
       }
     );
-    console.log(response);
-    navigate("/Landingpage");
+    navigate("/landingpage");
+  };
     // console.log(response.skill.skills);
     // useEffect(() => {
-      const getJobScore = async () => {
-        try {
-          if (localStorage.hasOwnProperty("userid")) {
-            const responseData = await sendRequest(
-              "http://localhost:5002/jobScore/getJobScore",
-              "POST",
-              JSON.stringify({
-                user: localStorage.getItem("userid"),
-              }),
-              {
-                "Content-Type": "application/json",
-              }
-            );
-            setScore(responseData);
-            console.log(responseData);
-            // setData(responseData)
-            //  setData(responseData.info)
-          }
-        } catch (err) {
-          console.log(err);
-        }
-      };
+    //   const getJobScore = async () => {
+    //     try {
+    //       if (localStorage.hasOwnProperty("userid")) {
+    //         const responseData = await sendRequest(
+    //           "http://localhost:5002/jobScore/getJobScore",
+    //           "POST",
+    //           JSON.stringify({
+    //             user: localStorage.getItem("userid"),
+    //           }),
+    //           {
+    //             "Content-Type": "application/json",
+    //           }
+    //         );
+    //         setScore(responseData);
+    //         console.log('hgygyg',responseData);
+    //         // setData(responseData)
+    //         //  setData(responseData.info)
+    //       }
+    //     } catch (err) {
+    //       console.log(err);
+    //     }
+    //   };
   
-      getJobScore();
+    //   getJobScore();
     // }, [sendRequest]);
-  };
+
 
   //   const formSubmitHandler = () => {
   //   responseSum = 0;
