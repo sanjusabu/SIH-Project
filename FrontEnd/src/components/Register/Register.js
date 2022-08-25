@@ -219,14 +219,18 @@ const navigate = useNavigate()
       {/* <br></br> */}
       {/* <br></br> */}
 <br></br>
-<div class="action_btn">
-      <div className="form-actions">
-    <button disabled={!formValid} className={classes.submit1}>Submit</button>
-      </div>
-    <Link to = '/login'><button className={classes.submit2}>Login</button> </Link>
-    </div>
+
+<div class="float-right">
+   <button disabled={!formValid} className={classes.butto}>Submit</button> 
+   
+   <Link to= '/login'> <button className={classes.butto}>SignUp</button></Link>
+</div>
+
+
     </form>
     </div>
+    <br></br>
+  
     </>);
   
 
