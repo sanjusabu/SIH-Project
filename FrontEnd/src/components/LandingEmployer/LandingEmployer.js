@@ -155,11 +155,7 @@ const Landingpage = () => {
             </button>
           </form>
         </div>
-        <div className="addjobs d-flex justify-content-center m-4">
-        <Link to="/addnewemployerjobs">
-          <button className="btn btn-primary">Add New Job</button>
-        </Link>
-      </div>
+        
         <div className="container">
           <div className="containers">
             <div className="left">
