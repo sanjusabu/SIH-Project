@@ -4,6 +4,7 @@ import { useState } from "react";
 import Joblist from "./Joblist";
 import LoadingSpinner from "../../Design/UIElements/LoadingSpinner";
 import StateList from "./countries-states-cities";
+import classes from "./Home.module.css";
 
 const isSearch = value => value.trim() !== '';
 const Search = ()=>
@@ -46,6 +47,87 @@ const Search = ()=>
 
          <Joblist details={details}/>
 
+        </div>
+        <div className = {classes.main}>
+<div className={classes.he}>
+<h3>Job search according to the location</h3></div>
+{/* <div className={classes.row}> */}
+        <div className={classes.im}>
+        <img  src={require('./jobslocation.jpg').default} height="180" width="180" />
+        </div>
+        <div className={classes.para}>
+        <h6>Services to help you get hired, faster: from preparing your CV, getting recruiter attention, finding the right jobs, and more!</h6>
+        </div>
+
+        
+        
+        </div>
+        <div className = {classes.main}>
+<div className={classes.he}>
+<h3>Recommending skills for a job</h3></div>
+{/* <div className={classes.row}> */}
+        <div className={classes.im}>
+        <img  src={require('./recommend.png').default} height="180" width="180" />
+        </div>
+        <div className={classes.para}>
+        <h6>Services to help you get hired, faster: from preparing your CV, getting recruiter attention, finding the right jobs, and more!</h6>
+        </div>
+        
+        </div>
+        <div className = {classes.main}>
+<div className={classes.he}>
+<h3>Keep a track of your career</h3></div>
+{/* <div className={classes.row}> */}
+        <div className={classes.im}>
+        <img  src={require('./keep.png').default} height="180" width="180" />
+        </div>
+        <div className={classes.para}>
+        <h6>Services to help you get hired, faster: from preparing your CV, getting recruiter attention, finding the right jobs, and more!</h6>
+        </div>
+       
+        
+        
+        </div>
+         
+
+        {/* </div> */}
+       
+        <h3 >Explore Top Companies Hiring Now</h3>
+        <div className={classes.com}>
+        <div className={classes.main1}>
+
+          <br></br>
+          <br></br>
+        <h4>Apisero</h4>
+        <h6>Rating: 4.2</h6>
+        <h6>Reviews: 113</h6>
+        </div>
+        
+       
+
+         <div className={classes.c1}>
+        <div className={classes.main2}>
+        <br></br>
+          <br></br>
+          <br></br>
+
+        <h4>Coforge</h4>
+        <h6>Rating: 3.8</h6>
+        <h6>Reviews: 200</h6>
+        </div>
+        </div>
+      
+      <div className={classes.c2}>
+        <div className={classes.main3}>
+        <br></br>
+          <br></br>
+          <br></br>
+        <h4>Diebold</h4>
+        <h6>Rating: 4.0</h6>
+        <h6>Reviews: 150</h6>
+        
+        </div>
+        </div>
         </div>
         </>
     )
