@@ -1,6 +1,5 @@
 const jobSc = require("../models/formModel");
 const HttpError = require("../models/http-error");
-const JobModel = require("../models/JobModel");
 
 // const ScoreDetails = async (req, res) => {
 //   const { user } = req.body;
@@ -16,43 +15,26 @@ const JobModel = require("../models/JobModel");
 // };
 
 const addJobScore = async (req, res, next) => {
-  const { userid, jobScore } = req.body;
-  console.log(jobSc);
+  const { userid, jobScore,companyName } = req.body;
   // console.log(skills)
-  let exisitingScore;
-  exisitingScore = await jobSc.findOne({ userid: userid});
-  console.log(exisitingScore);
-  if (exisitingScore) {
-    try {
-      // const result = await jobSc.updateOne(
-      //   { userid: userid,companyName: companyName },
-      //   {
-      //     $set: {
-      //       jobScore: jobScore,
-      //       companyName: companyName,
-      //     },
-      //   }
-      // );
-      const result = new jobSc({
-        userid: userid,
-        jobScore: jobScore,
-      });
-      console.log(result);
-    } catch (err) {
-      console.log(err);
-    }
-  } else {
-    const exisitingScore = new jobSc({
+  let exisitingScore
+  exisitingScore = await jobSc.findOne({companyName:companyName,userid:userid});
+  if(exisitingScore)
+  {
+    const error = new HttpError(
+      "Job exists already, please add different job",
+      422
+    );
+    return next(error);
+  }
+  else{
+    exisitingScore = new jobSc({
       userid: userid,
       jobScore: jobScore,
+      companyName: companyName,
     });
-
     try {
-      try {
         await exisitingScore.save();
-      } catch (err) {
-        console.log(err);
-      }
     } catch (err) {
       console.log(exisitingScore);
       const error = new HttpError(
@@ -62,24 +44,21 @@ const addJobScore = async (req, res, next) => {
       return next(error);
     }
   }
-  const updatedJobScore = await jobSc.findOne({ userid: userid });
-  res.json({ jobScore: updatedJobScore });
+
+  // const updatedJobScore = await jobSc.findOne({ userid: userid });
+  // res.json({ jobScore: updatedJobScore });
 };
 
 const getJobScore = async (req, res, next) => {
   const { userid } = req.body;
-  console.log(req.body);
-  console.log('hjfbhejbhj')
-  let exisitingScore;
-  exisitingScore = await jobSc.findOne({ userid: userid});
-  // console.log(exisitingScore.jobScore);
-  if (exisitingScore) {
-    res.json(exisitingScore.jobScore);
-  } else {
-    res.json([]);
+  const getjobsscore = await jobSc.find({ userid: userid });
+  let scorearray = [];
+  for (let i = 0; i < getjobsscore.length; i++) {
+    scorearray.push(getjobsscore[i].jobScore);
   }
+  res.json(scorearray);
 };
 
 exports.addJobScore = addJobScore;
 exports.getJobScore = getJobScore;
-// exports.getJobScore = getJobScore;
+

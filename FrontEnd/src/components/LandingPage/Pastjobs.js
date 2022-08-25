@@ -7,6 +7,7 @@ import { useRequest } from "../../hooks/request-hook";
 const Pastjobs = () => {
   const { sendRequest } = useRequest();
   const [prevJobs, setJobs] = useState([]);
+  const [score, setScore] = useState([]);
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -31,9 +32,26 @@ const Pastjobs = () => {
         console.log(err);
       }
     };
+    const getJobScore = async () => {
+        if (localStorage.hasOwnProperty("userid")) {
+          const responseData = await sendRequest(
+            "http://localhost:5002/jobScore/getJobScore",
+            "POST",
+            JSON.stringify({
+              userid: localStorage.getItem("userid"),
+            }),
+            {
+              "Content-Type": "application/json",
+            }
+          );
+          setScore(responseData);
+          console.log('hgygyg',responseData);
+        }
+    };
+    getJobScore();
     fetchJobs();
   }, [sendRequest]);
-
+let i=0;
   return (
     <>
       <div className="addjobs d-flex justify-content-center m-4">
@@ -53,6 +71,7 @@ const Pastjobs = () => {
                   salary={element.salary}
                   position={element.position}
                   location={element.location}
+                  score={score[i++]}
                 />
               </div>
             );
