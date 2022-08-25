@@ -59,7 +59,7 @@ const Search = () => {
       </div>
       <div>{Loading && <LoadingSpinner />}</div>
 
-      <StateList />
+      {/* <StateList /> */}
       {/* <div>
 
          <Joblist details={details}/>
