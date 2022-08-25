@@ -107,7 +107,7 @@ const prevjobs = async (req, res, next) => {
   console.log(req.body);
   const { compname, duration, salary, position, location, userid } = req.body;
   let previousJobs;
-  previousJobs = await Jobs.findOne({ compname: compname });
+  previousJobs = await Jobs.findOne({ compname: compname,userid:userid });
   if (previousJobs) {
     const error = new HttpError(
       "Job exists already, please add different job",
@@ -138,9 +138,38 @@ const prevjobs = async (req, res, next) => {
   res.json({ job: addJob });
 };
 
+const recommendjobs = async(req,res)=>{
+const {user} =  req.body
+const skill = req.body.skill;
+console.log(skill,"mil gaya",user)
+const required_arr  = []
+skillSearch.map(data=>{
+  let matches = []
+  data.skills.filter(item=> {
+  let sumn = skill.filter(dat=>dat===item);
+  if(sumn.length > 0){
+    // console.log(sumn)
+    matches.push(sumn[0]);
+    return true;
+  }
+    return false;
+    })
+    if(matches.length > 0){
+      required_arr.push({...data, matched: matches.length})
+    }
+  }
+)
+// if(required_arr){
+  required_arr.sort((a, b) => b.sumn - a.sumn);
+  console.log(required_arr)
+// }
+
+}
+
 exports.prevjobs = prevjobs;
 exports.getprevjobs = getprevjobs;
 exports.search = search;
 exports.getjobssalary = getjobssalary;
 exports.getjobsname = getjobsname;
 exports.loginsearch = loginsearch
+exports.recommendjobs = recommendjobs

@@ -9,4 +9,5 @@ router.post("/getprevjobs", jobController.getprevjobs);
 router.post("/getjobssalary", jobController.getjobssalary);
 router.post("/getjobsname", jobController.getjobsname);
 router.post("/search", jobController.search);
+router.post('/recommendjobs',jobController.recommendjobs)
 module.exports = router;

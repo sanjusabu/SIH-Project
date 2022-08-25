@@ -45,7 +45,7 @@ function SkillPanel() {
               "Content-Type": "application/json",
             }
           );
-          // console.log(responseData)
+          console.log(responseData)
           setData(responseData);
           // setData(responseData)
           //  setData(responseData.info)
@@ -55,7 +55,7 @@ function SkillPanel() {
       }
     };
     fetchUsers();
-  }, []);
+  }, [sendRequest]);
 
   // const [displayInputField, setStyle] = useState("none");
   const submitSkills = async (e) => {

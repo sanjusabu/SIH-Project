@@ -5,11 +5,13 @@ import { useEffect,useState } from "react";
 import { useRequest } from "../../hooks/request-hook";
 import useInput from "../../hooks/useInput";
 import { useNavigate } from "react-router-dom";
+
 const isSearch = value => value.trim() !== '';
 
 const Landingpage = () => {
   const {sendRequest} = useRequest()
   const [data,setData] = useState([])
+  const [getSkills,setSkills] = useState([])
   const {value:Search,reset:resetSearch,valueChangeHandler:searchChange} = useInput(isSearch)
   const {value:Place,reset:resetLocation,valueChangeHandler:searchLocation} = useInput(isSearch)
   const navigate = useNavigate()
@@ -35,28 +37,81 @@ const Landingpage = () => {
         console.log(err)
       }
     };
- 
 
-    fetchUsers();
-  }, [sendRequest]);
+    const fetchSkills = async () => {
+      try {
+        if (localStorage.hasOwnProperty("userid")) {
+        const responseData = await sendRequest(
+          'http://localhost:5002/skills/getSkills',
+          'POST',
+          JSON.stringify({
+            user: localStorage.getItem("userid")
+          }),
+          {
+            "Content-Type": "application/json",
+          }
+        );
+        console.log(responseData)
+        setSkills(responseData)
+        
+      } }catch (err) {
+        console.log(err)
+      }
+    
+      };
+   
+      fetchUsers();
+      fetchSkills();
+    
+      // console.log(getSkills)
+    }, [sendRequest]);
 
-  const submitHandler =async (e)=>{
-    e.preventDefault()
-    const response = await sendRequest(
-      'http://localhost:5002/jobs/loginsearch',
-      'POST',
-      JSON.stringify({search:Search,place:Place}),
-      {'Content-Type': 'application/json'}
-      )
-      console.log(response)
-      navigate("/newsearch",{state:response})
-
-    resetLocation()
-    resetSearch()
+    console.log(getSkills,"errfjwfkj")
+    useEffect(()=>{
+    const fetchJobs =async()=>{
+      
+      try {
+        if (localStorage.hasOwnProperty("userid")) {
+        const responseData = await sendRequest(
+          'http://localhost:5002/jobs/recommendjobs',
+          'POST',
+          JSON.stringify({
+            user: localStorage.getItem("userid"),
+            skill : getSkills
+          }),
+          {
+            "Content-Type": "application/json",
+          }
+        );
+        console.log(responseData)
+        // setSkills(responseData)
+        
+      } }catch (err) {
+        console.log(err)
+      }
+    }
+    fetchJobs()
   }
+,[sendRequest,getSkills])
 
-  return (
-    <>
+    
+    const submitHandler =async (e)=>{
+      e.preventDefault()
+      const response = await sendRequest(
+        'http://localhost:5002/jobs/loginsearch',
+        'POST',
+        JSON.stringify({search:Search,place:Place}),
+        {'Content-Type': 'application/json'}
+        )
+        console.log(response)
+        navigate("/newsearch",{state:response})
+        
+        resetLocation()
+        resetSearch()
+      }
+      
+      return (
+        <>
       <NavBar />
       <div>
         <div className="contain">

@@ -13,7 +13,7 @@ const addskill = async (req, res, next) => {
           skills: skills
         }
       })
-      console.log(result)
+      // console.log(result)
     }
     catch(err){
         console.log(err)
@@ -33,7 +33,7 @@ else{
       console.log(err);
     }
   } catch (err) {
-    console.log(existingSkills);
+    // console.log(existingSkills);
     const error = new HttpError(
       "Adding Skill failed, please try again later.",
       500
@@ -46,10 +46,11 @@ else{
 };
 
 const getSkills = async(req,res,next)=>{
-  const { userid} = req.body;
-  // console.log(userid,'hjfbhejbhj')
+  const { user} = req.body;
+  // console.log(user)
   let existingSkills
-  existingSkills = await Skills.findOne({userid:userid}) 
+  existingSkills = await Skills.findOne({userid:user}) 
+  // console.log(existingSkills)
   if(existingSkills)
   {
   res.json(existingSkills.skills)
