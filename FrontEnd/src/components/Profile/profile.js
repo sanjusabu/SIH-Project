@@ -7,6 +7,9 @@ import SkillPanel from "./SkillPanel";
 import Pastjobs from "../LandingPage/Pastjobs";
 import NavBar from "../NavBar/NavBar";
 import { useRequest } from "../../hooks/request-hook";
+// import { db } from "../../../../BackEnd/models/formModel";
+// import userModel from "../../../BackEnd/m"
+const uid = localStorage.getItem("userid");
 
 
 export default function Profile(props) {
@@ -49,7 +52,17 @@ useEffect(() => {
     console.log(image.src);
   };
 
-  const submitHandler = (event) => {
+
+
+  // const updateProfile = (event) => {
+  //   setEnteredSkill(event.target.value);
+  // };
+
+
+// console.log(data);
+
+
+  const submitHandler = async (event) => {
     event.preventDefault();
     const enteredDetails = {
       name: EnteredName,
@@ -57,8 +70,27 @@ useEffect(() => {
       phoneNo: EnteredPhoneNo,
       dob: new Date(EnteredDate),
     };
-    console.log(enteredDetails);
+    // console.log(EnteredName);
+    // db.userModel.updateOne(EnteredName)
+    // data.name = EnteredName;
+
+
+    const response = await sendRequest(
+      "http://localhost:5002/users/updateProfile",
+      "POST",
+      JSON.stringify({
+        userid: uid,
+        name: EnteredName,
+        location:EnteredLocation,
+      }),
+      {
+        "Content-Type": "application/json",
+      }
+    );
+    console.log(response);
   };
+
+  // db.userModel.up
 
   const nameChange = (event) => {
     setEnteredName(event.target.value);
@@ -95,7 +127,7 @@ useEffect(() => {
     setFilledPhoneNo(EnteredPhoneNo)
     setFilledDate(EnteredDate)
     setFilledGender(EnteredGender)
-    console.log(displayForm);
+    // console.log(displayForm);
     setStyle("none");
   };
 

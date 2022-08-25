@@ -9,4 +9,5 @@ router.post('/login',usersController.login)
 //   router.post('/login', usersController.login);
 
 router.post('/details',usersController.details)
+router.post('/updateProfile',usersController.updateProfile)
   module.exports = router;
