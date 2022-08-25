@@ -535,7 +535,7 @@ const Formd = () => {
           </td>
         </tr>
       </table>
-<br></br>
+
       <div className={classes.cont1}>
         <input type="submit" value="Submit" />
       </div>

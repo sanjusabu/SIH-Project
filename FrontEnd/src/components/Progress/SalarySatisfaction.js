@@ -1,23 +1,37 @@
 import React, {useState,useEffect} from "react";
+import { useRequest } from "../../hooks/request-hook";
 import classes from "./SalarySatisfaction.module.css";
 
-const experience = [1,3,2,1,3,2];
-const salary =[200000,450000,150000,200000,500000,100000]
-
+var experience=[]
+var salary=[]
 function SalarySatisfaction(props) {
+  const { sendRequest } = useRequest();
+
+  const submitHandler = async (e) => {
+    const response = await sendRequest(
+      "http://localhost:5002/jobs/getsalaray",
+      "POST",
+      JSON.stringify({  }),
+      { "Content-Type": "application/json" }
+    );
+    response.map((data) => experience.push(data.experience));
+    response.map((data) => salary.push(data.salary));
+    
+  };
+  useEffect(() => {
+   submitHandler()
+  },[]);
+  
   let bgCol = "";
   const [bgColor,setbgColor] = useState("");
   useEffect(() => {
     setbgColor(bgCol)
-    console.log(bgCol);
     satisfaction();
-    // bgColor = ("blue")
   },[bgColor,satisfaction]);
-  // bgCol = "yellow";
-  // bgCol = "black";
     function avgSal(exp){
     let varSum = 0;
     let sz =0;
+    
     for(let x=0;x<salary.length;x++){
       if(experience[x]==exp){
         varSum = varSum+salary[x];
@@ -34,14 +48,8 @@ function SalarySatisfaction(props) {
   function satisfaction(){
 
     let temp="";
-    // let averg =2;
-    //
-    // let currentSal =2;
-    // console.log(props?.currentJob?.salary);
     const averg =  avgSal(Number(props?.currentJob?.duration));
     const currentSal = props?.currentJob?.salary;
-    console.log(currentSal)
-    console.log("gcc");
     if(currentSal < (4*averg)/5){
       bgCol = "red"
       temp ="Needed i mprovement"
@@ -49,7 +57,6 @@ function SalarySatisfaction(props) {
     }
     else if(currentSal >= (4*averg)/5 && currentSal <averg){
       temp ="Decent"
-      console.log("print blue");
       bgCol = "orange"
 
     }
@@ -60,7 +67,6 @@ function SalarySatisfaction(props) {
     else if(currentSal >= (6*averg)/5 ){
       temp ="Great!"
       bgCol = "green"
-      console.log("bgColor");
     }
     return temp;
   }
