@@ -43,11 +43,11 @@ const Search = ()=>
         <div>{Loading && <LoadingSpinner />}</div>
 
         <StateList />
-        <div>
+        {/* <div>
 
          <Joblist details={details}/>
 
-        </div>
+        </div> */}
         <div className = {classes.main}>
 <div className={classes.he}>
 <h3>Job search according to the location</h3></div>
@@ -91,9 +91,9 @@ const Search = ()=>
          
 
         {/* </div> */}
-       
+        <Joblist details={details}/><br></br><br></br>
         <h3 >Explore Top Companies Hiring Now</h3>
-        <div className={classes.com}>
+        {/* <div className={classes.com}>
         <div className={classes.main1}>
 
           <br></br>
@@ -128,7 +128,29 @@ const Search = ()=>
         
         </div>
         </div>
+        </div> */}
+
+        <div className="container">
+        <div className="row">
+        {/* <div className="row"> */}
+        <div className={["col-md-4", classes.main1].join(" ")}>
+            <h4>Apisero</h4>
+            <h6>Rating: 4.2</h6>
+            <h6>Reviews: 113</h6>
+          </div>
+          <div className={["col-md-4", classes.main1].join(" ")}>
+            <h4>Apisero</h4>
+            <h6>Rating: 4.2</h6>
+            <h6>Reviews: 113</h6>
+          </div>
+          <div className={["col-md-4", classes.main1].join(" ")}>
+            <h4>Apisero</h4>
+            <h6>Rating: 4.2</h6>
+            <h6>Reviews: 113</h6>
+          </div>
         </div>
+      </div>
+       
         </>
     )
 }
