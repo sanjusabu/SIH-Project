@@ -64,7 +64,7 @@ const Landingpage = () => {
             "Content-Type": "application/json",
           }
         );
-        console.log(responseData)
+        // console.log(responseData)
         setSkills(responseData)
         
       } }catch (err) {
@@ -79,7 +79,7 @@ const Landingpage = () => {
       // console.log(getSkills)
     }, [sendRequest]);
 
-    console.log(getSkills,"errfjwfkj")
+    // console.log(getSkills,"errfjwfkj")
     useEffect(()=>{
     const fetchJobs =async()=>{
       // setloading(true)
@@ -97,7 +97,7 @@ const Landingpage = () => {
             "Content-Type": "application/json",
           }
         );
-        console.log(responseData)
+        // console.log(responseData)
        
         setJobs(responseData)
         
@@ -119,7 +119,7 @@ const Landingpage = () => {
         JSON.stringify({ search: Search, place: Place }),
         { "Content-Type": "application/json" }
       );
-      console.log(response);
+      // console.log(response);
       navigate("/newsearch", { state: response });
         
         resetLocation();
@@ -178,7 +178,7 @@ const Landingpage = () => {
                   <h6 className="time">Experience Required:{data.experience} years</h6>
                  <h6 className="proglanguage">{data.industry}</h6>
                  <h6>{data.joblocation_address}</h6>
-                 <h6>Skills Preffered : {data.skills.map(dat=> dat+ ',')}</h6>
+                 {/* <h6>Skills Preffered : {data.skills.map(dat=> dat+ ',')}</h6> */}
                 </div>)
                }
                {!jobs.length && <p>Jobs Loading</p>}

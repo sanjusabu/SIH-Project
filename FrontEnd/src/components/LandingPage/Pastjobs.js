@@ -43,7 +43,7 @@ const Pastjobs = () => {
       </div>
       <div className="container">
         <div className="row">
-          {console.log(prevJobs, "chekckskk")}
+          {/* {console.log(prevJobs, "chekckskk")} */}
           {prevJobs.map((element) => {
             return (
               <div className="col-md-4" key={element.compname}>
