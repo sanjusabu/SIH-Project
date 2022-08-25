@@ -9,6 +9,7 @@ const Jobdetails = (props) => {
     // e.preventDefault()
     navigate('/formd')
   }
+  
   let { compname, duration, salary, position, location } = props;
   return (
     <div>
@@ -20,6 +21,7 @@ const Jobdetails = (props) => {
             <p className="card-text">{duration}</p>
             <p className="card-text">{salary}</p>
             <p className="card-text">{location}</p>
+            <p className="card-text">Job Score: {location}</p>
             <p className="card-text">
               <small className="text-muted">Positioned as {position}</small>
             </p>
