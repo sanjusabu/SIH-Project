@@ -9,7 +9,7 @@ import PastjobsEmployer from "./PastjobsEmployer";
 
 const isSearch = (value) => value.trim() !== "";
 
-const LandingEmployer = () => {
+const Landingpage = () => {
   const { sendRequest } = useRequest();
   const [data, setData] = useState([]);
   const [getSkills, setSkills] = useState([]);
@@ -151,7 +151,7 @@ const LandingEmployer = () => {
             </button>
           </form>
         </div>
-        <PastjobsEmployer />
+        
         <div className="container">
           <div className="containers">
             <div className="left">
@@ -166,10 +166,10 @@ const LandingEmployer = () => {
                   <h6 className="time">Time Period : 3 Months</h6>
                   <h6 className="proglanguage">Language : Python</h6>
                   <div className="addjobs d-flex justify-content-center m-4">
-                    <Link to="/addnewemployerjobs">
-                      <button className="btn btn-primary">Add Employee</button>
-                    </Link>
-                  </div>
+        <Link to="/addnewemployerjobs">
+          <button className="btn btn-primary">Add Employee</button>
+        </Link>
+      </div>
                 </div>
                 <div className="options">
                   <h3 className="title">CillyFox</h3>
@@ -178,10 +178,10 @@ const LandingEmployer = () => {
 
                   <h6 className="proglanguage">Language : Python</h6>
                   <div className="addjobs d-flex justify-content-center m-4">
-                    <Link to="/addnewemployerjobs">
-                      <button className="btn btn-primary">Add Employee</button>
-                    </Link>
-                  </div>
+        <Link to="/addnewemployerjobs">
+          <button className="btn btn-primary">Add Employee</button>
+        </Link>
+      </div>
                 </div>
                 <div className="options">
                   <h3 className="title">CillyFox</h3>
@@ -189,10 +189,10 @@ const LandingEmployer = () => {
                   <h6 className="time">Time Period : 3 Months</h6>
                   <h6 className="proglanguage">Language : Python</h6>
                   <div className="addjobs d-flex justify-content-center m-4">
-                    <Link to="/addnewemployerjobs">
-                      <button className="btn btn-primary">Add Employee</button>
-                    </Link>
-                  </div>
+        <Link to="/addnewemployerjobs">
+          <button className="btn btn-primary">Add Employee</button>
+        </Link>
+      </div>
                 </div>
               </div>
             </div>
@@ -210,17 +210,17 @@ const LandingEmployer = () => {
                     <small className="text-muted">{data.email}</small>
                   </p>
                   <div className="butt d-flex justify-content-md-center">
-                    <h6>Jobs Posted: 8</h6>
-
+                  <h6>Jobs Posted: 8</h6>
+                  
                     {/* <Link to="/profile">
                       <button className="btn btn-primary">
-                        Jobs Posted
+                        Update Profile
                       </button>
                     </Link> */}
                   </div>
                   <div className="butt d-flex justify-content-md-center">
-                    <h6>CompanyName: Amazon</h6>
-
+                  <h6>CompanyName: Amazon</h6>
+                  
                     {/* <Link to="/profile">
                       <button className="btn btn-primary">
                         Jobs Posted
@@ -232,9 +232,10 @@ const LandingEmployer = () => {
             </div>
           </div>
         </div>
+        
       </div>
     </>
   );
 };
 
-export default LandingEmployer;
+export default Landingpage;

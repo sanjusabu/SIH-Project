@@ -5,16 +5,16 @@ import { useEffect, useState } from "react";
 import { useRequest } from "../../hooks/request-hook";
 import useInput from "../../hooks/useInput";
 import { useNavigate } from "react-router-dom";
-import LoadingSpinner from "../../Design/UIElements/LoadingSpinner";
+import LoadingSpinner from '../../Design/UIElements/LoadingSpinner'
 const isSearch = (value) => value.trim() !== "";
 
 const Landingpage = () => {
-  const [loading, setloading] = useState(true);
+  const [loading,setloading] = useState(true)
   const { sendRequest } = useRequest();
   const [data, setData] = useState([]);
   const [jobs, setJobs] = useState([]);
-
-  const [getSkills, setSkills] = useState([]);
+  
+  const [getSkills,setSkills] = useState([])
   const {
     value: Search,
     reset: resetSearch,
@@ -53,29 +53,30 @@ const Landingpage = () => {
     const fetchSkills = async () => {
       try {
         if (localStorage.hasOwnProperty("userid")) {
-          const responseData = await sendRequest(
-            "http://localhost:5002/skills/getSkills",
-            "POST",
-            JSON.stringify({
-              userid: localStorage.getItem("userid"),
-            }),
-            {
-              "Content-Type": "application/json",
-            }
-          );
-          // console.log(responseData)
-          setSkills(responseData);
-        }
-      } catch (err) {
-        console.log(err);
+        const responseData = await sendRequest(
+          'http://localhost:5002/skills/getSkills',
+          'POST',
+          JSON.stringify({
+            userid : localStorage.getItem("userid")
+          }),
+          {
+            "Content-Type": "application/json",
+          }
+        );
+        // console.log(responseData)
+        setSkills(responseData)
+        
+      } }catch (err) {
+        console.log(err)
       }
-    };
-
-    fetchUsers();
-    fetchSkills();
-
-    // console.log(getSkills)
-  }, [sendRequest]);
+    
+      };
+   
+      fetchUsers();
+      fetchSkills();
+    
+      // console.log(getSkills)
+    }, [sendRequest]);
 
   // console.log(getSkills,"errfjwfkj")
   useEffect(() => {
@@ -84,45 +85,48 @@ const Landingpage = () => {
       try {
         if (localStorage.hasOwnProperty("userid")) {
           // setloading(true)
-          const responseData = await sendRequest(
-            "http://localhost:5002/jobs/recommendjobs",
-            "POST",
-            JSON.stringify({
-              user: localStorage.getItem("userid"),
-              skill: getSkills,
-            }),
-            {
-              "Content-Type": "application/json",
-            }
-          );
-          // console.log(responseData)
-
-          setJobs(responseData);
-        }
-      } catch (err) {
-        console.log(err);
+        const responseData = await sendRequest(
+          'http://localhost:5002/jobs/recommendjobs',
+          'POST',
+          JSON.stringify({
+            user: localStorage.getItem("userid"),
+            skill : getSkills
+          }),
+          {
+            "Content-Type": "application/json",
+          }
+        );
+        // console.log(responseData)
+       
+        setJobs(responseData)
+        
+      } }catch (err) {
+        console.log(err)
       }
-    };
-    fetchJobs();
-  }, [sendRequest, getSkills]);
+    }
+    fetchJobs()
+  }
+,[sendRequest,getSkills])
 
-  const submitHandler = async (e) => {
-    e.preventDefault();
-    const response = await sendRequest(
-      "http://localhost:5002/jobs/loginsearch",
-      "POST",
-      JSON.stringify({ search: Search, place: Place }),
-      { "Content-Type": "application/json" }
-    );
-    // console.log(response);
-    navigate("/newsearch", { state: response });
 
-    resetLocation();
-    resetSearch();
-  };
-
-  return (
-    <>
+    
+    const submitHandler = async (e) => {
+      e.preventDefault();
+      const response = await sendRequest(
+        "http://localhost:5002/jobs/loginsearch",
+        "POST",
+        JSON.stringify({ search: Search, place: Place }),
+        { "Content-Type": "application/json" }
+      );
+      // console.log(response);
+      navigate("/newsearch", { state: response });
+        
+        resetLocation();
+        resetSearch();
+      };
+      
+      return (
+        <>
       <NavBar />
       <div>
         <div className="contain">
@@ -161,27 +165,24 @@ const Landingpage = () => {
             <div className="left">
               <div className="jobs">
                 <div className="conta d-flex">
-                  <h2 className="head">
-                    Recommended jobs according to Skills{" "}
-                  </h2>
+                  <h2 className="head">Recommended jobs according to Skills </h2>
                 </div>
                 {/* {console.log(jobs,'is the jobs ijskjf')} */}
                 {/* {loading && <LoadingSpinner />} */}
-                {/* {!loading && console.log(jobs,'flkfkw') */}
-                {jobs.length != 0 &&
-                  jobs?.map((data) => (
-                    <div className="options">
-                      <h3 className="title">{data.company}</h3>
-                      <p className="service">{data.jobtitle}</p>
-                      <h6 className="time">
-                        Experience Required:{data.experience} years
-                      </h6>
-                      <h6 className="proglanguage">{data.industry}</h6>
-                      <h6>{data.joblocation_address}</h6>
-                      {/* <h6>Skills Preffered : {data.skills.map(dat=> dat+ ',')}</h6> */}
-                    </div>
-                  ))}
-                {!jobs.length && <p>Jobs Loading</p>}
+               {/* {!loading && console.log(jobs,'flkfkw') */}
+              {jobs.length!=0 && jobs?.map(data=>
+                <div className="options">
+                  <h3 className="title">{data.company}</h3>
+                  <p className="service">{data.jobtitle}</p>
+                  <h6 className="time">Experience Required:{data.experience} years</h6>
+                 <h6 className="proglanguage">{data.industry}</h6>
+                 <h6>{data.joblocation_address}</h6>
+                 {/* <h6>Skills Preffered : {data.skills.map(dat=> dat+ ',')}</h6> */}
+                </div>)
+               }
+               {!jobs.length && <p>Jobs Loading</p>}
+                
+                
               </div>
             </div>
             <div className="right">
