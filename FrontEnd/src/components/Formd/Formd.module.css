@@ -1,6 +1,9 @@
 h1 {
   text-align: center;
 }
+.sp{
+  color: #781c68;
+}
 h2 {
   font-weight: bold;
   font-size: 150%;
@@ -50,7 +53,7 @@ h5 {
     position: relative;
     overflow: hidden;
     cursor: pointer;
-} */
+}  */
 
 .check-box {
   width: 80px;
@@ -124,13 +127,11 @@ table {
 td,
 th {
   border: 1px solid #dddddd;
-  text-align: left;
   padding: 15px;
   height: 10px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
 }
 
 .th1,
