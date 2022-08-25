@@ -22,13 +22,9 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-<<<<<<< HEAD
-    "start": "set PORT=3006 && react-scripts start --openssl-legacy-provider",
-=======
 
     "start": "set PORT=3006 && react-scripts start --openssl-legacy-provider",
 
->>>>>>> a281d0514f19b91074d1434a7d2b867522e4983e
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
