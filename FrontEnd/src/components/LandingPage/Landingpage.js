@@ -55,7 +55,7 @@ const Landingpage = () => {
           'http://localhost:5002/skills/getSkills',
           'POST',
           JSON.stringify({
-            user: localStorage.getItem("userid")
+            userid : localStorage.getItem("userid")
           }),
           {
             "Content-Type": "application/json",
