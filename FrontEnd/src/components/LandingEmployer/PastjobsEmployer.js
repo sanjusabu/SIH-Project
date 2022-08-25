@@ -56,6 +56,7 @@ const PastjobsEmployer = () => {
                   joblocation_address={element.joblocation_address}
                   payrate={element.payrate}
                   skills={element.skills}
+                  date={element.date}
                 />
               </div>
             );

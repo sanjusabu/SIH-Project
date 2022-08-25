@@ -18,6 +18,7 @@ const addnewemployerjobs = async (req, res, next) => {
     payrate,
     skills,
     vacancy,
+    date,
     userid,
   } = req.body;
   console.log(req.body);
@@ -31,6 +32,7 @@ const addnewemployerjobs = async (req, res, next) => {
     skills: skills,
     vacancy: vacancy,
     payrate: payrate,
+    date: date,
     userid: userid,
   });
   try {

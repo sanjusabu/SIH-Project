@@ -11,6 +11,7 @@ const EmployerJobSchema = new Schema({
   skills: { type: String, required: true },
   vacancy: { type: Number, required: true },
   payrate: { type: Number, required: true },
+  date: { type: Date, required: true },
   userid: { type: String, required: true },
 });
 

@@ -13,6 +13,7 @@ const AddEmployeejobs = () => {
     payrate: 0,
     vacancy: 0,
     skills: "",
+    date: new Date(),
   });
   const { sendRequest } = useRequest();
   const handleChange = (e) => {
@@ -35,6 +36,7 @@ const AddEmployeejobs = () => {
           payrate: jobEmployer.payrate,
           skills: jobEmployer.skills,
           vacancy: jobEmployer.vacancy,
+          date: jobEmployer.date,
           userid: localStorage.getItem("userid"),
         }),
         {
@@ -144,6 +146,12 @@ const AddEmployeejobs = () => {
           />
         </div>
         <div className="mb-3">
+          <label htmlFor="date" className="form-label">
+            <h4>Date</h4>
+          </label>
+          <input type="date" name="date" onChange={handleChange} />
+        </div>
+        <div className="mb-3">
           <label htmlFor="skills" className="form-label">
             <h4>Skills Required ( Comma Seperated )</h4>
           </label>
@@ -169,6 +177,7 @@ const AddEmployeejobs = () => {
             name="vacancy"
           />
         </div>
+
         <button type="submit" className="btn btn-primary">
           Add Job
         </button>
