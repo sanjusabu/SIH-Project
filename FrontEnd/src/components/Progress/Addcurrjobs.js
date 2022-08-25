@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useRequest } from "../../hooks/request-hook";
 import { useNavigate } from "react-router-dom";
-const Addprevjobs = () => {
+const Addcurrjobs = () => {
   const navigate = useNavigate();
-  const [job, setJob] = useState({
+  const [addcurrjob, setAddcurrjob] = useState({
     compname: "",
     duration: "",
     salary: 0,
@@ -12,22 +13,21 @@ const Addprevjobs = () => {
   });
   const { sendRequest } = useRequest();
   const handleChange = (e) => {
-    setJob({ ...job, [e.target.name]: e.target.value });
+    setAddcurrjob({ ...addcurrjob, [e.target.name]: e.target.value });
   };
 
-  const submit = async (e) => {
+  const currsubmit = async (e) => {
     e.preventDefault();
-    console.log(job.compname);
     if (localStorage.hasOwnProperty("userid")) {
       const response = await sendRequest(
-        "http://localhost:5002/jobs/addprevjobs",
+        "http://localhost:5002/jobs/addcurrjobs",
         "POST",
         JSON.stringify({
-          compname: job.compname,
-          duration: job.duration,
-          salary: job.salary,
-          position: job.position,
-          location: job.location,
+          compname: addcurrjob.compname,
+          duration: addcurrjob.duration,
+          salary: addcurrjob.salary,
+          position: addcurrjob.position,
+          location: addcurrjob.location,
           userid: localStorage.getItem("userid"),
         }),
         {
@@ -35,14 +35,13 @@ const Addprevjobs = () => {
         }
       );
     }
-    navigate("/profile");
-    //  console.log(response)
+    navigate("/progresstrack");
   };
 
   return (
     <div className="container my-4">
       <h1>Add Jobs</h1>
-      <form className="my-3" onSubmit={submit}>
+      <form className="my-3" onSubmit={currsubmit}>
         <div className="mb-3">
           <label htmlFor="compname" className="form-label">
             <h4>Company Name</h4>
@@ -51,7 +50,7 @@ const Addprevjobs = () => {
             type="text"
             className="form-control"
             id="compname"
-            value={job.compname}
+            value={addcurrjob.compname}
             name="compname"
             onChange={handleChange}
             aria-describedby="emailHelp"
@@ -65,7 +64,7 @@ const Addprevjobs = () => {
             type="text"
             className="form-control"
             id="duration"
-            value={job.duration}
+            value={addcurrjob.duration}
             onChange={handleChange}
             name="duration"
           />
@@ -78,7 +77,7 @@ const Addprevjobs = () => {
             type="text"
             className="form-control"
             id="salary"
-            value={job.salary}
+            value={addcurrjob.salary}
             onChange={handleChange}
             name="salary"
           />
@@ -90,7 +89,7 @@ const Addprevjobs = () => {
           <input
             type="text"
             className="form-control"
-            value={job.position}
+            value={addcurrjob.position}
             onChange={handleChange}
             id="position"
             name="position"
@@ -103,7 +102,7 @@ const Addprevjobs = () => {
           <input
             type="text"
             className="form-control"
-            value={job.location}
+            value={addcurrjob.location}
             onChange={handleChange}
             id="location"
             name="location"
@@ -117,4 +116,4 @@ const Addprevjobs = () => {
   );
 };
 
-export default Addprevjobs;
+export default Addcurrjobs;

@@ -5,42 +5,42 @@ import { Link } from "react-router-dom";
 import classes from "./progress.module.css";
 import BarGraph from "./BarGraph";
 import Progressbar from "../ProgressBar/Progressbar";
+import { useEffect, useState } from "react";
+import { useRequest } from "../../hooks/request-hook";
+import SalarySatisfaction from "./SalarySatisfaction";
 
 const Progress = () => {
-  const currJobs = [
-    {
-      compname: "Amazon",
-      duration: "3 Months",
-      salary: "100000",
-      position: "Software Developer",
-      location: "Mumbai",
-    },
-    {
-      compname: "Amazonn",
-      duration: "3 Months",
-      salary: "100000",
-      position: "Software Developer",
-      location: "Mumbai",
-    },
-    {
-      compname: "Amazonnn",
-      duration: "3 Months",
-      salary: "100000",
-      position: "Software Developer",
-      location: "Mumbai",
-    },
-  ];
+  const { sendRequest } = useRequest();
+  const [currJobs, setCurrJobs] = useState([]);
 
-  let satisfaction = 75;
-  let dashoffset = 440 - (440 * satisfaction) / 100;
-  let mystyle = {
-    strokeDashoffset: dashoffset,
-  };
+  useEffect(() => {
+    const fetchcurrJobs = async () => {
+      try {
+        if (localStorage.hasOwnProperty("userid")) {
+          const responseData = await sendRequest(
+            "http://localhost:5002/jobs/getcurrjobs",
+            "POST",
+            JSON.stringify({
+              userid: localStorage.getItem("userid"),
+            }),
+            {
+              "Content-Type": "application/json",
+            }
+          );
+          setCurrJobs(responseData);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchcurrJobs();
+  }, [sendRequest]);
+
   return (
     <>
       <NavBar />
       <div className="addjobs d-flex justify-content-center m-4">
-        <Link to="/addpreviousjobs">
+        <Link to="/addcurrjobs">
           <button className="btn btn-primary">Add Current Job</button>
         </Link>
       </div>
@@ -59,6 +59,9 @@ const Progress = () => {
               </div>
             );
           })}
+           <div className="col-md-4">
+            <SalarySatisfaction currentJob={currJobs[currJobs.length - 1]} />
+          </div>
         </div>
       </div>
       <div className="container my-3">
