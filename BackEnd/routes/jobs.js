@@ -11,5 +11,6 @@ router.post("/getcurrjobs", jobController.getcurrjobs);
 router.post("/getjobssalary", jobController.getjobssalary);
 router.post("/getjobsname", jobController.getjobsname);
 router.post("/loginsearch", jobController.loginsearch);
+router.post("/getsalaray", jobController.getsalaray);
 router.post("/search", jobController.search);
 module.exports = router;
