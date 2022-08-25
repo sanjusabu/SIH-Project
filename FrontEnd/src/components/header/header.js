@@ -97,6 +97,9 @@ const Headers = () => {
                     Form
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <div id="google_translate_element"></div>
+                </li>
               </ul>
             </div>
           )}
