@@ -148,8 +148,8 @@ const prevjobs = async (req, res, next) => {
 const addcurrjobs = async (req, res, next) => {
   const { compname, duration, salary, position, location, userid } = req.body;
   let currentJobs;
-  currentJobs = await CurrJobs.findOne({ compname: compname,userid:userid });
-  if (currentJobs) {
+  currentJobs = await CurrJobs.findOne({ userid:userid });
+  if (false) {
     const error = new HttpError(
       "Job exists already, please add different job",
       422
