@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.5.0",
     "bcrypt": "^5.0.1",
     "chart.js": "^3.9.1",
+    "nodemon": "^2.0.19",
     "react": "^18.2.0",
     "react-chartjs-2": "^4.3.1",
     "react-circular-progressbar": "^2.1.0",
@@ -21,9 +22,13 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
+<<<<<<< HEAD
+    "start": "set PORT=3006 && react-scripts start --openssl-legacy-provider",
+=======
 
     "start": "set PORT=3006 && react-scripts start --openssl-legacy-provider",
 
+>>>>>>> a281d0514f19b91074d1434a7d2b867522e4983e
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

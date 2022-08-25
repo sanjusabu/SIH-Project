@@ -51,6 +51,28 @@ const loginsearch = async (req, res, next) => {
   console.log(details);
   res.json(details);
 };
+
+
+const getsalaray = async (req, res, next) => {
+  // console.log(req.body)
+  const response = skillSearch.filter(
+    (data) =>
+      data
+  );
+
+  // console.log(response)
+  const details = response.map((data) => {
+    return {
+      experience: data.experience,
+      salary: data.payrate,
+    };
+  });
+  console.log(details);
+  res.json(details);
+};
+
+
+
 const getprevjobs = async (req, res, next) => {
   const { userid } = req.body;
   // console.log(userid)
@@ -195,6 +217,7 @@ exports.getjobssalary = getjobssalary;
 exports.getjobsname = getjobsname;
 exports.loginsearch = loginsearch;
 exports.getcurrjobs = getcurrjobs;
+exports.getsalaray = getsalaray;
 
 exports.recommendjobs = recommendjobs
 // const targetURL = `https://api.adzuna.com/v1/api/jobs/in/search/1?&results_per_page=20&content-type=application/json&app_id=da3b4b1b&app_key=36a0c2ed8bb2374466527f58761a7f3d&what=${toSearch}&where=${place}`;
