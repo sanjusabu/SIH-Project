@@ -150,12 +150,12 @@ useEffect(() => {
             <ul className="detailsul-1">
               {/* <li>{FilledName}</li> */}
               <li>{data.name}</li>
-              <li>{FilledLocation}</li>
+              <li>{data.location}</li>
             </ul>
             <ul className="detailsul-2">
               {/* <li>{FilledPhoneNo}</li> */}
               <li>{data.mobilenumber}</li>
-              <li>{FilledDate}</li>
+              <li>{data.email}</li>
               <button className="btn btn-primary detailedit" onClick={showForm}>
                 Edit
               </button>
