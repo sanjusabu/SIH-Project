@@ -148,8 +148,8 @@ const prevjobs = async (req, res, next) => {
 const addcurrjobs = async (req, res, next) => {
   const { compname, duration, salary, position, location, userid } = req.body;
   let currentJobs;
-  currentJobs = await CurrJobs.findOne({ compname: compname,userid:userid });
-  if (currentJobs) {
+  currentJobs = await CurrJobs.findOne({ userid:userid });
+  if (false) {
     const error = new HttpError(
       "Job exists already, please add different job",
       422
@@ -189,6 +189,7 @@ skillSearch.map(data=>{
   let matches = []
   data.skills.filter(item=> {
   let sumn = skill.filter(dat=>dat===item);
+  // console.log(sumn)
   if(sumn.length > 0){
     // console.log(sumn)
     matches.push(sumn[0]);
@@ -201,12 +202,14 @@ skillSearch.map(data=>{
     }
   }
   )
-  console.log(required_arr)
+  // console.log(required_arr)
+  let sorted =[]
 if(required_arr){
-  required_arr.sort((a, b) => b.sumn - a.sumn);
+  sorted = required_arr.slice().sort((a,b)=> b.matched- a.matched);
 }
-
-res.json({required_arr})
+// console.log(sorted)
+const toSend = sorted.slice(0,10)
+res.json(toSend)
 }
 
 exports.prevjobs = prevjobs;

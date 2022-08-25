@@ -12,7 +12,7 @@ import SalarySatisfaction from "./SalarySatisfaction";
 const Progress = () => {
   const { sendRequest } = useRequest();
   const [currJobs, setCurrJobs] = useState([]);
-
+  var temp2=[1]
   useEffect(() => {
     const fetchcurrJobs = async () => {
       try {
@@ -46,15 +46,18 @@ const Progress = () => {
       </div>
       <div className="container">
         <div className="row">
-          {currJobs.map((element) => {
+          
+          {
+          currJobs.map((data,index) => {
+            if ((currJobs.length - 1)==index)
             return (
-              <div className="col-md-4" key={element.compname}>
+              <div className="col-md-4" key={index}>
                 <CurrJobdetails
-                  compname={element.compname}
-                  duration={element.duration}
-                  salary={element.salary}
-                  position={element.position}
-                  location={element.location}
+                  compname={currJobs[currJobs.length - 1].compname}
+                  duration={currJobs[currJobs.length - 1].duration}
+                  salary={currJobs[currJobs.length - 1].salary}
+                  position={currJobs[currJobs.length - 1].position}
+                  location={currJobs[currJobs.length - 1].location}
                 />
               </div>
             );
