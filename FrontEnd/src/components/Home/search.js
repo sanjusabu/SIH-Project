@@ -6,9 +6,11 @@ import LoadingSpinner from "../../Design/UIElements/LoadingSpinner";
 import StateList from "./countries-states-cities";
 import Topjobs from "./Topjobs";
 import Specialities from "./Specialities";
+import { useNavigate } from "react-router-dom";
 
 const isSearch = (value) => value.trim() !== "";
 const Search = () => {
+  const navigate = useNavigate()
   const [Loading, setLoading] = useState(false);
   const {
     value: Search,
@@ -20,49 +22,64 @@ const Search = () => {
     reset: resetLocation,
     valueChangeHandler: searchLocation,
   } = useInput(isSearch);
-  const [details, setDetails] = useState([]);
+
+  // const [details, setDetails] = useState([]);
   const { sendRequest } = useRequest();
-  const submitHandler = async (event) => {
-    // console.log(Search)
-    setLoading(true);
+  const submitHandler = async (e) => {
+    e.preventDefault();
     const response = await sendRequest(
-      "http://localhost:5002/jobs/search",
+      "http://localhost:5002/jobs/loginsearch",
       "POST",
       JSON.stringify({ search: Search, place: Place }),
       { "Content-Type": "application/json" }
     );
-    console.log(response);
-    // const display = response.ma
-    setLoading(false);
-    setDetails(response);
-
-    resetLocation();
-    resetSearch();
-  };
+    // console.log(response);
+    navigate("/newsearch", { state: response });
+      
+      resetLocation();
+      resetSearch();
+    };
 
   return (
     <>
-      <div>
-        <input
-          type="text"
-          placeholder="Search Jobs"
-          value={Search}
-          onChange={searchChange}
-        />
-        <input
-          type="text"
-          placeholder="Location"
-          value={Place}
-          onChange={searchLocation}
-        />
-        <button onClick={submitHandler}>Search</button>
-      </div>
+
+        <div className="contain">
+          <form
+            className="search d-flex my-5"
+            role="search"
+            onSubmit={submitHandler}
+          >
+            <input
+              className="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              value={Search}
+              onChange={searchChange}
+              autoComplete="on"
+            />
+            <div className="contain">
+              <input
+                className="form-control"
+                type="search"
+                placeholder="Location"
+                aria-label="Search"
+                value={Place}
+                onChange={searchLocation}
+                autoComplete="on"
+              />
+            </div>
+            <button className="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
       <div>{Loading && <LoadingSpinner />}</div>
 
       {/* <StateList /> */}
       <Specialities />
       <Topjobs />
-      <Joblist details={details} />
+      {/* <Joblist details={details} /> */}
     </>
   );
 };

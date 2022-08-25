@@ -5,7 +5,7 @@ const Topjobs = () => {
   return (
     <div className="container my-3">
       <div className="jobs">
-        <h1 className={classes.headd}>Suggested Jobs</h1>
+        <h1 className={classes.headd}>Top Jobs</h1>
         <div className={classes.optionss}>
           <h3 className={classes.titlee}>Amazon</h3>
           <h4 className={classes.servicee}>Software Developer</h4>

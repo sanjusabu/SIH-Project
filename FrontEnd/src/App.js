@@ -100,6 +100,7 @@ function App() {
             element={
               <>
                 <Headers />
+      
                 <Search />
               </>
             }
@@ -109,6 +110,7 @@ function App() {
           <Route exact path="/formd" element={<Formd />}></Route>
           <Route exact path="/register" element={<Register />}></Route>
           <Route exact path="/registeremployer" element={<RegE/>}></Route>
+          <Route path="/newsearch" element={<Newsearch />}></Route>
           
         </Routes>
       </Router>
