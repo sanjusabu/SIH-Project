@@ -112,6 +112,32 @@ const login = async (req, res, next) => {
   res.json({ user: existingUser.toObject({ getters: true }) });
 };
 
+const updateProfile = async(req,res,next) =>{
+  const { userid, name, location } = req.body;
+  console.log("name is", name);
+  let existingUser;
+  existingUser = await UserModel.findOne({ userid: userid });
+  if (existingUser) {
+    try {
+      const result = await UserModel.updateOne(
+        // console.log("hgvhgv"),
+        { userid: userid },
+        {
+          $set: {
+            name: name,
+            location:location,
+          },
+        }
+        );
+        // res.json(result)
+      console.log(result)
+    } catch (err) {
+      console.log(err);
+    }
+  }
+}
+
 exports.signup = signup;
 exports.login = login;
 exports.details = details;
+exports.updateProfile = updateProfile;
