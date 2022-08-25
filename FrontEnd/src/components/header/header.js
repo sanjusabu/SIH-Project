@@ -92,6 +92,16 @@ const Headers = () => {
                   <Link
                     className="nav-link active"
                     aria-current="page"
+                    to="/images"
+                  >
+                    Form
+                  </Link>
+                </li>
+
+                <li className="nav-item1">
+                  <Link
+                    className="nav-link active"
+                    aria-current="page"
                     to="/formd"
                   >
                     Form
