@@ -52,7 +52,7 @@ function SalarySatisfaction(props) {
     const currentSal = props?.currentJob?.salary;
     if(currentSal < (4*averg)/5){
       bgCol = "red"
-      temp ="Needed improvement"
+      temp ="Needed i mprovement"
 
     }
     else if(currentSal >= (4*averg)/5 && currentSal <averg){

@@ -5,13 +5,14 @@ import { useEffect, useState } from "react";
 import { useRequest } from "../../hooks/request-hook";
 import useInput from "../../hooks/useInput";
 import { useNavigate } from "react-router-dom";
+import PastjobsEmployer from "./PastjobsEmployer";
 
 const isSearch = (value) => value.trim() !== "";
 
 const Landingpage = () => {
   const { sendRequest } = useRequest();
   const [data, setData] = useState([]);
-  const [getSkills,setSkills] = useState([])
+  const [getSkills, setSkills] = useState([]);
   const {
     value: Search,
     reset: resetSearch,
@@ -45,83 +46,78 @@ const Landingpage = () => {
       } catch (err) {
         console.log(err);
       }
-    
     };
 
     const fetchSkills = async () => {
       try {
         if (localStorage.hasOwnProperty("userid")) {
-        const responseData = await sendRequest(
-          'http://localhost:5002/skills/getSkills',
-          'POST',
-          JSON.stringify({
-            userid : localStorage.getItem("userid")
-          }),
-          {
-            "Content-Type": "application/json",
-          }
-        );
-        console.log(responseData)
-        setSkills(responseData)
-        
-      } }catch (err) {
-        console.log(err)
+          const responseData = await sendRequest(
+            "http://localhost:5002/skills/getSkills",
+            "POST",
+            JSON.stringify({
+              userid: localStorage.getItem("userid"),
+            }),
+            {
+              "Content-Type": "application/json",
+            }
+          );
+          console.log(responseData);
+          setSkills(responseData);
+        }
+      } catch (err) {
+        console.log(err);
       }
-    
-      };
-   
-      fetchUsers();
-      fetchSkills();
-    
-      // console.log(getSkills)
-    }, [sendRequest]);
+    };
 
-    console.log(getSkills,"errfjwfkj")
-    useEffect(()=>{
-    const fetchJobs =async()=>{
-      
+    fetchUsers();
+    fetchSkills();
+
+    // console.log(getSkills)
+  }, [sendRequest]);
+
+  console.log(getSkills, "errfjwfkj");
+  useEffect(() => {
+    const fetchJobs = async () => {
       try {
         if (localStorage.hasOwnProperty("userid")) {
-        const responseData = await sendRequest(
-          'http://localhost:5002/jobs/recommendjobs',
-          'POST',
-          JSON.stringify({
-            user: localStorage.getItem("userid"),
-            skill : getSkills
-          }),
-          {
-            "Content-Type": "application/json",
-          }
-        );
-        console.log(responseData)
-        // setSkills(responseData)
-        
-      } }catch (err) {
-        console.log(err)
+          const responseData = await sendRequest(
+            "http://localhost:5002/jobs/recommendjobs",
+            "POST",
+            JSON.stringify({
+              user: localStorage.getItem("userid"),
+              skill: getSkills,
+            }),
+            {
+              "Content-Type": "application/json",
+            }
+          );
+          console.log(responseData);
+          // setSkills(responseData)
+        }
+      } catch (err) {
+        console.log(err);
       }
-    }
-    fetchJobs()
-  }
-,[sendRequest,getSkills])
+    };
+    fetchJobs();
+  }, [sendRequest, getSkills]);
 
-    
-    const submitHandler = async (e) => {
-      e.preventDefault();
-      const response = await sendRequest(
-        "http://localhost:5002/jobs/loginsearch",
-        "POST",
-        JSON.stringify({ search: Search, place: Place }),
-        { "Content-Type": "application/json" }
-      );
-      console.log(response);
-      navigate("/newsearch", { state: response });
-        
-        resetLocation();
-        resetSearch();
-      };
-      
-      return (
-        <>
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    const response = await sendRequest(
+      "http://localhost:5002/jobs/loginsearch",
+      "POST",
+      JSON.stringify({ search: Search, place: Place }),
+      { "Content-Type": "application/json" }
+    );
+    console.log(response);
+    navigate("/newsearch", { state: response });
+
+    resetLocation();
+    resetSearch();
+  };
+
+  return (
+    <>
       <NavBar />
       <div>
         <div className="contain">
@@ -155,7 +151,8 @@ const Landingpage = () => {
             </button>
           </form>
         </div>
-        {/* <div className="container">
+        
+        <div className="container">
           <div className="containers">
             <div className="left">
               <div className="jobs">
@@ -168,18 +165,34 @@ const Landingpage = () => {
                   <p className="service">Liquid eLearning Services</p>
                   <h6 className="time">Time Period : 3 Months</h6>
                   <h6 className="proglanguage">Language : Python</h6>
+                  <div className="addjobs d-flex justify-content-center m-4">
+        <Link to="/addnewemployerjobs">
+          <button className="btn btn-primary">Add Employee</button>
+        </Link>
+      </div>
+                </div>
+                <div className="options">
+                  <h3 className="title">CillyFox</h3>
+                  <p className="service">Liquid eLearning Services</p>
+                  <h6 className="time">Time Period : 3 Months</h6>
+
+                  <h6 className="proglanguage">Language : Python</h6>
+                  <div className="addjobs d-flex justify-content-center m-4">
+        <Link to="/addnewemployerjobs">
+          <button className="btn btn-primary">Add Employee</button>
+        </Link>
+      </div>
                 </div>
                 <div className="options">
                   <h3 className="title">CillyFox</h3>
                   <p className="service">Liquid eLearning Services</p>
                   <h6 className="time">Time Period : 3 Months</h6>
                   <h6 className="proglanguage">Language : Python</h6>
-                </div>
-                <div className="options">
-                  <h3 className="title">CillyFox</h3>
-                  <p className="service">Liquid eLearning Services</p>
-                  <h6 className="time">Time Period : 3 Months</h6>
-                  <h6 className="proglanguage">Language : Python</h6>
+                  <div className="addjobs d-flex justify-content-center m-4">
+        <Link to="/addnewemployerjobs">
+          <button className="btn btn-primary">Add Employee</button>
+        </Link>
+      </div>
                 </div>
               </div>
             </div>
@@ -197,22 +210,29 @@ const Landingpage = () => {
                     <small className="text-muted">{data.email}</small>
                   </p>
                   <div className="butt d-flex justify-content-md-center">
-                    <Link to="/profile">
+                  <h6>Jobs Posted: 8</h6>
+                  
+                    {/* <Link to="/profile">
                       <button className="btn btn-primary">
                         Update Profile
                       </button>
-                    </Link>
+                    </Link> */}
+                  </div>
+                  <div className="butt d-flex justify-content-md-center">
+                  <h6>CompanyName: Amazon</h6>
+                  
+                    {/* <Link to="/profile">
+                      <button className="btn btn-primary">
+                        Jobs Posted
+                      </button>
+                    </Link> */}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div> */}
-        <div className="addjobs d-flex justify-content-center m-4">
-        <Link to="/addnewemployerjobs">
-          <button className="btn btn-primary">Add New Job</button>
-        </Link>
-      </div>
+        </div>
+        
       </div>
     </>
   );

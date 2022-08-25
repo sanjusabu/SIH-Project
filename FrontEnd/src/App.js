@@ -12,10 +12,10 @@ import Addcurrjobs from "./components/Progress/Addcurrjobs";
 import Landingpage from "./components/LandingPage/Landingpage";
 import LandingEmployer from "./components/LandingEmployer/LandingEmployer";
 import Profile from "./components/Profile/profile";
-// import Formd from "./components/Formd/Formd";
-import Formd from "./components/LandingPage/Formd";
+import Formd from "./components/Formd/Formd";
 import Progress from "./components/Progress/Progress";
 import Newsearch from "./components/newsearch/newsearch";
+import AddEmployeejobs from "./components/LandingEmployer/AddEmployeejobs";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -67,14 +67,15 @@ function App() {
           <Route path="/landingpage" element={<Landingpage />}></Route>
           <Route path="/landingEmployer" element={<LandingEmployer />}></Route>
           <Route path="/newsearch" element={<Newsearch />}></Route>
+          
           <Route path="/profile" element={<Profile />}></Route>
-          <Route exact path="/formd" element={<Formd />}></Route>
 
           <Route
             exact
             path="/addpreviousjobs"
             element={<Addprevjobs />}
           ></Route>
+          <Route exact path="/addnewemployerjobs" element={<AddEmployeejobs />}></Route>
           <Route exact path="/addcurrjobs" element={<Addcurrjobs />}></Route>
           <Route exact path="/progresstrack" element={<Progress />}></Route>
         </Routes>

@@ -189,7 +189,6 @@ skillSearch.map(data=>{
   let matches = []
   data.skills.filter(item=> {
   let sumn = skill.filter(dat=>dat===item);
-  // console.log(sumn)
   if(sumn.length > 0){
     // console.log(sumn)
     matches.push(sumn[0]);
@@ -202,14 +201,12 @@ skillSearch.map(data=>{
     }
   }
   )
-  // console.log(required_arr)
-  let sorted =[]
+  console.log(required_arr)
 if(required_arr){
-  sorted = required_arr.slice().sort((a,b)=> b.matched- a.matched);
+  required_arr.sort((a, b) => b.sumn - a.sumn);
 }
-// console.log(sorted)
-const toSend = sorted.slice(0,10)
-res.json(toSend)
+
+res.json({required_arr})
 }
 
 exports.prevjobs = prevjobs;

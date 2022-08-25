@@ -5,7 +5,7 @@ const jobRoutes = require("./routes/jobs");
 const skillRoutes = require("./routes/skills");
 const usersRoutes = require("./routes/user");
 const HttpError = require("./models/http-error");
-const jobscore = require("./routes/jobScore")
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -24,7 +24,6 @@ app.use((req, res, next) => {
 app.use("/users", usersRoutes);
 app.use("/jobs", jobRoutes);
 app.use("/skills", skillRoutes);
-app.use("/jobScore", jobscore);
 
 app.use((req, res, next) => {
   const error = new HttpError("Could not find this route.", 404);
