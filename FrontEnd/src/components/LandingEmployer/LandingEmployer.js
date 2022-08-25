@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const isSearch = (value) => value.trim() !== "";
 
-const Landingpage = () => {
+const LandingEmployer = () => {
   const { sendRequest } = useRequest();
   const [data, setData] = useState([]);
   const [getSkills,setSkills] = useState([])
@@ -245,4 +245,4 @@ const Landingpage = () => {
   );
 };
 
-export default Landingpage;
+export default LandingEmployer;

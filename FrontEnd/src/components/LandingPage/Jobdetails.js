@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
+import classes from "./adPrev.module.css";
 const Jobdetails = (props) => {
   const navigate = useNavigate()
   const FillSurveyHandler = (e)=>
@@ -14,7 +14,7 @@ const Jobdetails = (props) => {
   return (
     <div>
       <div className="my-3">
-        <div className="card">
+        <div className={["card border-0", classes.currjobs].join(" ")}>
           <div className="card-body">
             <h5 className="card-title text-center">{compname}</h5>
             <br />
