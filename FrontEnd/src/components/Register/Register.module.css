@@ -11,7 +11,7 @@ body {
 .main1 {
   background-color: #fff;
   width: 600px;
-  height: 650px;
+  height: 660px;
   margin: 7em auto;
   border-radius: 1.5em;
   box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
@@ -65,7 +65,22 @@ body {
   right: 999px;
   top: 700px;
 }
+.fin{
+  padding-left: 15px;
+}
 
+
+.butto{
+  border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #9c27b0, #e040fb);
+    border: 0;
+    font-family: "Ubuntu", sans-serif;
+    height: 50px;
+    width: 150px;
+    font-size: 22px;
+    box-shadow: 0 0 20px 1px rgb(0 0 0 / 4%);
+}
 .bt {
   width: 200px;
   height: 40px;

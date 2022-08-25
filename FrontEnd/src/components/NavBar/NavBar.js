@@ -58,6 +58,11 @@ const NavBar = () => {
                   Progress
                 </Link>
               </li>
+              {/* <li className="nav-item">
+                <Link className="nav-link active" to="/progresstrack">
+                  Employer add job
+                </Link>
+              </li> */}
             </ul>
             <li className="nav-item loggout">
               <button className="btn btn-danger logg" onClick={logoutHandler}>

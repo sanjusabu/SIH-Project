@@ -39,22 +39,54 @@ const Headers = () => {
             <div className="rightside">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item1">
-                  <Link
-                    className="nav-link active"
-                    aria-current="page"
-                    to="/login"
-                  >
-                    Login
-                  </Link>
+                  <li className="nav-item dropdown">
+                    <Link
+                      className="nav-link active dropdown-toggle"
+                      to="/loginroles"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Login
+                    </Link>
+                    <ul className="dropdown-menu">
+                      <li>
+                        <Link className="dropdown-item" to="/login">
+                          Login As Employee
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" to="/loginemployer">
+                          Login as Employer
+                        </Link>
+                      </li>
+                    </ul>
+                  </li>
                 </li>
                 <li className="nav-item1">
-                  <Link
-                    className="nav-link active"
-                    aria-current="page"
-                    to="/register"
-                  >
-                    Register
-                  </Link>
+                  <li className="nav-item dropdown">
+                    <Link
+                      className="nav-link active dropdown-toggle"
+                      to="/loginroles"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Register
+                    </Link>
+                    <ul className="dropdown-menu">
+                      <li>
+                        <Link className="dropdown-item" to="/register">
+                          Register As Employee
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" to="/registeremployer">
+                          Register as Employer
+                        </Link>
+                      </li>
+                    </ul>
+                  </li>
                 </li>
                 <li className="nav-item1">
                   <Link

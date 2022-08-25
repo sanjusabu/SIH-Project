@@ -6,7 +6,7 @@ import ErrorModal from '../../Design/UIElements/ErrorModal'
 import { Link } from 'react-router-dom';
 import {AuthContext} from '../../context/authcontext'
 import { useNavigate } from 'react-router-dom';
-import classes from './Register.module.css';
+import classes from './RegE.module.css';
 const isNotEmpty = value =>value.trim() !== '';
 const isEmail = value => value.includes('@');
 const isPassword = value => value.trim().length >= 3;
@@ -130,7 +130,7 @@ const navigate = useNavigate()
     <div className={classes.main1}>
     <form onSubmit={submitHandler}>
     <div className={classes.reg} >
-        Registration Form
+        Registration Form For Employer
       </div><br></br>
       <div className={nameClasses}>
         <label htmlFor='name' className={classes.em1}>Name</label><br></br>
@@ -223,7 +223,7 @@ const navigate = useNavigate()
 <div class="float-right">
    <button disabled={!formValid} className={classes.butto}>Submit</button> 
    
-   <Link to= '/login'> <button className={classes.butto}>SignUp</button></Link>
+   <Link to= '/loginE'> <button className={classes.butto}>SignUp</button></Link>
 </div>
 
 
