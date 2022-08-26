@@ -26,9 +26,11 @@ const signup = async (req, res, next) => {
   }
   const { name, email, password, mobile, location } = req.body;
   // console.log(req.body)
-  let existingUser;
+  let existingEmail;
+  let existingMobile;
   try {
-    existingUser = await UserModel.findOne({ email: email });
+    existingEmail = await UserModel.findOne({ email: email});
+    existingMobile = await UserModel.findOne({ mobilenumber:mobile});
   } catch (err) {
     const error = new HttpError(
       "Signing up failed, please try again later.",
@@ -37,7 +39,7 @@ const signup = async (req, res, next) => {
     return next(error);
   }
 
-  if (existingUser) {
+  if (existingEmail || existingMobile) {
     const error = new HttpError(
       "User exists already, please login instead.",
       422
@@ -112,6 +114,32 @@ const login = async (req, res, next) => {
   res.json({ user: existingUser.toObject({ getters: true }) });
 };
 
+const loginOTP = async(req,res,next)=>
+{
+// console.log(req.body.number)
+const {number,otp} =req.body
+let existingUser;
+try {
+  existingUser = await UserModel.findOne({ mobilenumber:number});
+} catch (err) {
+  const error = new HttpError(
+    "Signing up failed, please try again later.",
+    500
+  );
+  return next(error);
+}
+if (existingUser && otp==123456) {
+    res.json(existingUser)
+   
+}
+else{
+    const error = new HttpError(
+        "Sign in failed, please try again later, wrong phone number",
+        500
+      );
+      return next(error);
+}
+}
 const updateProfile = async(req,res,next) =>{
   const { userid, name, location } = req.body;
   console.log("name is", name);
@@ -139,5 +167,6 @@ const updateProfile = async(req,res,next) =>{
 
 exports.signup = signup;
 exports.login = login;
+exports.loginOTP = loginOTP;
 exports.details = details;
 exports.updateProfile = updateProfile;
