@@ -3,7 +3,7 @@ const HttpError = require("../models/http-error");
 const NontcModel = require("../models/nontc");
 const express = require("express");
 const axios = require("axios");
-
+const dataset= require('../JsonData/unskilled.json')
 const register = async(req,res,next)=>{
     const { name, mobile, location } = req.body;
     console.log(req.body,'dgkjl')
@@ -71,5 +71,17 @@ else{
       return next(error);
 }
 }
+const showjobs = (req,res,next)=>
+{
+  const {clicked} = req.body
+  // console.log(dataset)
+  console.log(showjobs)
+const response =  dataset.filter(dat =>dat.skills.includes(clicked))
+console.log(response)
+
+  res.json(response)
+
+}
 exports.register = register;
 exports.ologin = ologin;
+exports.showjobs = showjobs;

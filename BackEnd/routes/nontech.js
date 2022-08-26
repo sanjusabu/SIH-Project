@@ -5,5 +5,5 @@ const nontcController = require('../controllers/nontcController')
 
 router.post('/register',nontcController.register);
 router.post('/ologin',nontcController.ologin)
-
+router.post('/showjobs',nontcController.showjobs)
 module.exports = router;

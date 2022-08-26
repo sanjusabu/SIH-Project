@@ -21,7 +21,7 @@ import Newsearch from "./components/newsearch/newsearch";
 import Registertech from "./nontechcomponents/Registertech/Register";
 import Logintech from "./nontechcomponents/Logintech/Login";
 import { HomeContext } from "./context/homecontext";
-
+import ImagesSearch from "./components/imagesSearch/imagesSearch";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [LoggedIn, setLoggedIn] = useState(false);
@@ -140,6 +140,7 @@ function App() {
           <Route exact path="/logintech" element={<Logintech />}></Route> 
           <Route exact path="/registeremployer" element={<RegE/>}></Route>
           <Route path="/newsearch" element={<Newsearch />}></Route>
+          <Route path="/imagesSearch" element={<ImagesSearch />}></Route>
           
         </Routes>
       </Router>
@@ -177,6 +178,7 @@ else if(!isLoggedIn && LoggedIn){
       <Route exact path="/logintech" element={<Logintech />}></Route> 
       <Route exact path="/registeremployer" element={<RegE/>}></Route>
       <Route path="/newsearch" element={<Newsearch />}></Route>
+      <Route path="/imagesSearch" element={<ImagesSearch />}></Route>
       
     </Routes>
   </Router>)
