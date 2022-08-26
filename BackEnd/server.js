@@ -6,6 +6,7 @@ const skillRoutes = require("./routes/skills");
 const usersRoutes = require("./routes/user");
 const HttpError = require("./models/http-error");
 const jobscore = require("./routes/jobScore")
+const nontechnical = require("./routes/nontech")
 const app = express();
 
 app.use(bodyParser.json());
@@ -22,6 +23,7 @@ app.use((req, res, next) => {
 }); //cors error
 
 app.use("/users", usersRoutes);
+app.use("/nontc", nontechnical);
 app.use("/jobs", jobRoutes);
 app.use("/skills", skillRoutes);
 app.use("/jobScore", jobscore);
