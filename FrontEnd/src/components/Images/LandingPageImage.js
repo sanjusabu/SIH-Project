@@ -3,8 +3,8 @@ import { Navigate } from "react-router-dom";
 import { useRequest } from "../../hooks/request-hook";
 import { useNavigate } from "react-router-dom";
 function LandingPageImage(props) {
-  const navigate = useNavigate()
-  const {sendRequest} =  useRequest()
+  const navigate = useNavigate();
+  const { sendRequest } = useRequest();
   const imgLink = props.imgLink;
   const jobType = props.jobType;
   const value = props.value;
@@ -23,21 +23,21 @@ function LandingPageImage(props) {
     "Road Repair Workers",
   ];
 
-  const handleClick = async(e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
     console.log(skillarr[e.target.value]);
     const response = await sendRequest(
       "http://localhost:5002/nontc/showjobs",
       "POST",
       JSON.stringify({
-        clicked:skillarr[e.target.value]
+        clicked: skillarr[e.target.value],
       }),
       {
         "Content-Type": "application/json",
       }
     );
-    console.log(response)
-    navigate("/imagesSearch",{state:response})
+    console.log(response);
+    navigate("/imagesSearch", { state: response });
   };
   let i = 0;
   return (
@@ -57,7 +57,13 @@ function LandingPageImage(props) {
           ></img>
           <br></br>
           {/* <button class="btn btn-dark">Gardening</button> */}
-          <button class="btn btn-dark jobBtn">{props.jobType}</button>
+          <button
+            class="btn btn-dark jobBtn"
+            value={value}
+            onClick={handleClick}
+          >
+            {props.jobType}
+          </button>
         </div>
       </div>
     </>
