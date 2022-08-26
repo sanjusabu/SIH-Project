@@ -22,12 +22,12 @@ body {
 }
 
 .form-control {
- width:250px;
+  width:100%;
 }
 
 .form-control input,
 .form-control label {
-  display: block;
+ 
 }
 
 .form-control label {
