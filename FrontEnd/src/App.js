@@ -36,7 +36,7 @@ function App() {
 
   const logout = useCallback(() => {
     setIsLoggedIn(false);
-    setuserId(0);
+    setuserId(null);
   }, []);
 
   useEffect(() => {
@@ -107,7 +107,7 @@ function App() {
         </Routes>
       </Router>
     );
-  } else {
+  } else if(!isLoggedIn && !LoggedIn) {
     routes = (
       <Router>
         <Routes>
@@ -127,7 +127,6 @@ function App() {
             element={
               <>
                 <Headers />
-      
                 <Search />
               </>
             }
@@ -146,6 +145,42 @@ function App() {
       </Router>
     );
   }
+
+else if(!isLoggedIn && LoggedIn){
+  routes=(  <Router>
+    <Routes>
+      <Route
+        exact
+        path="/images"
+        element={
+          <>
+            <Route exact path="/images" element={<Images />}></Route>
+          </>
+        }
+      ></Route>
+      <Route
+        exact
+        path="/Home"
+        element={
+          <>
+            <Headers />
+            <Search />
+          </>
+        }
+      ></Route>
+      <Route exact path="/login" element={<Login />}></Route>
+      <Route exact path="/loginemployer" element={<LoginE/>}></Route>
+      <Route exact path="/formd" element={<Formd />}></Route>
+      <Route exact path="/images" element={<Images />}></Route>
+      <Route exact path="/register" element={<Register />}></Route>
+      <Route exact path="/registertech" element={<Registertech />}></Route>
+      <Route exact path="/logintech" element={<Logintech />}></Route> 
+      <Route exact path="/registeremployer" element={<RegE/>}></Route>
+      <Route path="/newsearch" element={<Newsearch />}></Route>
+      
+    </Routes>
+  </Router>)
+}
   return (
     <>
     <AuthContext.Provider

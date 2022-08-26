@@ -1,7 +1,23 @@
 import React from "react";
 import classes from "./Home.module.css";
-
+import { useEffect } from "react";
+import { useRequest } from "../../hooks/request-hook";
 const Specialities = () => {
+//   const {sendRequest} =  useRequest()
+//   useEffect(()=>{
+
+//     const fetchTop = async()=>{
+//       const responseData = await sendRequest(
+//       "http://localhost:5002/jobs/topjobs",
+//       'GET',
+//       {
+//         "Content-Type": "application/json",
+//       }
+//     );
+
+//   }
+// fetchTop()
+// },[])
   return (
     <>
       <div className={classes.main}>
