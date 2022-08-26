@@ -75,8 +75,10 @@ const showjobs = (req,res,next)=>
 {
   const {clicked} = req.body
   // console.log(dataset)
-  console.log(showjobs)
-const response =  dataset.filter(dat =>dat.skills===clicked)
+  // console.log(showjobs)
+  let small = clicked.toLowerCase()
+const response =  dataset.filter(dat =>dat.skills===clicked || dat.skills===small)
+
 console.log(response)
 
   res.json(response)
