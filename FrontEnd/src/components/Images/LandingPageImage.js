@@ -42,13 +42,14 @@ function LandingPageImage(props) {
   let i = 0;
   return (
     <>
-      <link
+      {/* <link
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
         rel="stylesheet"
-      ></link>
+      ></link> */}
 
-      <div class="col-lg-4 col-sm-8">
-        <div class="thumbnail">
+      {/* <div className="col-lg-2 col-sm-8 imgCont"> */}
+      <div className="imgCont">
+        <div className="thumbnail">
           <img
             // src="https://onlyveggies.net/wp-content/uploads/2020/01/beautiful-woman-works-in-a-garden-near-the-house-HA2PMAQ-scaled.jpg"
             src={props.imgLink}
@@ -56,9 +57,7 @@ function LandingPageImage(props) {
           ></img>
           <br></br>
           {/* <button class="btn btn-dark">Gardening</button> */}
-          <button class="btn btn-dark" value={value} onClick={handleClick}>
-            {props.jobType}
-          </button>
+          <button class="btn btn-dark jobBtn">{props.jobType}</button>
         </div>
       </div>
     </>
