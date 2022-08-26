@@ -496,7 +496,7 @@
       },
       {
         "": 0,
-        "company": "Py Solutions",
+        "company": "Java Solutions",
         "joblocation_address": "Telangana",
         "payrate": 48500,
         "skills": 
@@ -505,9 +505,18 @@
       },
       {
         "": 0,
-        "company": "Py Solutions",
+        "company": "Java Developer",
         "joblocation_address": "UttarPradesh",
         "payrate": 57500,
+        "skills": 
+          "Java"
+        
+      },
+      {
+        "": 0,
+        "company": "Java Trainer",
+        "joblocation_address": "Dhanbad",
+        "payrate": 77500,
         "skills": 
           "Java"
         
