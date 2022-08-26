@@ -47,8 +47,9 @@ function LandingPageImage(props) {
         rel="stylesheet"
       ></link>
 
-      <div class="col-lg-4 col-sm-8">
-        <div class="thumbnail">
+      {/* <div class="col-lg-2 col-sm-8"> */}
+      <div className="imgCont">
+        <div class="thumbail">
           <img
             // src="https://onlyveggies.net/wp-content/uploads/2020/01/beautiful-woman-works-in-a-garden-near-the-house-HA2PMAQ-scaled.jpg"
             src={props.imgLink}
