@@ -55,6 +55,42 @@
       },
       {
         "": 0,
+        "company": "Geena Patel Farm",
+        "joblocation_address": "Delhi",
+        "payrate": 30000,
+        "skills": 
+          "Farmer"
+        
+      },
+      {
+        "": 0,
+        "company": "Advanta Limited",
+        "joblocation_address": "Mumbai",
+        "payrate": 7800,
+        "skills": 
+          "Farmer"
+        
+      },
+      {
+        "": 0,
+        "company": "Monsanto India",
+        "joblocation_address": "Hyderabad",
+        "payrate": 8900,
+        "skills": 
+          "Farmer"
+        
+      },
+      {
+        "": 0,
+        "company": "National Agro Industry",
+        "joblocation_address": "Bangalore",
+        "payrate": 9700,
+        "skills": 
+          "Farmer"
+        
+      },
+      {
+        "": 0,
         "company": "NOOR Labour Recruitment",
         "joblocation_address": "Bihar",
         "payrate": 50000,
