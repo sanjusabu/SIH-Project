@@ -1,15 +1,16 @@
 import React, { useEffect } from "react";
-import FormComponent from "./FormComponent";
+
 // import "react-table-6/react-table.css";
-import classes from "./Formd.module.css";
+import classes from "../LandingPage/Formd.module.css";
 // import { useEffect, useState } from "react";
 //import App from './App';
 //import * as React from 'react';
 import { useNavigate } from "react-router-dom";
 import { useRequest } from "../../hooks/request-hook";
+import FormComponent from "../LandingPage/FormComponent";
 let responseSum = 0;
 
-const Formd = () => {
+const Formdata = () => {
   const navigate = useNavigate();
   const uid = localStorage.getItem("userid");
   const { sendRequest } = useRequest();
@@ -29,62 +30,20 @@ const Formd = () => {
       // setEnteredSkill(" ");
       // console.log(EnteredSkill);
       const response = await sendRequest(
-        "http://localhost:5002/jobScore/addJobScore",
+        "http://localhost:5002/jobScore/addCurrJobScore",
         "POST",
         JSON.stringify({
           userid: localStorage.getItem("userid"),
           companyName: localStorage.getItem("companyName"),
-          jobScore: responseSum,
+          jobCurrScore: responseSum,
         }),
         {
           "Content-Type": "application/json",
         }
       );
     }
-    navigate("/landingpage");
+    navigate("/progresstrack");
   };
-  // useEffect(() => {
-  //   formSubmitHandler();
-  //   // navigate("/landingpage");
-  // }, [sendRequest]);
-  // console.log(response.skill.skills);
-  // useEffect(() => {
-  //   const getJobScore = async () => {
-  //     try {
-  //       if (localStorage.hasOwnProperty("userid")) {
-  //         const responseData = await sendRequest(
-  //           "http://localhost:5002/jobScore/getJobScore",
-  //           "POST",
-  //           JSON.stringify({
-  //             user: localStorage.getItem("userid"),
-  //           }),
-  //           {
-  //             "Content-Type": "application/json",
-  //           }
-  //         );
-  //         setScore(responseData);
-  //         console.log('hgygyg',responseData);
-  //         // setData(responseData)
-  //         //  setData(responseData.info)
-  //       }
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
-
-  //   getJobScore();
-  // }, [sendRequest]);
-
-  //   const formSubmitHandler = () => {
-  //   responseSum = 0;
-  //   for(let i=1;i<=5;i++){
-  //     let qn = "qn"+i;
-  //     console.log(qn);
-  //     responseSum += parseInt(document.querySelector(`input[name=${qn}]:checked`).value)
-
-  //   }
-  //   console.log(responseSum)
-  // };
 
   return (
     <>
@@ -123,4 +82,4 @@ const Formd = () => {
     </>
   );
 };
-export default Formd;
+export default Formdata;
