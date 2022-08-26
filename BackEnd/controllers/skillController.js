@@ -2,8 +2,10 @@ const Skills = require("../models/SkillModel");
 const HttpError = require("../models/http-error");
 
 const addskill = async (req, res, next) => {
-  const { userid, skills } = req.body;
+  let { userid, skills } = req.body;
   console.log(skills);
+  skills = skills.map(sk=>sk.toLowerCase())
+  console.log(skills,'dvkjdvnk')
   let existingSkills;
   existingSkills = await Skills.findOne({ userid: userid });
   if (existingSkills) {

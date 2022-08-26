@@ -60,7 +60,7 @@ const NavBar = () => {
               </li> 
               <li className="nav-item">
                 <Link className="nav-link active" to="/images">
-                  Search By Images
+                  Find Jobs By Images
                 </Link>
               </li>
               {/* <li className="nav-item">

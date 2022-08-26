@@ -11,7 +11,7 @@ const Newsearch = () => {
 
       <div className="container my-4">
         <div className="jobs">
-          <h1 className={classes.headd}>Jobs</h1>
+          <h1 className={classes.headd}>Available Jobs</h1>
           {location.state?.map((data) => (
             <div className={classes.optionss}>
               <h3 className={classes.titlee}>{data.company}</h3>
@@ -19,6 +19,7 @@ const Newsearch = () => {
               <h5 className={classes.timee}>{data.salary}</h5>
               <div className={classes.containerss}>
                 <ul className={classes.proglanguagee}>
+                  <li className={classes.timee}>Available Cities:{data.city}</li>
                   <li className={classes.listtt}>Skills:</li>
                   {data.skills.map((sub) => (
                     <li className={classes.listtt}>{sub}, </li>

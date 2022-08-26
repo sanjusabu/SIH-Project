@@ -4,13 +4,13 @@ const HttpError = require("../models/http-error");
 const express = require("express");
 const fs = require("fs");
 const Dataset = require("../JsonData/jobs.json");
-const skillSearch = require("../JsonData/jobsearch.json");
+const skillSearch = require("../JsonData/csvjson.json")
 const search = (req, res, next) => {
   // console.log("sanju")
   console.log(req.body);
   const toSearch = req.body.search;
   console.log(typeof toSearch);
-  const place = req.body.place;
+  // const place = req.body.place.toLowerCase();
 
   const response = Dataset.filter((data) =>
     data.job_description.includes(toSearch)
@@ -209,6 +209,7 @@ if(required_arr){
 }
 // console.log(sorted)
 const toSend = sorted.slice(0,10)
+console.log(toSend)
 res.json(toSend)
 }
 
