@@ -9,6 +9,225 @@
       
     },
     {
+      "": 0,
+      "company": "Sharma Carpenters",
+      "joblocation_address": "Mumbai",
+      "payrate": 20500,
+      "skills": 
+        "Carpenter"
+      
+    },
+{
+      "": 0,
+      "company": "Sanjay carpenting",
+      "joblocation_address": "Delhi",
+      "payrate": 35500,
+      "skills": 
+        "Carpenter"
+      
+    },
+{
+      "": 0,
+      "company": "Giri Carpenters",
+      "joblocation_address": "Hyderabad",
+      "payrate": 28500,
+      "skills": 
+        "Carpenter"
+      
+    },
+{
+      "": 0,
+      "company": "Raju carpenting",
+      "joblocation_address": "Bangalore",
+      "payrate": 31500,
+      "skills": 
+        "Carpenter"
+      
+    },
+{
+      "": 0,
+      "company": "Junior Electrician",
+      "joblocation_address": "Mumbai",
+      "payrate": 21500,
+      "skills": 
+        "Electrician"
+      
+    },
+{
+      "": 0,
+      "company": "Technician",
+      "joblocation_address": "Delhi",
+      "payrate": 31500,
+      "skills": 
+        "Electrician"
+      
+    },
+{
+      "": 0,
+      "company": "IT Electrician",
+      "joblocation_address": "Hyderabad",
+      "payrate": 29500,
+      "skills": 
+        "Electrician"
+      
+    },
+{
+      "": 0,
+      "company": "Junior Electrician",
+      "joblocation_address": "Bangalore",
+      "payrate": 31900,
+      "skills": 
+        "Electrician"
+      
+    },
+
+{
+      "": 0,
+      "company": "Zigru Services",
+      "joblocation_address": "Mumbai",
+      "payrate": 24500,
+      "skills": 
+        "Painters"
+      
+    },
+{
+      "": 0,
+      "company": "Gouri Painting Services",
+      "joblocation_address": "Delhi",
+      "payrate": 37500,
+      "skills": 
+        "Painters"
+      
+    },
+{
+      "": 0,
+      "company": "Paint Guru",
+      "joblocation_address": "Hyderabad",
+      "payrate": 20900,
+      "skills": 
+        "Painters"
+      
+    },
+{
+      "": 0,
+      "company": "Ananya Enterprises",
+      "joblocation_address": "Bangalore",
+      "payrate": 34800,
+      "skills": 
+        "Painters"
+      
+    },
+
+{
+      "": 0,
+      "company": "Pyhton Developer",
+      "joblocation_address": "Mumbai",
+      "payrate": 14500,
+      "skills": 
+        "Python"
+      
+    },
+{
+      "": 0,
+      "company": "Python Trainer",
+      "joblocation_address": "Delhi",
+      "payrate": 17500,
+      "skills": 
+        "Python"
+      
+    },
+{
+      "": 0,
+      "company": "Python Developer",
+      "joblocation_address": "Hyderabad",
+      "payrate": 29900,
+      "skills": 
+        "Python"
+      
+    },
+{
+      "": 0,
+      "company": "Python Trainer",
+      "joblocation_address": "Bangalore",
+      "payrate": 30800,
+      "skills": 
+        "Python"
+      
+    },
+
+{
+      "": 0,
+      "company": "Fast Care Plumbing",
+      "joblocation_address": "Mumbai",
+      "payrate": 14500,
+      "skills": 
+        "Plumber"
+      
+    },
+{
+      "": 0,
+      "company": "Plumbing Services",
+      "joblocation_address": "Delhi",
+      "payrate": 17500,
+      "skills": 
+        "Plumber"
+      
+    },
+{
+      "": 0,
+      "company": "Pradaata Plumbing Services",
+      "joblocation_address": "Hyderabad",
+      "payrate": 19900,
+      "skills": 
+        "Plumber"
+      
+    },
+{
+      "": 0,
+      "company": "Harsh Plumbing Services",
+      "joblocation_address": "Bangalore",
+      "payrate": 10800,
+      "skills": 
+        "Plumber"
+      
+    },
+{
+      "": 0,
+      "company": "Taktical Digital",
+      "joblocation_address": "Mumbai",
+      "payrate": 34500,
+      "skills": 
+        "Marketing"
+      
+    },
+{
+      "": 0,
+      "company": "Ignite Visibility",
+      "joblocation_address": "Delhi",
+      "payrate": 27500,
+      "skills": 
+        "Marketing"
+      
+    },
+{
+      "": 0,
+      "company": "Blue Fountain Media",
+      "joblocation_address": "Hyderabad",
+      "payrate": 39900,
+      "skills": 
+        "Marketing"
+      
+    },
+{
+      "": 0,
+      "company":"Nexusbee",
+      "joblocation_address": "Bangalore",
+      "payrate": 20800,
+      "skills": 
+        "Marketing"
+      
+    },
+    {
         "": 0,
         "company": "Hira Farms",
         "joblocation_address": "Punjab",
@@ -49,6 +268,42 @@
         "company": "Geena Patel Farm",
         "joblocation_address": "Bihar",
         "payrate": 10000,
+        "skills": 
+          "Farmer"
+        
+      },
+      {
+        "": 0,
+        "company": "Geena Patel Farm",
+        "joblocation_address": "Delhi",
+        "payrate": 30000,
+        "skills": 
+          "Farmer"
+        
+      },
+      {
+        "": 0,
+        "company": "Advanta Limited",
+        "joblocation_address": "Mumbai",
+        "payrate": 7800,
+        "skills": 
+          "Farmer"
+        
+      },
+      {
+        "": 0,
+        "company": "Monsanto India",
+        "joblocation_address": "Hyderabad",
+        "payrate": 8900,
+        "skills": 
+          "Farmer"
+        
+      },
+      {
+        "": 0,
+        "company": "National Agro Industry",
+        "joblocation_address": "Bangalore",
+        "payrate": 9700,
         "skills": 
           "Farmer"
         
@@ -529,5 +784,321 @@
         "skills": 
           "Carpenter"
         
-      }
+      },
+      
+      {
+        "": 0,
+        "company": "Staffingine",
+        "joblocation_address": "Mumbai",
+        "payrate": 20000,
+        "skills": 
+          "Java"
+        
+      },
+      {
+          "": 0,
+          "company": "Nlmesa",
+          "joblocation_address": "Bangalore",
+          "payrate": 250000,
+          "skills": 
+            "Java"
+          
+        },
+        {
+          "": 0,
+          "company": "Netcracker Technology",
+          "joblocation_address": "Hyderabad",
+          "payrate": 30000,
+          "skills": 
+            "Java"
+          
+        },
+        {
+            "": 0,
+            "company": "NIC",
+            "joblocation_address": "Delhi",
+            "payrate": 25000,
+            "skills": 
+              "Java"
+            
+          },
+          {
+            "": 0,
+            "company": "Sahara Motors",
+            "joblocation_address": "Mumbai",
+            "payrate": 35000,
+            "skills": 
+              "Car Repair Workers"
+            
+          },
+          {
+              "": 0,
+              "company": "Mars Auto Care",
+              "joblocation_address": "Bangalore",
+              "payrate": 20000,
+              "skills": 
+                "Car Repair Workers"
+              
+            },
+            {
+              "": 0,
+              "company": "RKS auto",
+              "joblocation_address": "Hyderabad",
+              "payrate": 10000,
+              "skills": 
+                "Car Repair Workers"
+              
+            },
+            {
+                "": 0,
+                "company": "Gas Mechanic Luke",
+                "joblocation_address": "Delhi",
+                "payrate": 21000,
+                "skills": 
+                  "Car Repair Workers"
+              },
+              {
+                "": 0,
+                "company": "Staff engine repair",
+                "joblocation_address": "Mumbai",
+                "payrate": 10500,
+                "skills": 
+                  "Cycle Repair Workers"
+                
+              },
+              {
+                  "": 0,
+                  "company": "Nlmesa",
+                  "joblocation_address": "Bangalore",
+                  "payrate": 10000,
+                  "skills": 
+                    "Cycle Repair Workers"
+                  
+                },
+                {
+                  "": 0,
+                  "company": "Netcracker Technology",
+                  "joblocation_address": "Hyderabad",
+                  "payrate": 19000,
+                  "skills": 
+                    "Cycle Repair Workers"
+                  
+                },
+                {
+                    "": 0,
+                    "company": "GoMechanic Luke",
+                    "joblocation_address": "Delhi",
+                    "payrate": 20000,
+                    "skills": 
+                      "Cycle Repair Workers"
+                    
+                  },
+                  {
+                    "": 0,
+                    "company": "Construction Administrator",
+                    "joblocation_address": "Mumbai",
+                    "payrate": 10500,
+                    "skills": 
+                      "Construction"
+                    
+                  },
+                  {
+                      "": 0,
+                      "company": "Jobspri",
+                      "joblocation_address": "Bangalore",
+                      "payrate": 10000,
+                      "skills": 
+                        "Construction"
+                      
+                    },
+                    {
+                      "": 0,
+                      "company": "Consttech",
+                      "joblocation_address": "Hyderabad",
+                      "payrate": 19000,
+                      "skills": 
+                        "Construction"
+                      
+                    },
+                    {
+                        "": 0,
+                        "company": "Carrer Innovator",
+                        "joblocation_address": "Delhi",
+                        "payrate": 20000,
+                        "skills": 
+                          "Construction"
+                        
+                      },
+                      {
+                        "":0,
+                        "company":"Skills International",
+                        "joblocation_address":"Mumbai",
+                        "payrate":73000,
+                        "skills":"C"
+                      },
+                      {
+                        "":0,
+                        "company":"India Skills Private Limited",
+                        "joblocation_address":"Delhi",
+                        "payrate":94000,
+                        "skills":"C"
+                      },
+                      {
+                        "":0,
+                        "company":"Unisrring Tech solutions",
+                        "joblocation_address":"Hyderabad",
+                        "payrate":73000,
+                        "skills":"C"
+                      },
+                      {
+                        "":0,
+                        "company":"Oracle",
+                        "joblocation_address":"Bangalore",
+                        "payrate":94000,
+                        "skills":"C"
+                      },
+                      {
+                        "":0,
+                        "company":"4284 Highways",
+                        "joblocation_address":"Mumbai",
+                        "payrate":73000,
+                        "skills":"Road Repair Workers"
+                      },
+                      {
+                        "":0,
+                        "company":"Picasu Financial",
+                        "joblocation_address":"Delhi",
+                        "payrate":94000,
+                        "skills":"Road Repair Workers"
+                      },
+                      {
+                        "":0,
+                        "company":"16820 Road Construction",
+                        "joblocation_address":"Hyderabad",
+                        "payrate":73000,
+                        "skills":"Road Repair Workers"
+                      },
+                      {
+                        "":0,
+                        "company":"7444 Road",
+                        "joblocation_address":"Bangalore",
+                        "payrate":94000,
+                        "skills":"Road Repair Workers"
+                      },
+                      {
+                        "":0,
+                        "company":"A-Z cleaning service",
+                        "joblocation_address":"Mumbai",
+                        "payrate":73000,
+                        "skills":"Cleaner"
+                      },
+                      {
+                        "":0,
+                        "company":"Karyamitr",
+                        "joblocation_address":"Delhi",
+                        "payrate":9000,
+                        "skills":"Cleaner"
+                      },
+                      {
+                        "":0,
+                        "company":"Demould",
+                        "joblocation_address":"Hyderabad",
+                        "payrate":13000,
+                        "skills":"Cleaner"
+                      },
+                      {
+                        "":0,
+                        "company":"Cleaning crew",
+                        "joblocation_address":"Bangalore",
+                        "payrate":94000,
+                        "skills":"Cleaner"
+                      
+                      },
+                      {
+                        "":0,
+                        "company":"MNR Solutions",
+                        "joblocation_address":"Mumbai",
+                        "payrate":73000,
+                        "skills":"C++"
+                      },
+                      {
+                        "":0,
+                        "company":"Glan Management Consultancy",
+                        "joblocation_address":"Delhi",
+                        "payrate":9000,
+                        "skills":"C++"
+                      },
+                      {
+                        "":0,
+                        "company":"United Force Technologies",
+                        "joblocation_address":"Hyderabad",
+                        "payrate":13000,
+                        "skills":"C++"
+                      },
+                      {
+                        "":0,
+                        "company":"UMind Consulting",
+                        "joblocation_address":"Bangalore",
+                        "payrate":94000,
+                        "skills":"C++"
+                      },
+
+                      {
+                        "":0,
+                        "company":"Janani Appartment HouseNumber:123",
+                        "joblocation_address":"Mumbai",
+                        "payrate":73000,
+                        "skills":"House Keeper"
+                      },
+                      {
+                        "":0,
+                        "company":"Dhee appartments HouseNumber:156",
+                        "joblocation_address":"Delhi",
+                        "payrate":9000,
+                        "skills":"House Keeper"
+                      },
+                      {
+                        "":0,
+                        "company":"Dhruv Appartments HouseNumber:455",
+                        "joblocation_address":"Hyderabad",
+                        "payrate":13000,
+                        "skills":"House Keeper"
+                      },
+                      {
+                        "":0,
+                        "company":"UMind Consulting",
+                        "joblocation_address":"Bangalore",
+                        "payrate":94000,
+                        "skills":"House Keeper"
+                      },
+                      
+                      {
+                        "":0,
+                        "company":"Dhhuv appartments HouseNumber:163",
+                        "joblocation_address":"Delhi",
+                        "payrate":9000,
+                        "skills":"Chef"
+                      },
+                      {
+                        "":0,
+                        "company":"Dheeraj Appartments HouseNumber:164",
+                        "joblocation_address":"Hyderabad",
+                        "payrate":13000,
+                        "skills":"Chef"
+                      },
+                      {
+                        "":0,
+                        "company":"Sabu Restaurant",
+                        "joblocation_address":"Bangalore",
+                        "payrate":94000,
+                        "skills":"Chef"
+                      },
+                      {
+                        "":0,
+                        "company":"Raj Dhaba",
+                        "joblocation_address":"Mumbai",
+                        "payrate":94000,
+                        "skills":"Chef"
+                      }
+
     ]

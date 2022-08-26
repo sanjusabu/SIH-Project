@@ -45,13 +45,15 @@ export default function Images() {
 
       <div className="rows">
    
-        <LandingPageImage
+      <LandingPageImage
           imgLink={
-            "https://www.indiawaterportal.org/sites/default/files/styles/node_lead_image/public/iwp/tea_garden_0.jpg?itok=c6Yop2ON"
+            "https://www.jagranjosh.com/imported/images/E/GK/agriculture_infrastructure_fund_cabinet_approval.jpg"
           }
-          jobType={"Gardening"}
-          value={0}
+          jobType={"Small Farmers"}
+          value={16}
         />
+
+
         
         <LandingPageImage
           imgLink={
@@ -180,8 +182,15 @@ export default function Images() {
             "https://th.bing.com/th/id/OIP._Lm_T3scKhVEVFC54gcRxwHaE8?w=277&h=185&c=7&r=0&o=5&pid=1.7"
           }
           jobType={"Java"}
-          value={15}
-        /></div>
+          value={15}/>
+          <LandingPageImage
+          imgLink={
+            "https://www.indiawaterportal.org/sites/default/files/styles/node_lead_image/public/iwp/tea_garden_0.jpg?itok=c6Yop2ON"
+          }
+          jobType={"Gardening"}
+          value={0}
+        />
+        </div>
 
       
     </>
