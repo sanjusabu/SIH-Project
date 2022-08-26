@@ -202,8 +202,9 @@ skillSearch.map(data=>{
     }
   }
   )
-  // console.log(required_arr)
+  console.log(required_arr)
   let sorted =[]
+  // console.log(required_arr)
 if(required_arr){
   sorted = required_arr.slice().sort((a,b)=> b.matched- a.matched);
 }
