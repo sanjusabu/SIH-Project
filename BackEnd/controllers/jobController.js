@@ -212,6 +212,11 @@ const toSend = sorted.slice(0,10)
 res.json(toSend)
 }
 
+const topjobs = async(req,res,next)=>
+{
+  console.log(Dataset)
+}
+
 exports.prevjobs = prevjobs;
 exports.addcurrjobs = addcurrjobs;
 exports.getprevjobs = getprevjobs;
@@ -223,6 +228,7 @@ exports.getcurrjobs = getcurrjobs;
 exports.getsalaray = getsalaray;
 
 exports.recommendjobs = recommendjobs
+exports.topjobs = topjobs
 // const targetURL = `https://api.adzuna.com/v1/api/jobs/in/search/1?&results_per_page=20&content-type=application/json&app_id=da3b4b1b&app_key=36a0c2ed8bb2374466527f58761a7f3d&what=${toSearch}&where=${place}`;
 
 // axios.get(targetURL)

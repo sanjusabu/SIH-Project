@@ -14,4 +14,5 @@ router.post("/loginsearch", jobController.loginsearch);
 router.post("/getsalaray", jobController.getsalaray);
 router.post("/search", jobController.search);
 router.post('/recommendjobs',jobController.recommendjobs)
+router.post('/topjobs',jobController.topjobs)
 module.exports = router;
