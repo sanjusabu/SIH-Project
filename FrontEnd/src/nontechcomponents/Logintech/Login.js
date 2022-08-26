@@ -106,7 +106,7 @@ const Logintech = () => {
             <div className={classes.inpw}>
               <input
                 className={classes.passUL}
-                type="otp"
+                type="password"
                 id="set_otp"
                 border-radius="8em"
                 size="38"

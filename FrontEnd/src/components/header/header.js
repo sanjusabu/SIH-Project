@@ -102,15 +102,7 @@ const Headers = () => {
                     </ul>
                   </li>
                 </li>
-                {/* <li className="nav-item1">
-                  <Link
-                    className="nav-link active"
-                    aria-current="page"
-                    to="/images"
-                  >
-                    Form
-                  </Link>
-                </li> */}
+                
                 <li className="nav-item">
                   <div id="google_translate_element"></div>
                 </li>
@@ -123,19 +115,3 @@ const Headers = () => {
   );
 };
 export default Headers;
-
-{
-  /* <ul>
-  {!auth.isLoggedIn && (
-    <li>
-      <NavLink to="/login">Login</NavLink>
-    </li>
-  )}
-
-  {!auth.isLoggedIn && (
-    <li>
-      <NavLink to="register">Register</NavLink>
-    </li>
-  )}
-</ul>; */
-}
