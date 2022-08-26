@@ -19,12 +19,17 @@ const Newsearch = () => {
               <h5 className={classes.timee}>{data.salary}</h5>
               <div className={classes.containerss}>
                 <ul className={classes.proglanguagee}>
-                  <li className={classes.timee}>Available Cities:{data.city}</li>
+                  <li className={classes.listtt}>
+                    Available Cities:{data.city}
+                  </li>
+                </ul>
+              </div>
+              <div className={classes.containerss}>
+                <ul className={classes.proglanguagee}>
                   <li className={classes.listtt}>Skills:</li>
                   {data.skills.map((sub) => (
                     <li className={classes.listtt}>{sub}, </li>
                   ))}
-                  <br />
                 </ul>
               </div>
             </div>
