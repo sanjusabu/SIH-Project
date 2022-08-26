@@ -69,7 +69,7 @@ const Search = () => {
                 autoComplete="on"
               />
             </div>
-            <button className="btn btn-outline-success" type="submit">
+            <button className="btn btn-outline-success mx-2" type="submit">
               Search
             </button>
           </form>
