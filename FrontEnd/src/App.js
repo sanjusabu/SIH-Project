@@ -18,10 +18,15 @@ import Images from "./components/Images/Images";
 
 import Progress from "./components/Progress/Progress";
 import Newsearch from "./components/newsearch/newsearch";
+import Registertech from "./nontechcomponents/Registertech/Register";
+import Logintech from "./nontechcomponents/Logintech/Login";
+import { HomeContext } from "./context/homecontext";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [LoggedIn, setLoggedIn] = useState(false);
   const [userId, setuserId] = useState("");
+  const [userNumber, setuserNumber] = useState(0);
 
   const login = useCallback((uid) => {
     localStorage.setItem("userid", uid);
@@ -31,13 +36,33 @@ function App() {
 
   const logout = useCallback(() => {
     setIsLoggedIn(false);
-    setuserId(null);
+    setuserId(0);
   }, []);
 
   useEffect(() => {
     if (localStorage.hasOwnProperty("userid")) {
       setuserId(localStorage.getItem("userid"));
       setIsLoggedIn(true);
+    }
+  }, []);
+
+  
+  const ologin = useCallback((un) => {
+    console.log(un)
+    localStorage.setItem("userNumber", un);
+    setLoggedIn(true);
+    setuserNumber(localStorage.getItem("userNumber"));
+  }, []);
+
+  const ologout = useCallback(() => {
+    setLoggedIn(false);
+    setuserNumber(0);
+  }, []);
+
+  useEffect(() => {
+    if (localStorage.hasOwnProperty("userNumber")) {
+      setuserNumber(localStorage.getItem("userNumber"));
+      setLoggedIn(true);
     }
   }, []);
 
@@ -112,6 +137,8 @@ function App() {
           <Route exact path="/formd" element={<Formd />}></Route>
           <Route exact path="/images" element={<Images />}></Route>
           <Route exact path="/register" element={<Register />}></Route>
+          <Route exact path="/registertech" element={<Registertech />}></Route>
+          <Route exact path="/logintech" element={<Logintech />}></Route> 
           <Route exact path="/registeremployer" element={<RegE/>}></Route>
           <Route path="/newsearch" element={<Newsearch />}></Route>
           
@@ -120,6 +147,7 @@ function App() {
     );
   }
   return (
+    <>
     <AuthContext.Provider
       value={{
         isLoggedIn: isLoggedIn,
@@ -130,6 +158,16 @@ function App() {
     >
       <main>{routes}</main>
     </AuthContext.Provider>
+<HomeContext.Provider
+    value={{
+      LoggedIn: LoggedIn,
+      userNumber: userNumber,
+      ologin: ologin,
+      ologout: ologout,
+    }} >
+
+</HomeContext.Provider>
+</>
   );
 }
 

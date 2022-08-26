@@ -38,7 +38,10 @@ const Headers = () => {
           {!auth.isLoggedIn && (
             <div className="rightside">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                  
+                  
                 <li className="nav-item1">
+
                   <li className="nav-item dropdown">
                     <Link
                       className="nav-link active dropdown-toggle"
@@ -49,10 +52,11 @@ const Headers = () => {
                     >
                       Login
                     </Link>
+
                     <ul className="dropdown-menu">
                       <li>
                         <Link className="dropdown-item" to="/login">
-                          Login As Employee
+                          Login(Technical)
                         </Link>
                       </li>
                       <li>
@@ -60,6 +64,11 @@ const Headers = () => {
                           Login as Employer
                         </Link>
                       </li>
+                    <li className="nav-item">
+                    <Link className="dropdown-item" to="/logintech">
+                      Login(Non - Technical work )
+                    </Link>
+                  </li>
                     </ul>
                   </li>
                 </li>
@@ -77,7 +86,7 @@ const Headers = () => {
                     <ul className="dropdown-menu">
                       <li>
                         <Link className="dropdown-item" to="/register">
-                          Register As Employee
+                          Register(Technical)
                         </Link>
                       </li>
                       <li>
@@ -85,28 +94,15 @@ const Headers = () => {
                           Register as Employer
                         </Link>
                       </li>
+                    <li className="nav-item">
+                    <Link className="dropdown-item" to="/registertech">
+                      Register(Non-Technical work )
+                    </Link>
+                  </li>
                     </ul>
                   </li>
                 </li>
-                <li className="nav-item1">
-                  <Link
-                    className="nav-link active"
-                    aria-current="page"
-                    to="/images"
-                  >
-                    Form
-                  </Link>
-                </li>
-
-                <li className="nav-item1">
-                  <Link
-                    className="nav-link active"
-                    aria-current="page"
-                    to="/formd"
-                  >
-                    Form
-                  </Link>
-                </li>
+                
                 <li className="nav-item">
                   <div id="google_translate_element"></div>
                 </li>
@@ -119,19 +115,3 @@ const Headers = () => {
   );
 };
 export default Headers;
-
-{
-  /* <ul>
-  {!auth.isLoggedIn && (
-    <li>
-      <NavLink to="/login">Login</NavLink>
-    </li>
-  )}
-
-  {!auth.isLoggedIn && (
-    <li>
-      <NavLink to="register">Register</NavLink>
-    </li>
-  )}
-</ul>; */
-}
