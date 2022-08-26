@@ -38,7 +38,7 @@ export default function Images() {
         </div>
       </div> */}
 
-
+<h1 ><b>Choose A Job Of Your Choice</b></h1>
 
       <div className="rows">
    
@@ -80,10 +80,10 @@ export default function Images() {
         
         <LandingPageImage
           imgLink={
-            "https://thumbs.dreamstime.com/b/indian-street-repair-bicycles-ahmedabad-photographing-october-ahmedabad-india-62392476.jpg"
+            "https://th.bing.com/th/id/OIP.FF6mLRf4uAUbp7tXsZ5GvAHaHa?w=192&h=192&c=7&r=0&o=5&pid=1.7"
           }
-          jobType={"Cycle Repair Workers"}
-          value={4}
+          jobType={"Python"}
+          value={14}
         /></div>
       {/* </div> */}
       <div className="rows">
@@ -96,10 +96,10 @@ export default function Images() {
         />
         <LandingPageImage
           imgLink={
-            "https://th.bing.com/th/id/R.db79993b6ab6d6af2df890af917232b3?rik=agKjFg4xMbdmDA&riu=http%3a%2f%2fgdb.voanews.com%2f461B7A5A-4278-45D5-B793-1EA44DD9B53D_mw1024_s_n.jpg&ehk=Fbllu1LeHQ1mNn6jvLjEuqbeWgnsPWu1a2jHcfyrqqk%3d&risl=&pid=ImgRaw&r=0"
+            "https://th.bing.com/th/id/R.c032304329ae0588591a44c9cbbb7054?rik=l6QCnfjKaEkpMQ&riu=http%3a%2f%2fs17026.pcdn.co%2fwp-content%2fuploads%2fsites%2f9%2f2016%2f07%2fMarketing.jpg&ehk=i3v7w76xL%2bhI4%2bObjLwlyd0bxwBBDhT%2fzMzTJP%2foXkM%3d&risl=&pid=ImgRaw&r=0"
           }
-          jobType={" Car Repair Workers"}
-          value={6}
+          jobType={"Marketing"}
+          value={14}
         />
         <LandingPageImage
           imgLink={
@@ -117,10 +117,10 @@ export default function Images() {
         />
         <LandingPageImage
           imgLink={
-            "https://th.bing.com/th/id/R.1fd9888852e014e9b8ab0260ce56d259?rik=eHzQZ0G8SH83Cw&riu=http%3a%2f%2fi.dawn.com%2flarge%2f2016%2f01%2f56aa49056c785.jpg&ehk=pnyslehfEhO3YNJoe%2fHQHm1TdYqk7wpSPJ%2bSvjLh7mM%3d&risl=&pid=ImgRaw&r=0"
+            "https://th.bing.com/th/id/OIP.Su7THg9xW9Cm2PvGNfMqcwHaHa?w=173&h=180&c=7&r=0&o=5&pid=1.7"
           }
-          jobType={"Construction"}
-          value={9}
+          jobType={"C++"}
+          value={13}
         />
       </div>
       <div className="rows">
@@ -137,6 +137,37 @@ export default function Images() {
           }
           jobType={"Road Repair Workers"}
           value={11}
+        />
+        <LandingPageImage
+          imgLink={
+            "https://th.bing.com/th/id/OIP.CGb5i24b-85d19BU0cd-ZwHaGd?w=198&h=180&c=7&r=0&o=5&pid=1.7"
+          }
+          jobType={"C"}
+          value={12}
+        />
+        <LandingPageImage
+          imgLink={
+            
+            "https://th.bing.com/th/id/R.1fd9888852e014e9b8ab0260ce56d259?rik=eHzQZ0G8SH83Cw&riu=http%3a%2f%2fi.dawn.com%2flarge%2f2016%2f01%2f56aa49056c785.jpg&ehk=pnyslehfEhO3YNJoe%2fHQHm1TdYqk7wpSPJ%2bSvjLh7mM%3d&risl=&pid=ImgRaw&r=0"
+          }
+          jobType={"Construction"}
+          value={9}
+        />
+        <LandingPageImage
+          imgLink={
+            "https://thumbs.dreamstime.com/b/indian-street-repair-bicycles-ahmedabad-photographing-october-ahmedabad-india-62392476.jpg"
+           
+          }
+          jobType={"Cycle Repair Workers"}
+          value={4}
+        />
+        <LandingPageImage
+          imgLink={
+            "https://th.bing.com/th/id/R.db79993b6ab6d6af2df890af917232b3?rik=agKjFg4xMbdmDA&riu=http%3a%2f%2fgdb.voanews.com%2f461B7A5A-4278-45D5-B793-1EA44DD9B53D_mw1024_s_n.jpg&ehk=Fbllu1LeHQ1mNn6jvLjEuqbeWgnsPWu1a2jHcfyrqqk%3d&risl=&pid=ImgRaw&r=0"
+            
+          }
+          jobType={"Car Repair Workers"}
+          value={6}
         />
       </div>
     </>
