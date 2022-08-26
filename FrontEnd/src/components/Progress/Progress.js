@@ -87,18 +87,18 @@ const Progress = () => {
       <div className="container my-3">
         <div className={classes.containers}>
           <div className={classes.lefttt}>
-            <div className="container">
+            <div className="container my-3">
               <BarGraph />
             </div>
           </div>
           <div className={classes.rightss}>
-            <div className="container">
+            <div className="container my-3">
               <Progressbar score={score[0]} />
             </div>
           </div>
         </div>
       </div>
-      <div className={["container", classes.skillcontainer].join(" ")}>
+      {/* <div className={["container", classes.skillcontainer].join(" ")}>
         <div className={["row", classes.footcontainer].join(" ")}>
           <h2 className="p-2 mb-3">Skills You should Learn</h2>
           <div className="col-md-4">
@@ -141,7 +141,7 @@ const Progress = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

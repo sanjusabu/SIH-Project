@@ -10,33 +10,6 @@ import classes from "./Images.module.css";
 export default function Images() {
   return (
     <>
-      {/* <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
-        rel="stylesheet"
-      ></link> */}
-      {/* <div class="row match-to-row"> */}
-
-      {/* <div className="container">
-        <div className="row">
-          
-          <div className={["col-md-4", classes.main1].join(" ")}>
-            <h4>Apisero</h4>
-            <h6>Rating: 4.2</h6>
-            <h6>Reviews: 113</h6>
-          </div>
-          <div className={["col-md-4", classes.main1].join(" ")}>
-            <h4>Apisero</h4>
-            <h6>Rating: 4.2</h6>
-            <h6>Reviews: 113</h6>
-          </div>
-          <div className={["col-md-4", classes.main1].join(" ")}>
-            <h4>Apisero</h4>
-            <h6>Rating: 4.2</h6>
-            <h6>Reviews: 113</h6>
-          </div>
-        </div>
-      </div> */}
-
       <h1>
         <b>Choose A Job Of Your Choice</b>
       </h1>
