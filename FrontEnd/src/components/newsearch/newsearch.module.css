@@ -31,6 +31,9 @@
   list-style: none;
   margin: 3px;
 }
+.listt {
+  list-style: none;
+}
 .containerss {
   display: flex;
   justify-content: center;
