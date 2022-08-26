@@ -15,70 +15,104 @@ export default function Images() {
         rel="stylesheet"
       ></link> */}
       {/* <div class="row match-to-row"> */}
+
+
+      {/* <div className="container">
+        <div className="row">
+          
+          <div className={["col-md-4", classes.main1].join(" ")}>
+            <h4>Apisero</h4>
+            <h6>Rating: 4.2</h6>
+            <h6>Reviews: 113</h6>
+          </div>
+          <div className={["col-md-4", classes.main1].join(" ")}>
+            <h4>Apisero</h4>
+            <h6>Rating: 4.2</h6>
+            <h6>Reviews: 113</h6>
+          </div>
+          <div className={["col-md-4", classes.main1].join(" ")}>
+            <h4>Apisero</h4>
+            <h6>Rating: 4.2</h6>
+            <h6>Reviews: 113</h6>
+          </div>
+        </div>
+      </div> */}
+
+
+
       <div className="rows">
+   
         <LandingPageImage
           imgLink={
-            "https://onlyveggies.net/wp-content/uploads/2020/01/beautiful-woman-works-in-a-garden-near-the-house-HA2PMAQ-scaled.jpg"
+            "https://www.indiawaterportal.org/sites/default/files/styles/node_lead_image/public/iwp/tea_garden_0.jpg?itok=c6Yop2ON"
           }
           jobType={"Gardening"}
           value={0}
         />
+        
         <LandingPageImage
           imgLink={
-            "https://liveblogspot.com/wp-content/uploads/2018/11/Carpenter-1.jpg"
+            "https://thumbs.dreamstime.com/b/indian-village-carpenter-working-wooden-work-factory-indian-village-carpenter-working-wooden-work-factory-logs-cutting-162009331.jpg"
           }
           jobType={"Carpenter"}
           value={1}
         />
+        
         <LandingPageImage
           imgLink={
-            "https://th.bing.com/th/id/OIP.xeye48mrx1p-leouvHeaOwHaEo?pid=ImgDet&rs=1 "
+            "https://st2.depositphotos.com/1005682/12187/i/950/depositphotos_121872246-stock-photo-indian-male-electrician.jpg "
           }
           jobType={"Electrician "}
           value={2}
-        />
+        /> 
+         
         <LandingPageImage
           imgLink={
-            "https://th.bing.com/th/id/R.b141de38be660a05cccb34d5da36371c?rik=y1USBrD9aLGcuw&riu=http%3a%2f%2fwww.superpainter.com.au%2fwp-content%2fuploads%2f2013%2f02%2fpainter.jpg&ehk=lAGUYUP8IGNQttztduOicvUIPsf1gspDWIEcft%2bPPBM%3d&risl=&pid=ImgRaw&r=0 "
+            "https://th.bing.com/th/id/R.bb3215a887dc847a3fec3b0406b2fc25?rik=AYnXF3b6A83lag&riu=http%3a%2f%2fwww.mediumspot.com%2fwp-content%2fuploads%2f2020%2f06%2fHouse-Painter11-880x528.jpg&ehk=mdXDDCQFMyp7UA2j9Fo5byDU%2brF6INjD%2boMdxm%2b8%2fLU%3d&risl=&pid=ImgRaw&r=0 "
           }
           jobType={"Painters "}
           value={3}
         />
+        {/* </div></div> */}
+        
+
+        
+        
         <LandingPageImage
           imgLink={
-            "https://thumbs.dreamstime.com/b/street-repair-bicycles-master-streets-chinese-cities-bicycle-stalls-55399815.jpg"
+            "https://thumbs.dreamstime.com/b/indian-street-repair-bicycles-ahmedabad-photographing-october-ahmedabad-india-62392476.jpg"
           }
           jobType={"Cycle Repair Workers"}
           value={4}
-        />
-      </div>
+        /></div>
+      {/* </div> */}
       <div className="rows">
         <LandingPageImage
           imgLink={
-            "https://mydecorative.com/wp-content/uploads/2020/07/plumbing-services.jpg"
+            "https://i.ytimg.com/vi/ueIyo4QkH7E/maxresdefault.jpg"
           }
           jobType={"Plumbers"}
           value={5}
         />
         <LandingPageImage
           imgLink={
-            "https://th.bing.com/th/id/OIP.BClDMBPqI7sT6qcoKc4JFQHaEK?pid=ImgDet&rs=1"
+            "https://th.bing.com/th/id/R.db79993b6ab6d6af2df890af917232b3?rik=agKjFg4xMbdmDA&riu=http%3a%2f%2fgdb.voanews.com%2f461B7A5A-4278-45D5-B793-1EA44DD9B53D_mw1024_s_n.jpg&ehk=Fbllu1LeHQ1mNn6jvLjEuqbeWgnsPWu1a2jHcfyrqqk%3d&risl=&pid=ImgRaw&r=0"
           }
           jobType={" Car Repair Workers"}
           value={6}
         />
         <LandingPageImage
           imgLink={
-            "https://media.gettyimages.com/photos/house-keeper-making-the-bed-laying-out-the-pillows-looking-happy-and-picture-id911864000"
+            "https://th.bing.com/th/id/R.e20de233719c470f7501d1b6d736337c?rik=Jmz8Rjkesn%2fO2g&riu=http%3a%2f%2fwww.indianwomenblog.org%2fwp-content%2fuploads%2f2017%2f08%2fcover-26.jpg&ehk=1fqbULZlnzWM8crV7VMWPgswxHi8sFMXfsH%2bO6CSH8A%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"
           }
           jobType={"House Keeper"}
           value={7}
         />
         <LandingPageImage
           imgLink={
-            "https://th.bing.com/th/id/OIP.7SG17x2KxY9ocnk3W2GYFQHaE6?pid=ImgDet&rs=1"
+            "https://thumbs.dreamstime.com/z/jodhpur-india-nov-indian-women-cooking-traditional-food-popular-tourist-destination-featuring-many-palaces-forts-136054221.jpg"
           }
-          jobType={"Chef"}
+          jobType={"House Cook"}
           value={8}
         />
         <LandingPageImage
@@ -92,14 +126,14 @@ export default function Images() {
       <div className="rows">
         <LandingPageImage
           imgLink={
-            "https://www.homeshaastra.com/wp-content/uploads/2020/04/Home-Cleaning-During-COVID-19-Pandemic-850x560.jpg"
+            "https://3.imimg.com/data3/MK/XS/MY-6721998/housekeeping-security-services-500x500.jpg"
           }
           jobType={"Cleaner"}
           value={10}
         />
         <LandingPageImage
           imgLink={
-            "https://media.istockphoto.com/photos/road-maintenance-workers-fixing-the-cracks-and-potholes-picture-id538907316"
+            "https://www.hindustantimes.com/rf/image_size_960x540/HT/p2/2017/03/31/Pictures/akbarpur-construction-protection-wednesday-district-resumed-between_d1131e8c-163f-11e7-a5d6-c47fceabb9c0.jpg"
           }
           jobType={"Road Repair Workers"}
           value={11}
