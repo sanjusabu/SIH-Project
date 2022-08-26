@@ -85,9 +85,11 @@ const Headers = () => {
                     </Link> */}
                   
                       <li>
+                     
                         <Link className="nav-item" to="/register">
-                          Register with email
+                        <button class="btn btn-dark">Register with email</button>
                         </Link>
+                        
                       </li>
                       {/* <li>
                         <Link className="dropdown-item" to="/registeremployer">
