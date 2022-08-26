@@ -22,6 +22,7 @@ import Registertech from "./nontechcomponents/Registertech/Register";
 import Logintech from "./nontechcomponents/Logintech/Login";
 // import { HomeContext } from "./context/homecontext";
 import ImagesSearch from "./components/imagesSearch/imagesSearch";
+import Formdata from "./components/Progress/Formdata";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   // const [LoggedIn, setLoggedIn] = useState(false);
@@ -45,9 +46,6 @@ function App() {
       setIsLoggedIn(true);
     }
   }, []);
-
-  
-
 
   let routes;
   if (isLoggedIn) {
@@ -79,20 +77,20 @@ function App() {
           <Route path="/newsearch" element={<Newsearch />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route exact path="/formd" element={<Formd />}></Route>
-
+          <Route exact path="/formdata" element={<Formdata />}></Route>
           <Route
             exact
             path="/addpreviousjobs"
             element={<Addprevjobs />}
           ></Route>
           <Route exact path="/addcurrjobs" element={<Addcurrjobs />}></Route>
-        <Route path="/imagesSearch" element={<ImagesSearch />}></Route>
+          <Route path="/imagesSearch" element={<ImagesSearch />}></Route>
           <Route exact path="/progresstrack" element={<Progress />}></Route>
-        <Route exact path="/images" element={<Images />}></Route>
+          <Route exact path="/images" element={<Images />}></Route>
         </Routes>
       </Router>
     );
-  } else  {
+  } else {
     routes = (
       <Router>
         <Routes>
@@ -121,30 +119,27 @@ function App() {
           {/* <Route exact path="/formd" element={<Formd />}></Route> */}
           <Route exact path="/register" element={<Register />}></Route>
           {/* <Route exact path="/registerOTP" element={<Registertech />}></Route> */}
-          <Route exact path="/loginOTP" element={<Logintech />}></Route> 
+          <Route exact path="/loginOTP" element={<Logintech />}></Route>
           {/* <Route exact path="/registeremployer" element={<RegE/>}></Route> */}
           <Route path="/newsearch" element={<Newsearch />}></Route>
-          
         </Routes>
       </Router>
     );
   }
 
-
   return (
     <>
-    <AuthContext.Provider
-      value={{
-        isLoggedIn: isLoggedIn,
-        userId: userId,
-        login: login,
-        logout: logout,
-      }}
-    >
-      <main>{routes}</main>
-    </AuthContext.Provider>
-
-</>
+      <AuthContext.Provider
+        value={{
+          isLoggedIn: isLoggedIn,
+          userId: userId,
+          login: login,
+          logout: logout,
+        }}
+      >
+        <main>{routes}</main>
+      </AuthContext.Provider>
+    </>
   );
 }
 

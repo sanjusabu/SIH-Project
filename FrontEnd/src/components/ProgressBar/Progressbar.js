@@ -3,13 +3,11 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import classes from "./progressbar.module.css";
 
-function Progressbar() {
+function Progressbar(props) {
   const [percentage, setPercentage] = useState(0);
-  let percent = 75;
-
   useEffect(() => {
     setTimeout(() => {
-      if (percentage < percent) {
+      if (percentage < props.score) {
         setPercentage(percentage + 1);
       }
     }, 15);
@@ -19,7 +17,10 @@ function Progressbar() {
     <div className="app">
       <h2 className={classes.jobsatis}>Current Job Satisfaction</h2>
       <div className="container" style={{ width: 240 }}>
-        <CircularProgressbar value={percentage} text={`${percentage}%`} />
+        <CircularProgressbar
+          value={props.score * 2}
+          text={`${props.score * 2}%`}
+        />
       </div>
     </div>
   );

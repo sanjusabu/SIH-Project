@@ -12,7 +12,8 @@ import SalarySatisfaction from "./SalarySatisfaction";
 const Progress = () => {
   const { sendRequest } = useRequest();
   const [currJobs, setCurrJobs] = useState([]);
-  var temp2=[1]
+  const [score, setScore] = useState([]);
+  var temp2 = [1];
   useEffect(() => {
     const fetchcurrJobs = async () => {
       try {
@@ -33,9 +34,26 @@ const Progress = () => {
         console.log(err);
       }
     };
+    const getCurrJobScore = async () => {
+      if (localStorage.hasOwnProperty("userid")) {
+        const responseData = await sendRequest(
+          "http://localhost:5002/jobScore/getCurrJobScore",
+          "POST",
+          JSON.stringify({
+            userid: localStorage.getItem("userid"),
+          }),
+          {
+            "Content-Type": "application/json",
+          }
+        );
+        setScore(responseData);
+        console.log("gygyg", responseData);
+      }
+    };
+    getCurrJobScore();
     fetchcurrJobs();
   }, [sendRequest]);
-
+  let i = 0;
   return (
     <>
       <NavBar />
@@ -46,23 +64,22 @@ const Progress = () => {
       </div>
       <div className="container">
         <div className="row">
-          
-          {
-          currJobs.map((data,index) => {
-            if ((currJobs.length - 1)==index)
-            return (
-              <div className="col-md-4" key={index}>
-                <CurrJobdetails
-                  compname={currJobs[currJobs.length - 1].compname}
-                  duration={currJobs[currJobs.length - 1].duration}
-                  salary={currJobs[currJobs.length - 1].salary}
-                  position={currJobs[currJobs.length - 1].position}
-                  location={currJobs[currJobs.length - 1].location}
-                />
-              </div>
-            );
+          {currJobs.map((data, index) => {
+            if (currJobs.length - 1 === index)
+              return (
+                <div className="col-md-4" key={index}>
+                  <CurrJobdetails
+                    compname={currJobs[currJobs.length - 1].compname}
+                    duration={currJobs[currJobs.length - 1].duration}
+                    salary={currJobs[currJobs.length - 1].salary}
+                    position={currJobs[currJobs.length - 1].position}
+                    location={currJobs[currJobs.length - 1].location}
+                    score={score[i++]}
+                  />
+                </div>
+              );
           })}
-           <div className="col-md-4">
+          <div className="col-md-4">
             <SalarySatisfaction currentJob={currJobs[currJobs.length - 1]} />
           </div>
         </div>
@@ -76,7 +93,7 @@ const Progress = () => {
           </div>
           <div className={classes.rightss}>
             <div className="container">
-              <Progressbar />
+              <Progressbar score={score[0]} />
             </div>
           </div>
         </div>
