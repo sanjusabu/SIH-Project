@@ -10,6 +10,42 @@
     },
     {
       "": 0,
+      "company": "Kaveri Seed Company",
+      "joblocation_address": "Delhi",
+      "payrate": 25000,
+      "skills": 
+        "Farmer"
+      
+    },
+    {
+      "": 0,
+      "company": "National Agro-Industry",
+      "joblocation_address": "Mumbai",
+      "payrate": 35000,
+      "skills": 
+        "Farmer"
+      
+    },
+    {
+      "": 0,
+      "company": "JK Agri Ltd.",
+      "joblocation_address": "Bangalore",
+      "payrate": 45000,
+      "skills": 
+        "Farmer"
+      
+    },
+    {
+      "": 0,
+      "company": "Goodricke Group Ltd.",
+      "joblocation_address": "Hyderabad",
+      "payrate": 25000,
+      "skills": 
+        "Farmer"
+      
+    },
+    {
+      "": 0,
       "company": "Sharma Carpenters",
       "joblocation_address": "Mumbai",
       "payrate": 20500,
