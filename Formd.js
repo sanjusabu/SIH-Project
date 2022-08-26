@@ -25,7 +25,7 @@ const Formd = () => {
 
         <tr>
 
-          <th>Job Satisfaction</th>
+          <th>Are you satisfied with your job overall?</th>
           <td>
             <input
               className={classes.th1}
@@ -127,7 +127,7 @@ const Formd = () => {
           </td>
         </tr>
         <tr>
-          <th>How hepful was the job suggestion?</th>
+          <th>Do you feel you are rewarded for your dedication and commitment towards the work?</th>
           <td>
             <input
               className={classes.th1}
@@ -229,7 +229,7 @@ const Formd = () => {
           </td>
         </tr>
         <tr>
-          <th>xyz</th>
+          <th>Do you believe that there is an opportunity for individual career growth and development within the company?</th>
           <td>
             <input
               className={classes.th1}
@@ -331,7 +331,7 @@ const Formd = () => {
           </td>
         </tr>
         <tr>
-          <th>ZYX</th>
+          <th>Do your seniors, managers encourage you to give your best effort?</th>
           <td>
             <input
               className={classes.th1}

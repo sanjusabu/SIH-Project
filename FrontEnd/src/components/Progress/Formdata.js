@@ -63,13 +63,13 @@ const Formdata = () => {
           <td> 10</td>
         </tr>
 
-        <FormComponent qnTitle={"Job Satisfaction"} qnNo={"qn1"} />
+        <FormComponent qnTitle={"Are you satisfied with your job overall?"} qnNo={"qn1"} />
         <FormComponent
-          qnTitle={"How hepful was the job suggestion?"}
+          qnTitle={"Do you feel you are rewarded for your dedication and commitment towards the work?"}
           qnNo={"qn2"}
         />
-        <FormComponent qnTitle={"xyz"} qnNo={"qn3"} />
-        <FormComponent qnTitle={"ZYX"} qnNo={"qn4"} />
+        <FormComponent qnTitle={"Do you believe that there is an opportunity for individual career growth and development within the company?"} qnNo={"qn3"} />
+        <FormComponent qnTitle={"Do your seniors, managers encourage you to give your best effort?"} qnNo={"qn4"} />
         <FormComponent
           qnTitle={"How much would you like to rate our portal"}
           qnNo={"qn5"}
