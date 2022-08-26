@@ -9,6 +9,225 @@
       
     },
     {
+      "": 0,
+      "company": "Sharma Carpenters",
+      "joblocation_address": "Mumbai",
+      "payrate": 20500,
+      "skills": 
+        "Carpenter"
+      
+    },
+{
+      "": 0,
+      "company": "Sanjay carpenting",
+      "joblocation_address": "Delhi",
+      "payrate": 35500,
+      "skills": 
+        "Carpenter"
+      
+    },
+{
+      "": 0,
+      "company": "Giri Carpenters",
+      "joblocation_address": "Hyderabad",
+      "payrate": 28500,
+      "skills": 
+        "Carpenter"
+      
+    },
+{
+      "": 0,
+      "company": "Raju carpenting",
+      "joblocation_address": "Bangalore",
+      "payrate": 31500,
+      "skills": 
+        "Carpenter"
+      
+    },
+{
+      "": 0,
+      "company": "Junior Electrician",
+      "joblocation_address": "Mumbai",
+      "payrate": 21500,
+      "skills": 
+        "Electrician"
+      
+    },
+{
+      "": 0,
+      "company": "Technician",
+      "joblocation_address": "Delhi",
+      "payrate": 31500,
+      "skills": 
+        "Electrician"
+      
+    },
+{
+      "": 0,
+      "company": "IT Electrician",
+      "joblocation_address": "Hyderabad",
+      "payrate": 29500,
+      "skills": 
+        "Electrician"
+      
+    },
+{
+      "": 0,
+      "company": "Junior Electrician",
+      "joblocation_address": "Bangalore",
+      "payrate": 31900,
+      "skills": 
+        "Electrician"
+      
+    },
+
+{
+      "": 0,
+      "company": "Zigru Services",
+      "joblocation_address": "Mumbai",
+      "payrate": 24500,
+      "skills": 
+        "Painters"
+      
+    },
+{
+      "": 0,
+      "company": "Gouri Painting Services",
+      "joblocation_address": "Delhi",
+      "payrate": 37500,
+      "skills": 
+        "Painters"
+      
+    },
+{
+      "": 0,
+      "company": "Paint Guru",
+      "joblocation_address": "Hyderabad",
+      "payrate": 20900,
+      "skills": 
+        "Painters"
+      
+    },
+{
+      "": 0,
+      "company": "Ananya Enterprises",
+      "joblocation_address": "Bangalore",
+      "payrate": 34800,
+      "skills": 
+        "Painters"
+      
+    },
+
+{
+      "": 0,
+      "company": "Pyhton Developer",
+      "joblocation_address": "Mumbai",
+      "payrate": 14500,
+      "skills": 
+        "Python"
+      
+    },
+{
+      "": 0,
+      "company": "Python Trainer",
+      "joblocation_address": "Delhi",
+      "payrate": 17500,
+      "skills": 
+        "Python"
+      
+    },
+{
+      "": 0,
+      "company": "Python Developer",
+      "joblocation_address": "Hyderabad",
+      "payrate": 29900,
+      "skills": 
+        "Python"
+      
+    },
+{
+      "": 0,
+      "company": "Python Trainer",
+      "joblocation_address": "Bangalore",
+      "payrate": 30800,
+      "skills": 
+        "Python"
+      
+    },
+
+{
+      "": 0,
+      "company": "Fast Care Plumbing",
+      "joblocation_address": "Mumbai",
+      "payrate": 14500,
+      "skills": 
+        "Plumber"
+      
+    },
+{
+      "": 0,
+      "company": "Plumbing Services",
+      "joblocation_address": "Delhi",
+      "payrate": 17500,
+      "skills": 
+        "Plumber"
+      
+    },
+{
+      "": 0,
+      "company": "Pradaata Plumbing Services",
+      "joblocation_address": "Hyderabad",
+      "payrate": 19900,
+      "skills": 
+        "Plumber"
+      
+    },
+{
+      "": 0,
+      "company": "Harsh Plumbing Services",
+      "joblocation_address": "Bangalore",
+      "payrate": 10800,
+      "skills": 
+        "Plumber"
+      
+    },
+{
+      "": 0,
+      "company": "Taktical Digital",
+      "joblocation_address": "Mumbai",
+      "payrate": 34500,
+      "skills": 
+        "Marketing"
+      
+    },
+{
+      "": 0,
+      "company": "Ignite Visibility",
+      "joblocation_address": "Delhi",
+      "payrate": 27500,
+      "skills": 
+        "Marketing"
+      
+    },
+{
+      "": 0,
+      "company": "Blue Fountain Media",
+      "joblocation_address": "Hyderabad",
+      "payrate": 39900,
+      "skills": 
+        "Marketing"
+      
+    },
+{
+      "": 0,
+      "company":"Nexusbee",
+      "joblocation_address": "Bangalore",
+      "payrate": 20800,
+      "skills": 
+        "Marketing"
+      
+    },
+    {
         "": 0,
         "company": "Hira Farms",
         "joblocation_address": "Punjab",
