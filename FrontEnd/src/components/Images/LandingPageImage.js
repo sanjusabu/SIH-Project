@@ -1,8 +1,29 @@
-import React from 'react'
+import React from "react";
 
 function LandingPageImage(props) {
-    const imgLink = props.imgLink;
-    const jobType = props.jobType;
+  const imgLink = props.imgLink;
+  const jobType = props.jobType;
+  const value = props.value;
+  const skillarr = [
+    "Gardening",
+    "Carpenter",
+    "Electrician",
+    "Painters",
+    "Cycle Repair Workers",
+    "Plumbers",
+    "Car Repair Workers",
+    "House Keeper",
+    "Chef",
+    "Construction",
+    "Cleaner",
+    "Road Repair Workers",
+  ];
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    console.log(skillarr[e.target.value]);
+  };
+  let i = 0;
   return (
     <>
       <link
@@ -10,20 +31,22 @@ function LandingPageImage(props) {
         rel="stylesheet"
       ></link>
 
-      <div className="col-lg-3 col-sm-8 imgCont">
-        <div className="thumbnail">
+      <div class="col-lg-4 col-sm-8">
+        <div class="thumbnail">
           <img
             // src="https://onlyveggies.net/wp-content/uploads/2020/01/beautiful-woman-works-in-a-garden-near-the-house-HA2PMAQ-scaled.jpg"
             src={props.imgLink}
-            alt=""
+            alt="Loading"
           ></img>
           <br></br>
           {/* <button class="btn btn-dark">Gardening</button> */}
-          <button class="btn btn-dark">{props.jobType}</button>
+          <button class="btn btn-dark" value={value} onClick={handleClick}>
+            {props.jobType}
+          </button>
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default LandingPageImage
+export default LandingPageImage;
