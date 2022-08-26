@@ -3,7 +3,7 @@
       "": 0,
       "company": "Konar Farms",
       "joblocation_address": "Chennai",
-      "payrate": 150000,
+      "payrate": 15000,
       "skills": [
         "Farmer"
       ]
@@ -12,7 +12,7 @@
         "": 0,
         "company": "Hira Farms",
         "joblocation_address": "Punjab",
-        "payrate": 150000,
+        "payrate": 110000,
         "skills": [
           "Farmer"
         ]
@@ -21,7 +21,7 @@
         "": 0,
         "company": "Big Indian Farms",
         "joblocation_address": "Uttar Pradesh",
-        "payrate": 150000,
+        "payrate": 30000,
         "skills": [
           "Farmer"
         ]
@@ -30,7 +30,7 @@
         "": 0,
         "company": "Ram Saran Farm",
         "joblocation_address": "Assam",
-        "payrate": 150000,
+        "payrate": 60000,
         "skills": [
           "Farmer"
         ]
@@ -39,7 +39,7 @@
         "": 0,
         "company": "Rajiv Farm",
         "joblocation_address": "Punjab",
-        "payrate": 150000,
+        "payrate": 15000,
         "skills": [
           "Farmer"
         ]
@@ -48,7 +48,7 @@
         "": 0,
         "company": "Geena Patel Farm",
         "joblocation_address": "Bihar",
-        "payrate": 150000,
+        "payrate": 10000,
         "skills": [
           "Farmer"
         ]
@@ -57,7 +57,7 @@
         "": 0,
         "company": "NOOR Labour Recruitment",
         "joblocation_address": "Bihar",
-        "payrate": 150000,
+        "payrate": 50000,
         "skills": [
           "Labour"
         ]
@@ -66,7 +66,7 @@
         "": 0,
         "company": "JB Corporate Private LMT",
         "joblocation_address": "Bihar",
-        "payrate": 150000,
+        "payrate": 15000,
         "skills": [
           "Labour"
         ]
@@ -75,7 +75,7 @@
         "": 0,
         "company": "Raj Enterprise",
         "joblocation_address": "Bihar",
-        "payrate": 150000,
+        "payrate": 15000,
         "skills": [
           "Labour"
         ]
@@ -84,7 +84,7 @@
         "": 0,
         "company": "Billa Enterprise",
         "joblocation_address": "Jharkhand",
-        "payrate": 130000,
+        "payrate": 13000,
         "skills": [
           "Labour"
         ]
@@ -93,7 +93,7 @@
         "": 0,
         "company": "Dingla Pvt Ltd",
         "joblocation_address": "AP",
-        "payrate": 130000,
+        "payrate": 13000,
         "skills": [
           "Gardening"
         ]
@@ -101,8 +101,8 @@
       {
         "": 0,
         "company": "Meet Recruitment",
-        "joblocation_address": "Orissa",
-        "payrate": 120000,
+        "joblocation_address": "Odisha",
+        "payrate": 12000,
         "skills": [
           "Gardening"
         ]
@@ -111,7 +111,7 @@
         "": 0,
         "company": "Jain Locomotive",
         "joblocation_address": "Kerela",
-        "payrate": 220000,
+        "payrate": 22000,
         "skills": [
           "Electrician"
         ]
@@ -119,8 +119,8 @@
       {
         "": 0,
         "company": "Singla Engineering Works",
-        "joblocation_address": "Orissa",
-        "payrate": 225000,
+        "joblocation_address": "Odisha",
+        "payrate": 22500,
         "skills": [
           "Electrician"
         ]
@@ -129,7 +129,7 @@
         "": 0,
         "company": "Patel farm",
         "joblocation_address": "Maharashtra",
-        "payrate": 125000,
+        "payrate": 12500,
         "skills": [
           "Gardening"
         ]
@@ -138,7 +138,7 @@
         "": 0,
         "company": "Bharat Jalpan",
         "joblocation_address": "Bihar",
-        "payrate": 305000,
+        "payrate": 30500,
         "skills": [
           "Chef"
         ]
@@ -147,7 +147,7 @@
         "": 0,
         "company": "Sharma PLumbing Works",
         "joblocation_address": "Rajasthan",
-        "payrate": 200000,
+        "payrate": 20000,
         "skills": [
           "Plumber"
         ]
@@ -156,7 +156,7 @@
         "": 0,
         "company": "Rajeev carpenting",
         "joblocation_address": "Rajasthan",
-        "payrate": 305000,
+        "payrate": 30500,
         "skills": [
           "Carpenter"
         ]
@@ -165,7 +165,7 @@
         "": 0,
         "company": "Swathi Restaurant",
         "joblocation_address": "Andhra Pradesh",
-        "payrate": 465000,
+        "payrate": 46500,
         "skills": [
           "Chef"
         ]
@@ -174,25 +174,25 @@
         "": 0,
         "company": "Tulda Constructions",
         "joblocation_address": "Maharashtra",
-        "payrate": 305000,
+        "payrate": 30500,
         "skills": [
-          "Constructor"
+          "Construction"
         ]
       },
       {
         "": 0,
         "company": "Noida Construction works",
         "joblocation_address": "Uttar Pradesh",
-        "payrate": 300000,
+        "payrate": 30000,
         "skills": [
-          "Constructor"
+          "Construction"
         ]
       },
       {
         "": 0,
         "company": "Central Mall",
         "joblocation_address": "Bihar",
-        "payrate": 120000,
+        "payrate": 12000,
         "skills": [
           "Cleaner"
         ]
@@ -201,7 +201,7 @@
         "": 0,
         "company": "The great mall",
         "joblocation_address": "Madhya Pradesh",
-        "payrate": 140000,
+        "payrate": 14000,
         "skills": [
           "Cleaner"
         ]
@@ -210,7 +210,7 @@
         "": 0,
         "company": "Inorbit Mall",
         "joblocation_address": "Maharashtra",
-        "payrate": 200000,
+        "payrate": 70000,
         "skills": [
           "Cleaner"
         ]
@@ -219,7 +219,7 @@
         "": 0,
         "company": "Inorbit Mall",
         "joblocation_address": "Andhra Pradesh",
-        "payrate": 150000,
+        "payrate": 15000,
         "skills": [
           "Sweeper"
         ]
@@ -228,7 +228,7 @@
         "": 0,
         "company": "Eat out",
         "joblocation_address": "TamilNadu",
-        "payrate": 200000,
+        "payrate": 20000,
         "skills": [
           "Cook"
         ]
@@ -237,7 +237,7 @@
         "": 0,
         "company": "Dine In",
         "joblocation_address": "Uttar Pradesh",
-        "payrate": 200000,
+        "payrate": 20000,
         "skills": [
           "Cook"
         ]
@@ -246,16 +246,16 @@
         "": 0,
         "company": "Meet Services",
         "joblocation_address": "Karnataka",
-        "payrate": 110000,
+        "payrate": 11000,
         "skills": [
-          "HouseKeeper"
+          "House Keeper"
         ]
       },
       {
         "": 0,
         "company": "Meet Services",
         "joblocation_address": "Punjab",
-        "payrate": 90000,
+        "payrate": 60000,
         "skills": [
           "Cycle Repair Workers"
         ]
@@ -264,7 +264,7 @@
         "": 0,
         "company": "Sanju Services",
         "joblocation_address": "Bihar",
-        "payrate": 90000,
+        "payrate": 70000,
         "skills": [
           "Cycle Repair Workers"
         ]
@@ -282,7 +282,7 @@
         "": 0,
         "company": "Yukti Plumbing",
         "joblocation_address": "Karnataka",
-        "payrate": 120000,
+        "payrate": 12000,
         "skills": [
           "Plumbers"
         ]
@@ -291,7 +291,7 @@
         "": 0,
         "company": "Sai Electricals",
         "joblocation_address": "Andhra Pradesh",
-        "payrate": 130000,
+        "payrate": 30000,
         "skills": [
           "Electrician"
         ]
@@ -300,7 +300,7 @@
         "": 0,
         "company": "Murti Cleaners",
         "joblocation_address": "TamilNadu",
-        "payrate": 120000,
+        "payrate": 10000,
         "skills": [
           "Cleaner"
         ]
@@ -309,7 +309,7 @@
         "": 0,
         "company": "Clean India",
         "joblocation_address": "Punjab",
-        "payrate": 120000,
+        "payrate": 50000,
         "skills": [
           "Cleaner"
         ]
@@ -318,7 +318,7 @@
         "": 0,
         "company": "Yuvraj Enterprise",
         "joblocation_address": "Uttar Pradesh",
-        "payrate": 120000,
+        "payrate": 50000,
         "skills": [
           "Cleaner"
         ]
@@ -327,7 +327,7 @@
         "": 0,
         "company": "Raj Enterprise",
         "joblocation_address": "TamilNadu",
-        "payrate": 120000,
+        "payrate": 40000,
         "skills": [
           "House Keeper"
         ]
@@ -336,7 +336,7 @@
         "": 0,
         "company": "KEEP Private Limited",
         "joblocation_address": "Punjab",
-        "payrate": 120000,
+        "payrate": 100000,
         "skills": [
           "House Keeper"
         ]
@@ -345,9 +345,108 @@
         "": 0,
         "company": "Clean Enterprise",
         "joblocation_address": "Rajasthan",
-        "payrate": 120000,
+        "payrate": 90000,
         "skills": [
           "House Keeper"
+        ]
+      },
+      {
+        "": 0,
+        "company": "Indian Highway Private Limited",
+        "joblocation_address": "Chandigarh",
+        "payrate": 30000,
+        "skills": [
+          "Road Repair Workers"
+        ]
+      },
+      {
+        "": 0,
+        "company": "Nation Highway Enterprise",
+        "joblocation_address": "Karnataka",
+        "payrate": 80000,
+        "skills": [
+          "Road Repair Workers"
+        ]
+      },
+      {
+        "": 0,
+        "company": "Safe Speed Enterprise",
+        "joblocation_address": "Kerela",
+        "payrate": 50000,
+        "skills": [
+          "Road Repair Workers"
+        ]
+      },
+      {
+        "": 0,
+        "company": "Raj Dhaba",
+        "joblocation_address": "Chennai",
+        "payrate": 85000,
+        "skills": [
+          "Chef"
+        ]
+      },
+      {
+        "": 0,
+        "company": "Sabu Restaurant",
+        "joblocation_address": "Odisha",
+        "payrate": 12000,
+        "skills": [
+          "Chef"
+        ]
+      },
+      {
+        "": 0,
+        "company": "Skyhigh Enterprise",
+        "joblocation_address": "Rajasthan",
+        "payrate": 20000,
+        "skills": [
+          "Construction"
+        ]
+      },
+      {
+        "": 0,
+        "company": "BRIGHT Private Limited",
+        "joblocation_address": "Madhya Pradesh",
+        "payrate": 10000,
+        "skills": [
+          "Painters"
+        ]
+      },
+      {
+        "": 0,
+        "company": "Wall Gaurd Enterprise",
+        "joblocation_address": "Jharkhand",
+        "payrate": 12000,
+        "skills": [
+          "Painters"
+        ]
+      },
+      {
+        "": 0,
+        "company": "Ambuja paints",
+        "joblocation_address": "Rajasthan",
+        "payrate": 20000,
+        "skills": [
+          "Painters"
+        ]
+      },
+      {
+        "": 0,
+        "company": "FUTURE carpenting",
+        "joblocation_address": "Karnataka",
+        "payrate": 30500,
+        "skills": [
+          "Carpenter"
+        ]
+      },
+      {
+        "": 0,
+        "company": "Wood Work Private Limited",
+        "joblocation_address": "Odisha",
+        "payrate": 30000,
+        "skills": [
+          "Carpenter"
         ]
       }
 ]
