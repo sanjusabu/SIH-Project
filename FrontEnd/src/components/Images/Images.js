@@ -2,9 +2,6 @@ import React from "react";
 // import "react-table-6/react-table.css";
 import LandingPageImage from "./LandingPageImage";
 import "./landingPageImage.css";
-import NavBar from  "../NavBar/NavBar";
-
-
 
 //import App from './App';
 //import * as React from 'react';
@@ -19,7 +16,6 @@ export default function Images() {
       ></link> */}
       {/* <div class="row match-to-row"> */}
 
-<NavBar/>
       {/* <div className="container">
         <div className="row">
           
@@ -41,11 +37,12 @@ export default function Images() {
         </div>
       </div> */}
 
-<h1 ><b>Choose A Job Of Your Choice</b></h1>
+      <h1>
+        <b>Choose A Job Of Your Choice</b>
+      </h1>
 
       <div className="rows">
-   
-      <LandingPageImage
+        <LandingPageImage
           imgLink={
             "https://www.jagranjosh.com/imported/images/E/GK/agriculture_infrastructure_fund_cabinet_approval.jpg"
           }
@@ -53,8 +50,6 @@ export default function Images() {
           value={16}
         />
 
-
-        
         <LandingPageImage
           imgLink={
             "https://thumbs.dreamstime.com/b/indian-village-carpenter-working-wooden-work-factory-indian-village-carpenter-working-wooden-work-factory-logs-cutting-162009331.jpg"
@@ -62,15 +57,15 @@ export default function Images() {
           jobType={"Carpenter"}
           value={1}
         />
-        
+
         <LandingPageImage
           imgLink={
             "https://st2.depositphotos.com/1005682/12187/i/950/depositphotos_121872246-stock-photo-indian-male-electrician.jpg "
           }
           jobType={"Electrician "}
           value={2}
-        /> 
-         
+        />
+
         <LandingPageImage
           imgLink={
             "https://th.bing.com/th/id/R.bb3215a887dc847a3fec3b0406b2fc25?rik=AYnXF3b6A83lag&riu=http%3a%2f%2fwww.mediumspot.com%2fwp-content%2fuploads%2f2020%2f06%2fHouse-Painter11-880x528.jpg&ehk=mdXDDCQFMyp7UA2j9Fo5byDU%2brF6INjD%2boMdxm%2b8%2fLU%3d&risl=&pid=ImgRaw&r=0 "
@@ -79,23 +74,19 @@ export default function Images() {
           value={3}
         />
         {/* </div></div> */}
-        
 
-        
-        
         <LandingPageImage
           imgLink={
             "https://th.bing.com/th/id/OIP.FF6mLRf4uAUbp7tXsZ5GvAHaHa?w=192&h=192&c=7&r=0&o=5&pid=1.7"
           }
           jobType={"Python"}
           value={14}
-        /></div>
+        />
+      </div>
       {/* </div> */}
       <div className="rows">
         <LandingPageImage
-          imgLink={
-            "https://i.ytimg.com/vi/ueIyo4QkH7E/maxresdefault.jpg"
-          }
+          imgLink={"https://i.ytimg.com/vi/ueIyo4QkH7E/maxresdefault.jpg"}
           jobType={"Plumbers"}
           value={5}
         />
@@ -106,7 +97,6 @@ export default function Images() {
           jobType={"Marketing"}
           value={14}
         />
-
 
         <LandingPageImage
           imgLink={
@@ -154,7 +144,6 @@ export default function Images() {
         />
         <LandingPageImage
           imgLink={
-            
             "https://th.bing.com/th/id/R.1fd9888852e014e9b8ab0260ce56d259?rik=eHzQZ0G8SH83Cw&riu=http%3a%2f%2fi.dawn.com%2flarge%2f2016%2f01%2f56aa49056c785.jpg&ehk=pnyslehfEhO3YNJoe%2fHQHm1TdYqk7wpSPJ%2bSvjLh7mM%3d&risl=&pid=ImgRaw&r=0"
           }
           jobType={"Construction"}
@@ -163,16 +152,15 @@ export default function Images() {
         <LandingPageImage
           imgLink={
             "https://thumbs.dreamstime.com/b/indian-street-repair-bicycles-ahmedabad-photographing-october-ahmedabad-india-62392476.jpg"
-           
           }
           jobType={"Cycle Repair Workers"}
           value={4}
-        /></div>
-        <div className="rows">
+        />
+      </div>
+      <div className="rows">
         <LandingPageImage
           imgLink={
             "https://th.bing.com/th/id/R.db79993b6ab6d6af2df890af917232b3?rik=agKjFg4xMbdmDA&riu=http%3a%2f%2fgdb.voanews.com%2f461B7A5A-4278-45D5-B793-1EA44DD9B53D_mw1024_s_n.jpg&ehk=Fbllu1LeHQ1mNn6jvLjEuqbeWgnsPWu1a2jHcfyrqqk%3d&risl=&pid=ImgRaw&r=0"
-            
           }
           jobType={"Car Repair Workers"}
           value={6}
@@ -182,17 +170,16 @@ export default function Images() {
             "https://th.bing.com/th/id/OIP._Lm_T3scKhVEVFC54gcRxwHaE8?w=277&h=185&c=7&r=0&o=5&pid=1.7"
           }
           jobType={"Java"}
-          value={15}/>
-          <LandingPageImage
+          value={15}
+        />
+        <LandingPageImage
           imgLink={
             "https://www.indiawaterportal.org/sites/default/files/styles/node_lead_image/public/iwp/tea_garden_0.jpg?itok=c6Yop2ON"
           }
           jobType={"Gardening"}
           value={0}
         />
-        </div>
-
-      
+      </div>
     </>
   );
 }
