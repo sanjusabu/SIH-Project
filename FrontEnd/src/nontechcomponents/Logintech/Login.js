@@ -64,7 +64,7 @@ const Logintech = () => {
 
     home.ologin(response.number);
     console.log(response.number,'check');
-    navigate("/heelo");
+    navigate("/images");
     resetNumber();
     resetotp();
   };

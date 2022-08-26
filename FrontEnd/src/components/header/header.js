@@ -102,7 +102,7 @@ const Headers = () => {
                     </ul>
                   </li>
                 </li>
-                <li className="nav-item1">
+                {/* <li className="nav-item1">
                   <Link
                     className="nav-link active"
                     aria-current="page"
@@ -110,17 +110,7 @@ const Headers = () => {
                   >
                     Form
                   </Link>
-                </li>
-
-                <li className="nav-item1">
-                  <Link
-                    className="nav-link active"
-                    aria-current="page"
-                    to="/formd"
-                  >
-                    Form
-                  </Link>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <div id="google_translate_element"></div>
                 </li>
