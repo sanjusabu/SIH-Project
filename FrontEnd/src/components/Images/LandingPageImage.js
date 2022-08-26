@@ -21,6 +21,10 @@ function LandingPageImage(props) {
     "Construction",
     "Cleaner",
     "Road Repair Workers",
+    "C",
+    "C++",
+    "Python",
+    "Java"
   ];
 
   const handleClick = async(e) => {

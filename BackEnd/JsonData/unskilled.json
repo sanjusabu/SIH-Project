@@ -442,6 +442,87 @@
       },
       {
         "": 0,
+        "company": "C Developer",
+        "joblocation_address": "Karnataka",
+        "payrate": 32500,
+        "skills": 
+          "C"
+        
+      },
+      {
+        "": 0,
+        "company": "JC Onboarding Lead C",
+        "joblocation_address": "Kerela",
+        "payrate": 38500,
+        "skills": 
+          "C"
+        
+      },
+      {
+        "": 0,
+        "company": "JC Onboarding Lead C++",
+        "joblocation_address": "Mumbai",
+        "payrate": 48500,
+        "skills": 
+          "C++"
+        
+      },
+      {
+        "": 0,
+        "company": "C++ Developer",
+        "joblocation_address": "Kolkata",
+        "payrate": 58500,
+        "skills": 
+          "C++"
+        
+      },
+      {
+        "": 0,
+        "company": "Python Developer",
+        "joblocation_address": "Delhi",
+        "payrate": 78500,
+        "skills": 
+          "Python"
+        
+      },
+      {
+        "": 0,
+        "company": "Py Solutions",
+        "joblocation_address": "Punjab",
+        "payrate": 68500,
+        "skills": 
+          "Python"
+        
+      },
+      {
+        "": 0,
+        "company": "Java Solutions",
+        "joblocation_address": "Telangana",
+        "payrate": 48500,
+        "skills": 
+          "Java"
+        
+      },
+      {
+        "": 0,
+        "company": "Java Developer",
+        "joblocation_address": "UttarPradesh",
+        "payrate": 57500,
+        "skills": 
+          "Java"
+        
+      },
+      {
+        "": 0,
+        "company": "Java Trainer",
+        "joblocation_address": "Dhanbad",
+        "payrate": 77500,
+        "skills": 
+          "Java"
+        
+      },
+      {
+        "": 0,
         "company": "Wood Work Private Limited",
         "joblocation_address": "Odisha",
         "payrate": 30000,
