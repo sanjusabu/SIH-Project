@@ -20,13 +20,13 @@ import Progress from "./components/Progress/Progress";
 import Newsearch from "./components/newsearch/newsearch";
 import Registertech from "./nontechcomponents/Registertech/Register";
 import Logintech from "./nontechcomponents/Logintech/Login";
-import { HomeContext } from "./context/homecontext";
+// import { HomeContext } from "./context/homecontext";
 import ImagesSearch from "./components/imagesSearch/imagesSearch";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [LoggedIn, setLoggedIn] = useState(false);
+  // const [LoggedIn, setLoggedIn] = useState(false);
   const [userId, setuserId] = useState("");
-  const [userNumber, setuserNumber] = useState(0);
+  // const [userNumber, setuserNumber] = useState(0);
 
   const login = useCallback((uid) => {
     localStorage.setItem("userid", uid);
@@ -47,24 +47,7 @@ function App() {
   }, []);
 
   
-  const ologin = useCallback((un) => {
-    console.log(un)
-    localStorage.setItem("userNumber", un);
-    setLoggedIn(true);
-    setuserNumber(localStorage.getItem("userNumber"));
-  }, []);
 
-  const ologout = useCallback(() => {
-    setLoggedIn(false);
-    setuserNumber(0);
-  }, []);
-
-  useEffect(() => {
-    if (localStorage.hasOwnProperty("userNumber")) {
-      setuserNumber(localStorage.getItem("userNumber"));
-      setLoggedIn(true);
-    }
-  }, []);
 
   let routes;
   if (isLoggedIn) {
@@ -103,11 +86,13 @@ function App() {
             element={<Addprevjobs />}
           ></Route>
           <Route exact path="/addcurrjobs" element={<Addcurrjobs />}></Route>
+        <Route path="/imagesSearch" element={<ImagesSearch />}></Route>
           <Route exact path="/progresstrack" element={<Progress />}></Route>
+        <Route exact path="/images" element={<Images />}></Route>
         </Routes>
       </Router>
     );
-  } else if(!isLoggedIn && !LoggedIn) {
+  } else  {
     routes = (
       <Router>
         <Routes>
@@ -132,57 +117,20 @@ function App() {
             }
           ></Route>
           <Route exact path="/login" element={<Login />}></Route>
-          <Route exact path="/loginemployer" element={<LoginE/>}></Route>
-          <Route exact path="/formd" element={<Formd />}></Route>
-          <Route exact path="/images" element={<Images />}></Route>
+          {/* <Route exact path="/loginemployer" element={<LoginE/>}></Route> */}
+          {/* <Route exact path="/formd" element={<Formd />}></Route> */}
           <Route exact path="/register" element={<Register />}></Route>
-          <Route exact path="/registertech" element={<Registertech />}></Route>
-          <Route exact path="/logintech" element={<Logintech />}></Route> 
-          <Route exact path="/registeremployer" element={<RegE/>}></Route>
+          {/* <Route exact path="/registerOTP" element={<Registertech />}></Route> */}
+          <Route exact path="/loginOTP" element={<Logintech />}></Route> 
+          {/* <Route exact path="/registeremployer" element={<RegE/>}></Route> */}
           <Route path="/newsearch" element={<Newsearch />}></Route>
-          <Route path="/imagesSearch" element={<ImagesSearch />}></Route>
           
         </Routes>
       </Router>
     );
   }
 
-else if(!isLoggedIn && LoggedIn){
-  routes=(  <Router>
-    <Routes>
-      <Route
-        exact
-        path="/images"
-        element={
-          <>
-            <Route exact path="/images" element={<Images />}></Route>
-          </>
-        }
-      ></Route>
-      <Route
-        exact
-        path="/Home"
-        element={
-          <>
-            <Headers />
-            <Search />
-          </>
-        }
-      ></Route>
-      <Route exact path="/login" element={<Login />}></Route>
-      <Route exact path="/loginemployer" element={<LoginE/>}></Route>
-      <Route exact path="/formd" element={<Formd />}></Route>
-      <Route exact path="/images" element={<Images />}></Route>
-      <Route exact path="/register" element={<Register />}></Route>
-      <Route exact path="/registertech" element={<Registertech />}></Route>
-      <Route exact path="/logintech" element={<Logintech />}></Route> 
-      <Route exact path="/registeremployer" element={<RegE/>}></Route>
-      <Route path="/newsearch" element={<Newsearch />}></Route>
-      <Route path="/imagesSearch" element={<ImagesSearch />}></Route>
-      
-    </Routes>
-  </Router>)
-}
+
   return (
     <>
     <AuthContext.Provider
@@ -195,15 +143,7 @@ else if(!isLoggedIn && LoggedIn){
     >
       <main>{routes}</main>
     </AuthContext.Provider>
-<HomeContext.Provider
-    value={{
-      LoggedIn: LoggedIn,
-      userNumber: userNumber,
-      ologin: ologin,
-      ologout: ologout,
-    }} >
 
-</HomeContext.Provider>
 </>
   );
 }

@@ -57,6 +57,11 @@ const NavBar = () => {
                 <Link className="nav-link active" to="/progresstrack">
                   Progress
                 </Link>
+              </li> 
+              <li className="nav-item">
+                <Link className="nav-link active" to="/images">
+                  Search By Images
+                </Link>
               </li>
               {/* <li className="nav-item">
                 <Link className="nav-link active" to="/progresstrack">

@@ -14,7 +14,7 @@ let formValid = false;
 
 const Logintech = () => {
   const auth = useContext(AuthContext);
-  const home = useContext(HomeContext);
+  // const home = useContext(HomeContext);
   const { isError, sendRequest, clearError } = useRequest();
 
   const {
@@ -51,7 +51,7 @@ const Logintech = () => {
       return;
     }
     const response = await sendRequest(
-      "http://localhost:5002/nontc/ologin",
+      "http://localhost:5002/users/loginOTP",
       "POST",
       JSON.stringify({
         number: numberValue,
@@ -62,9 +62,10 @@ const Logintech = () => {
       }
     );
 
-    home.ologin(response.number);
-    console.log(response.number,'check');
-    navigate("/images");
+    // home.ologin(response.number);
+    console.log(response);
+    auth.login(response._id)
+    navigate("/landingpage");
     resetNumber();
     resetotp();
   };

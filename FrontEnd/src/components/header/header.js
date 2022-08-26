@@ -56,52 +56,47 @@ const Headers = () => {
                     <ul className="dropdown-menu">
                       <li>
                         <Link className="dropdown-item" to="/login">
-                          Login(Technical)
+                          Login using Email
                         </Link>
                       </li>
-                      <li>
+                      {/* <li>
                         <Link className="dropdown-item" to="/loginemployer">
                           Login as Employer
                         </Link>
-                      </li>
+                      </li> */}
                     <li className="nav-item">
-                    <Link className="dropdown-item" to="/logintech">
-                      Login(Non - Technical work )
+                    <Link className="dropdown-item" to="/loginOTP">
+                      Login using OTP
                     </Link>
                   </li>
                     </ul>
                   </li>
                 </li>
-                <li className="nav-item1">
-                  <li className="nav-item dropdown">
-                    <Link
+                <li className="nav-item">
+                  {/* <li className="nav-item dropdown"> */}
+                    {/* <Link
                       className="nav-link active dropdown-toggle"
                       to="/loginroles"
                       role="button"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
-                      Register
-                    </Link>
-                    <ul className="dropdown-menu">
+                      Register 
+                    </Link> */}
+                  
                       <li>
-                        <Link className="dropdown-item" to="/register">
-                          Register(Technical)
+                        <Link className="nav-item" to="/register">
+                          Register with email
                         </Link>
                       </li>
-                      <li>
+                      {/* <li>
                         <Link className="dropdown-item" to="/registeremployer">
                           Register as Employer
                         </Link>
-                      </li>
-                    <li className="nav-item">
-                    <Link className="dropdown-item" to="/registertech">
-                      Register(Non-Technical work )
-                    </Link>
+                      </li> */}
+                  
                   </li>
-                    </ul>
-                  </li>
-                </li>
+            
                 
                 <li className="nav-item">
                   <div id="google_translate_element"></div>
