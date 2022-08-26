@@ -2,6 +2,9 @@ import React from "react";
 // import "react-table-6/react-table.css";
 import LandingPageImage from "./LandingPageImage";
 import "./landingPageImage.css";
+import NavBar from  "../NavBar/NavBar";
+
+
 
 //import App from './App';
 //import * as React from 'react';
@@ -16,7 +19,7 @@ export default function Images() {
       ></link> */}
       {/* <div class="row match-to-row"> */}
 
-
+<NavBar/>
       {/* <div className="container">
         <div className="row">
           
@@ -101,6 +104,8 @@ export default function Images() {
           jobType={"Marketing"}
           value={14}
         />
+
+
         <LandingPageImage
           imgLink={
             "https://th.bing.com/th/id/R.e20de233719c470f7501d1b6d736337c?rik=Jmz8Rjkesn%2fO2g&riu=http%3a%2f%2fwww.indianwomenblog.org%2fwp-content%2fuploads%2f2017%2f08%2fcover-26.jpg&ehk=1fqbULZlnzWM8crV7VMWPgswxHi8sFMXfsH%2bO6CSH8A%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"
@@ -160,7 +165,8 @@ export default function Images() {
           }
           jobType={"Cycle Repair Workers"}
           value={4}
-        />
+        /></div>
+        <div className="rows">
         <LandingPageImage
           imgLink={
             "https://th.bing.com/th/id/R.db79993b6ab6d6af2df890af917232b3?rik=agKjFg4xMbdmDA&riu=http%3a%2f%2fgdb.voanews.com%2f461B7A5A-4278-45D5-B793-1EA44DD9B53D_mw1024_s_n.jpg&ehk=Fbllu1LeHQ1mNn6jvLjEuqbeWgnsPWu1a2jHcfyrqqk%3d&risl=&pid=ImgRaw&r=0"
@@ -169,7 +175,15 @@ export default function Images() {
           jobType={"Car Repair Workers"}
           value={6}
         />
-      </div>
+        <LandingPageImage
+          imgLink={
+            "https://th.bing.com/th/id/OIP._Lm_T3scKhVEVFC54gcRxwHaE8?w=277&h=185&c=7&r=0&o=5&pid=1.7"
+          }
+          jobType={"Java"}
+          value={15}
+        /></div>
+
+      
     </>
   );
 }
