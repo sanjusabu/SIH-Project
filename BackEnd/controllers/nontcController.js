@@ -76,7 +76,7 @@ const showjobs = (req,res,next)=>
   const {clicked} = req.body
   // console.log(dataset)
   console.log(showjobs)
-const response =  dataset.filter(dat =>dat.skills.includes(clicked))
+const response =  dataset.filter(dat =>dat.skills===clicked)
 console.log(response)
 
   res.json(response)
