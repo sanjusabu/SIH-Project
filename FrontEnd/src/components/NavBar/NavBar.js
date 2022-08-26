@@ -69,6 +69,11 @@ const NavBar = () => {
                 Logout
               </button>
             </li>
+            <li className="nav-item">
+              <div className="container d-flex justify-content-center">
+                <div id="google_translate_element"></div>
+              </div>
+            </li>
           </div>
         </div>
       </nav>

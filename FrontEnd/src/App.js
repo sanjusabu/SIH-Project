@@ -14,6 +14,8 @@ import LandingEmployer from "./components/LandingEmployer/LandingEmployer";
 import Profile from "./components/Profile/profile";
 // import Formd from "./components/Formd/Formd";
 import Formd from "./components/LandingPage/Formd";
+import Images from "./components/Images/Images";
+
 import Progress from "./components/Progress/Progress";
 import Newsearch from "./components/newsearch/newsearch";
 import Registertech from "./nontechcomponents/Registertech/Register";
@@ -133,6 +135,7 @@ function App() {
           <Route exact path="/login" element={<Login />}></Route>
           <Route exact path="/loginemployer" element={<LoginE/>}></Route>
           <Route exact path="/formd" element={<Formd />}></Route>
+          <Route exact path="/images" element={<Images />}></Route>
           <Route exact path="/register" element={<Register />}></Route>
           <Route exact path="/registertech" element={<Registertech />}></Route>
           <Route exact path="/logintech" element={<Logintech />}></Route> 

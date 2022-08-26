@@ -106,10 +106,23 @@ const Headers = () => {
                   <Link
                     className="nav-link active"
                     aria-current="page"
+                    to="/images"
+                  >
+                    Form
+                  </Link>
+                </li>
+
+                <li className="nav-item1">
+                  <Link
+                    className="nav-link active"
+                    aria-current="page"
                     to="/formd"
                   >
                     Form
                   </Link>
+                </li>
+                <li className="nav-item">
+                  <div id="google_translate_element"></div>
                 </li>
               </ul>
             </div>
