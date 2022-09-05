@@ -64,11 +64,11 @@ const Headers = () => {
                           Login as Employer
                         </Link>
                       </li> */}
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                     <Link className="dropdown-item" to="/loginOTP">
                       Login using OTP
                     </Link>
-                  </li>
+                  </li> */}
                     </ul>
                   </li>
                 </li>
