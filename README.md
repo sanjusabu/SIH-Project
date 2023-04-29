@@ -1,4 +1,4 @@
-# EZ Career - SIH
+# EZ Career - SIH - https://frontend-sih.onrender.com
 
 ## Features
 
@@ -50,3 +50,7 @@
 
 If You are Mac useror windows is giving error just make the following change in the package.json file before running the above command
 :- "start": "set PORT=3006 && react-scripts --openssl-legacy-provider start" in the package.json file.
+
+Website Link - https://frontend-sih.onrender.com
+
+Explore our website and find yourselves a suitable job based on your skills.
