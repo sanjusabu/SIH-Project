@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 // import userImg from "./userProfile.png";
 import "./Profile.css";
 import FormInput from "./FormInput";
@@ -9,58 +9,93 @@ import NavBar from "../NavBar/NavBar";
 import { useRequest } from "../../hooks/request-hook";
 // import { db } from "../../../../BackEnd/models/formModel";
 // import userModel from "../../../BackEnd/m"
-const uid = localStorage.getItem("userid");
-
 
 export default function Profile(props) {
+  const uid = localStorage.getItem("userid");
+  const [divblock, setDivblock] = useState("flex");
+  const [csstyle, setCsstyle] = useState("none");
+  const [image1, setImage1] = useState(null);
+  const [added, setAdded] = useState(false);
+  const [currentUser, setCurrentUser] = useState([]);
   const showForm = () => {
     console.log(displayForm);
     setStyle("block");
   };
-const {sendRequest} = useRequest()
-const [data,setData]  = useState([])
+  const { sendRequest } = useRequest();
+  const [data, setData] = useState([]);
 
-
-useEffect(() => {
-  const fetchUsers = async () => {
-    try {
-      if (localStorage.hasOwnProperty("userid")) {
-      const responseData = await sendRequest(
-        'http://localhost:5002/users/details',
-        'POST',
-        JSON.stringify({
-          user: localStorage.getItem("userid")
-        }),
-        {
-          "Content-Type": "application/json",
-        }
-      );
-      responseData.map(data=>setData(data))
-    //  console.log(responseData.info)
-    } }catch (err) {
-      console.log(err)
+  const fileRef = useRef(null);
+  let formData = new FormData();
+  // console.log("rendering", useridpr);
+  const onImageChange = async (event) => {
+    // console.log("meet", event);
+    event.preventDefault();
+    if (event.target.files && event.target.files[0]) {
+      setImage1(URL.createObjectURL(event.target.files[0]));
+    }
+    setDivblock("none");
+    setCsstyle("flex");
+  };
+  const updateProfHandller = async (e) => {
+    e.preventDefault();
+    // console.log("meet", formData);
+    if (localStorage.hasOwnProperty("userid")) {
+      formData.append("userid", uid);
+      formData.append("file", fileRef.current.files[0]);
+      try {
+        const responseData = await sendRequest(
+          "http://localhost:5002/users/updateProfilePicture",
+          "POST",
+          formData
+        );
+        setAdded(true);
+        setDivblock("flex");
+        setCsstyle("none");
+        setImage1(null);
+        fileRef.current.files[0] = null;
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
 
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        if (localStorage.hasOwnProperty("userid")) {
+          const responseData = await sendRequest(
+            "http://localhost:5002/users/details",
+            "POST",
+            JSON.stringify({
+              user: localStorage.getItem("userid"),
+            }),
+            {
+              "Content-Type": "application/json",
+            }
+          );
+          setCurrentUser(responseData[0]);
+          responseData.map((data) => setData(data));
+          //  console.log(responseData.info)
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
 
-  fetchUsers();
-}, [sendRequest]);
+    fetchUsers();
+  }, [sendRequest, added]);
 
-  const loadFile = function (event) {
-    var image = document.getElementById("output");
-    image.src = URL.createObjectURL(event.target.files[0]);
-    console.log(image.src);
-  };
-
-
+  // const loadFile = function (event) {
+  //   var image = document.getElementById("output");
+  //   image.src = URL.createObjectURL(event.target.files[0]);
+  //   console.log(image.src);
+  // };
 
   // const updateProfile = (event) => {
   //   setEnteredSkill(event.target.value);
   // };
 
-
-// console.log(data);
-
+  // console.log(data);
 
   const submitHandler = async (event) => {
     event.preventDefault();
@@ -74,14 +109,13 @@ useEffect(() => {
     // db.userModel.updateOne(EnteredName)
     // data.name = EnteredName;
 
-
     const response = await sendRequest(
       "http://localhost:5002/users/updateProfile",
       "POST",
       JSON.stringify({
         userid: uid,
         name: EnteredName,
-        location:EnteredLocation,
+        location: EnteredLocation,
       }),
       {
         "Content-Type": "application/json",
@@ -122,11 +156,11 @@ useEffect(() => {
   };
 
   const saveChanges = () => {
-    setFilledName(EnteredName)
-    setFilledLocation(EnteredLocation)
-    setFilledPhoneNo(EnteredPhoneNo)
-    setFilledDate(EnteredDate)
-    setFilledGender(EnteredGender)
+    setFilledName(EnteredName);
+    setFilledLocation(EnteredLocation);
+    setFilledPhoneNo(EnteredPhoneNo);
+    setFilledDate(EnteredDate);
+    setFilledGender(EnteredGender);
     // console.log(displayForm);
     setStyle("none");
   };
@@ -151,6 +185,45 @@ useEffect(() => {
       <div id="profile">
         <div className="basic-info">
           <div className="profile-image">
+            <div className="profileCover">
+              <img
+                className="profileUserImg"
+                src={
+                  currentUser.profilePicture
+                    ? currentUser.profilePicture
+                    : "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
+                }
+                alt=""
+              />
+            </div>
+            {localStorage.getItem("userid") === uid ? (
+              <div className={`updatePict d-${divblock}`}>
+                <label className="btn btn-outline-info my-2">
+                  <input
+                    type="file"
+                    // className="updatePict"
+                    onChange={onImageChange}
+                    name="file"
+                    ref={fileRef}
+                  />
+                  Update Profile Photo
+                </label>
+              </div>
+            ) : (
+              <div></div>
+            )}
+            <div className={`postimgggg my-2 d-${csstyle}`}>
+              <img className="newimggg mx-3" src={image1} alt="Loading" />
+              <button
+                className="addpost btn btn-outline-info"
+                onClick={updateProfHandller}
+                disabled={image1 ? false : true}
+              >
+                Change Image
+              </button>
+            </div>
+          </div>
+          {/* <div className="profile-image">
             <p>
               <input
                 type="file"
@@ -167,7 +240,6 @@ useEffect(() => {
               </label>
             </p>
             <p>
-              {/* <img id="output" width="100%" style={{borderRadius:"100%" ,width:"60%", objectFit:"cover"}} /> */}
               <img
                 id="output"
                 width="100%"
@@ -177,7 +249,7 @@ useEffect(() => {
                 }}
               />
             </p>
-          </div>
+          </div> */}
           <div className="details">
             <ul className="detailsul-1">
               {/* <li>{FilledName}</li> */}

@@ -4,7 +4,8 @@ const HttpError = require("../models/http-error");
 const express = require("express");
 const fs = require("fs");
 const Dataset = require("../JsonData/jobs.json");
-const skillSearch = require("../JsonData/csvjson.json")
+const skillSearch = require("../JsonData/csvjson.json");
+
 const search = (req, res, next) => {
   // console.log("sanju")
   console.log(req.body);
@@ -28,6 +29,7 @@ const search = (req, res, next) => {
   console.log(details);
   res.json(details);
 };
+
 const loginsearch = async (req, res, next) => {
   // console.log(req.body)
   const search = req.body.search;
@@ -52,13 +54,9 @@ const loginsearch = async (req, res, next) => {
   res.json(details);
 };
 
-
 const getsalaray = async (req, res, next) => {
   // console.log(req.body)
-  const response = skillSearch.filter(
-    (data) =>
-      data
-  );
+  const response = skillSearch.filter((data) => data);
 
   // console.log(response)
   const details = response.map((data) => {
@@ -70,8 +68,6 @@ const getsalaray = async (req, res, next) => {
   console.log(details);
   res.json(details);
 };
-
-
 
 const getprevjobs = async (req, res, next) => {
   const { userid } = req.body;
@@ -114,7 +110,7 @@ const prevjobs = async (req, res, next) => {
   console.log(req.body);
   const { compname, duration, salary, position, location, userid } = req.body;
   let previousJobs;
-  previousJobs = await Jobs.findOne({ compname: compname,userid:userid });
+  previousJobs = await Jobs.findOne({ compname: compname, userid: userid });
   if (previousJobs) {
     const error = new HttpError(
       "Job exists already, please add different job",
@@ -148,76 +144,73 @@ const prevjobs = async (req, res, next) => {
 const addcurrjobs = async (req, res, next) => {
   const { compname, duration, salary, position, location, userid } = req.body;
   let currentJobs;
-  currentJobs = await CurrJobs.findOne({ compname: compname,userid:userid });
+  currentJobs = await CurrJobs.findOne({ compname: compname, userid: userid });
   if (currentJobs) {
     const error = new HttpError(
       "Job exists already, please add different job",
       422
     );
     return next(error);
+  } else {
+    const addcurJob = new CurrJobs({
+      compname: compname,
+      duration: duration,
+      position: position,
+      salary: salary,
+      location: location,
+      userid: userid,
+    });
+    try {
+      await addcurJob.save();
+    } catch (err) {
+      console.log("saving error");
+      const error = new HttpError(
+        "Adding Job failed, please try again later.",
+        500
+      );
+      return next(error);
+    }
+    res.json({ job: addcurJob });
   }
-else{
-  const addcurJob = new CurrJobs({
-    compname: compname,
-    duration: duration,
-    position: position,
-    salary: salary,
-    location: location,
-    userid: userid,
-  });
-  try {
-    await addcurJob.save();
-  } catch (err) {
-    console.log("saving error");
-    const error = new HttpError(
-      "Adding Job failed, please try again later.",
-      500
-    );
-    return next(error);
-  }
-  res.json({ job: addcurJob });
-}
   // console.log(newJob)
 };
 
-const recommendjobs = async(req,res)=>{
-const {user} =  req.body
-const skill = req.body.skill;
-console.log(skill,"mil gaya",user)
-const required_arr  = []
-skillSearch.map(data=>{
-  let matches = []
-  data.skills.filter(item=> {
-  let sumn = skill.filter(dat=>dat===item);
-  // console.log(sumn)
-  if(sumn.length > 0){
-    // console.log(sumn)
-    matches.push(sumn[0]);
-    return true;
-  }
-    return false;
-    })
-    if(matches.length > 0){
-      required_arr.push({...data, matched: matches.length})
+const recommendjobs = async (req, res) => {
+  const { user } = req.body;
+  const skill = req.body.skill;
+  console.log(skill, "mil gaya", user);
+  const required_arr = [];
+  skillSearch.map((data) => {
+    let matches = [];
+    data.skills.filter((item) => {
+      let sumn = skill.filter((dat) => dat === item);
+      // console.log(sumn)
+      if (sumn.length > 0) {
+        // console.log(sumn)
+        matches.push(sumn[0]);
+        return true;
+      }
+      return false;
+    });
+    if (matches.length > 0) {
+      required_arr.push({ ...data, matched: matches.length });
     }
-  }
-  )
-  console.log(required_arr)
-  let sorted =[]
+  });
+  console.log(required_arr);
+  let sorted = [];
   // console.log(required_arr)
-if(required_arr){
-  sorted = required_arr.slice().sort((a,b)=> b.matched- a.matched);
-}
-// console.log(sorted)
-const toSend = sorted.slice(0,10)
-console.log(toSend)
-res.json(toSend)
-}
+  if (required_arr) {
+    sorted = required_arr.slice().sort((a, b) => b.matched - a.matched);
+  }
+  // console.log(sorted)
+  const toSend = sorted.slice(0, 10);
+  console.log(toSend);
+  res.json(toSend);
+};
 
-const topjobs = async(req,res,next)=>
-{
-  console.log(Dataset)
-}
+const topjobs = async (req, res, next) => {
+  console.log(Dataset);
+};
 
 exports.prevjobs = prevjobs;
 exports.addcurrjobs = addcurrjobs;
@@ -229,8 +222,8 @@ exports.loginsearch = loginsearch;
 exports.getcurrjobs = getcurrjobs;
 exports.getsalaray = getsalaray;
 
-exports.recommendjobs = recommendjobs
-exports.topjobs = topjobs
+exports.recommendjobs = recommendjobs;
+exports.topjobs = topjobs;
 // const targetURL = `https://api.adzuna.com/v1/api/jobs/in/search/1?&results_per_page=20&content-type=application/json&app_id=da3b4b1b&app_key=36a0c2ed8bb2374466527f58761a7f3d&what=${toSearch}&where=${place}`;
 
 // axios.get(targetURL)

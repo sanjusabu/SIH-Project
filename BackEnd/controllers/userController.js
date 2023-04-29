@@ -5,6 +5,9 @@ const express = require("express");
 const axios = require("axios");
 const bcrypt = require("bcrypt");
 const { ObjectId } = require("mongodb");
+const getDataUri = require("../utils/dataUri");
+const cloudinary = require("../utils/cloudinary");
+
 const details = async (req, res) => {
   const { user } = req.body;
   const id = ObjectId(user);
@@ -29,8 +32,8 @@ const signup = async (req, res, next) => {
   let existingEmail;
   let existingMobile;
   try {
-    existingEmail = await UserModel.findOne({ email: email});
-    existingMobile = await UserModel.findOne({ mobilenumber:mobile});
+    existingEmail = await UserModel.findOne({ email: email });
+    existingMobile = await UserModel.findOne({ mobilenumber: mobile });
   } catch (err) {
     const error = new HttpError(
       "Signing up failed, please try again later.",
@@ -114,33 +117,30 @@ const login = async (req, res, next) => {
   res.json({ user: existingUser.toObject({ getters: true }) });
 };
 
-const loginOTP = async(req,res,next)=>
-{
-// console.log(req.body.number)
-const {number,otp} =req.body
-let existingUser;
-try {
-  existingUser = await UserModel.findOne({ mobilenumber:number});
-} catch (err) {
-  const error = new HttpError(
-    "Signing up failed, please try again later.",
-    500
-  );
-  return next(error);
-}
-if (existingUser && otp==123456) {
-    res.json(existingUser)
-   
-}
-else{
+const loginOTP = async (req, res, next) => {
+  // console.log(req.body.number)
+  const { number, otp } = req.body;
+  let existingUser;
+  try {
+    existingUser = await UserModel.findOne({ mobilenumber: number });
+  } catch (err) {
     const error = new HttpError(
-        "Sign in failed, please try again later, wrong phone number",
-        500
-      );
-      return next(error);
-}
-}
-const updateProfile = async(req,res,next) =>{
+      "Signing up failed, please try again later.",
+      500
+    );
+    return next(error);
+  }
+  if (existingUser && otp == 123456) {
+    res.json(existingUser);
+  } else {
+    const error = new HttpError(
+      "Sign in failed, please try again later, wrong phone number",
+      500
+    );
+    return next(error);
+  }
+};
+const updateProfile = async (req, res, next) => {
   const { userid, name, location } = req.body;
   console.log("name is", name);
   let existingUser;
@@ -153,20 +153,38 @@ const updateProfile = async(req,res,next) =>{
         {
           $set: {
             name: name,
-            location:location,
+            location: location,
           },
         }
-        );
-        // res.json(result)
-      console.log(result)
+      );
+      // res.json(result)
+      console.log(result);
     } catch (err) {
       console.log(err);
     }
   }
-}
+};
+
+const updateProfilePicture = async (req, res, next) => {
+  const file = req.file;
+  const { userid } = req.body;
+  const fileUri = getDataUri(file);
+  const mycloud = await cloudinary.uploader.upload(fileUri.content);
+  const cloudimageurl = mycloud.secure_url;
+  const updateprofile = await UserModel.updateOne(
+    { _id: userid },
+    {
+      $set: {
+        profilePicture: cloudimageurl,
+      },
+    }
+  );
+  res.json(updateprofile);
+};
 
 exports.signup = signup;
 exports.login = login;
 exports.loginOTP = loginOTP;
 exports.details = details;
 exports.updateProfile = updateProfile;
+exports.updateProfilePicture = updateProfilePicture;
