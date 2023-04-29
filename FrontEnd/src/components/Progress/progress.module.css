@@ -39,6 +39,7 @@
 .containers {
   display: flex;
   flex-direction: row;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 1300px) {

@@ -6,10 +6,12 @@ import "./landingPageImage.css";
 //import App from './App';
 //import * as React from 'react';
 import classes from "./Images.module.css";
+import NavBar from "../NavBar/NavBar";
 
 export default function Images() {
   return (
     <>
+      {/* <NavBar /> */}
       <h1>
         <b>Choose A Job Of Your Choice</b>
       </h1>

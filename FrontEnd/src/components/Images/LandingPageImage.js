@@ -4,7 +4,7 @@ import { useRequest } from "../../hooks/request-hook";
 import { useNavigate } from "react-router-dom";
 function LandingPageImage(props) {
   const navigate = useNavigate()
-  const {sendRequest} =  useRequest()
+  const { sendRequest } = useRequest()
   const imgLink = props.imgLink;
   const jobType = props.jobType;
   const value = props.value;
@@ -28,21 +28,21 @@ function LandingPageImage(props) {
     "Farmer"
   ];
 
-  const handleClick = async(e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
     console.log(skillarr[e.target.value]);
     const response = await sendRequest(
       "http://localhost:5002/nontc/showjobs",
       "POST",
       JSON.stringify({
-        clicked:skillarr[e.target.value]
+        clicked: skillarr[e.target.value]
       }),
       {
         "Content-Type": "application/json",
       }
     );
     console.log(response)
-    navigate("/imagesSearch",{state:response})
+    navigate("/imagesSearch", { state: response })
   };
   let i = 0;
   return (
@@ -62,7 +62,7 @@ function LandingPageImage(props) {
           ></img>
           <br></br>
           {/* <button class="btn btn-dark">Gardening</button> */}
-          <button class="btn btn-dark" value={value} onClick={handleClick}>
+          <button className="btn btn-light" value={value} onClick={handleClick}>
             {props.jobType}
           </button>
         </div>

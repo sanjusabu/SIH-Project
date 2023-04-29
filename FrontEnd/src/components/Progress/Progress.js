@@ -84,7 +84,7 @@ const Progress = () => {
           </div>
         </div>
       </div>
-      <div className="container my-3">
+      <div className="container">
         <div className={classes.containers}>
           <div className={classes.lefttt}>
             <div className="container my-3">
@@ -98,50 +98,6 @@ const Progress = () => {
           </div>
         </div>
       </div>
-      {/* <div className={["container", classes.skillcontainer].join(" ")}>
-        <div className={["row", classes.footcontainer].join(" ")}>
-          <h2 className="p-2 mb-3">Skills You should Learn</h2>
-          <div className="col-md-4">
-            <div className={["card", classes.skillcard].join(" ")}>
-              <div className="card-header">
-                <h2>Leadership</h2>
-              </div>
-              <div className="card-body">
-                <h5 className="card-title p-2">Special title treatment</h5>
-                <Link to="/skillsrecommend" className="btn btn-primary">
-                  Go somewhere
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className={["card", classes.skillcard].join(" ")}>
-              <div className="card-header">
-                <h2>Communication Skills</h2>
-              </div>
-              <div className="card-body">
-                <h5 className="card-title p-2">Special title treatment</h5>
-                <Link to="/skillsrecommend" className="btn btn-primary">
-                  Go somewhere
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className={["card", classes.skillcard].join(" ")}>
-              <div className="card-header">
-                <h2>Next.Js</h2>
-              </div>
-              <div className="card-body">
-                <h5 className="card-title p-2">Special title treatment</h5>
-                <Link to="/skillsrecommend" className="btn btn-primary">
-                  Go somewhere
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </>
   );
 };

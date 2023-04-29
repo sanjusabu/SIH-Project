@@ -33,39 +33,35 @@ img {
   transform-style: preserve-3d;
 } */
 
-.imgCont{
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 20px;
-    top: 10px;
-    /* padding: 10px; */
+.imgCont {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  top: 10px;
 }
 
-.rows{
-    object-fit: cover;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    /* height: 100px;
-    width: 300px; */
+.rows {
+  object-fit: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.thumbail img{
-    display: flex;
-    object-fit: cover;
-    height: 220px;
-    width: 224px;
-    border-radius: 117px;
-    padding: 10px;
-    justify-content: center;
-
+.thumbail img {
+  display: flex;
+  object-fit: cover;
+  height: 220px;
+  width: 224px;
+  border-radius: 117px;
+  padding: 10px;
+  justify-content: center;
 }
 
-.thumbail{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.thumbail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

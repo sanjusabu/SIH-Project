@@ -112,7 +112,6 @@ html {
   height: 50px;
   border-radius: 50%;
 }
-
 .slide-in-left-enter-active {
   transform: translateX(0);
   opacity: 1;
