@@ -182,199 +182,173 @@ export default function Profile(props) {
   return (
     <>
       <NavBar />
-      <div id="profile">
-        <div className="basic-info">
-          <div className="profile-image">
-            <div className="profileCover">
-              <img
-                className="profileUserImg"
-                src={
-                  currentUser.profilePicture
-                    ? currentUser.profilePicture
-                    : "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
-                }
-                alt=""
-              />
-            </div>
-            {localStorage.getItem("userid") === uid ? (
-              <div className={`updatePict d-${divblock}`}>
-                <label className="btn btn-outline-info my-2">
-                  <input
-                    type="file"
-                    // className="updatePict"
-                    onChange={onImageChange}
-                    name="file"
-                    ref={fileRef}
-                  />
-                  Update Profile Photo
-                </label>
+      <div className="container">
+        <div id="profile">
+          <div className="basic-info my-4">
+            <div className="profile-image">
+              <div className="profileCover">
+                <img
+                  className="profileUserImg"
+                  src={
+                    currentUser.profilePicture
+                      ? currentUser.profilePicture
+                      : "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg"
+                  }
+                  alt=""
+                />
               </div>
-            ) : (
-              <div></div>
-            )}
-            <div className={`postimgggg my-2 d-${csstyle}`}>
-              <img className="newimggg mx-3" src={image1} alt="Loading" />
-              <button
-                className="addpost btn btn-outline-info"
-                onClick={updateProfHandller}
-                disabled={image1 ? false : true}
-              >
-                Change Image
-              </button>
+              {localStorage.getItem("userid") === uid ? (
+                <div className={`updatePict d-${divblock}`}>
+                  <label className="btn btn-outline-info my-2">
+                    <input
+                      type="file"
+                      className="inputfilecss"
+                      onChange={onImageChange}
+                      name="file"
+                      ref={fileRef}
+                    />
+                    Update Profile Photo
+                  </label>
+                </div>
+              ) : (
+                <div></div>
+              )}
+              <div className={`postimgggg my-2 d-${csstyle}`}>
+                <img className="newimggg mx-3" src={image1} alt="Loading" />
+                <button
+                  className="addpost btn btn-outline-info"
+                  onClick={updateProfHandller}
+                  disabled={image1 ? false : true}
+                >
+                  Change Image
+                </button>
+              </div>
             </div>
-          </div>
-          {/* <div className="profile-image">
-            <p>
-              <input
-                type="file"
-                accept="image/*"
-                name="image"
-                id="file"
-                onChange={loadFile}
-                style={{ display: "none" }}
-              />
-            </p>
-            <p className="upload-btn">
-              <label htmlFor="file" style={{ cursor: "pointer"}}>
-                Upload Image
-              </label>
-            </p>
-            <p>
-              <img
-                id="output"
-                width="100%"
-                style={{
-                  objectFit: "cover",
-                  zIndex: "1",
-                }}
-              />
-            </p>
-          </div> */}
-          <div className="details">
-            <ul className="detailsul-1">
-              {/* <li>{FilledName}</li> */}
-              <li>{data.name}</li>
-              <li>{data.location}</li>
-            </ul>
-            <ul className="detailsul-2">
-              {/* <li>{FilledPhoneNo}</li> */}
-              <li>{data.mobilenumber}</li>
-              <li>{data.email}</li>
-              <button className="btn btn-primary detailedit" onClick={showForm}>
-                Edit
-              </button>
-            </ul>
+            <div className="details">
+              <ul className="detailsul-1">
+                <li>{data.name}</li>
+                <li>{data.location}</li>
+              </ul>
+              <ul className="detailsul-2">
+                {/* <li>{FilledPhoneNo}</li> */}
+                <li>{data.mobilenumber}</li>
+                <li>{data.email}</li>
+                <button className="btn btn-primary detailedit" onClick={showForm}>
+                  Edit
+                </button>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div
-        className="form-container container"
-        style={{ display: `${displayForm}`, position: "relative" }}
-      >
-        <form onSubmit={submitHandler}>
-          <div className="row container">
-            <h4>Edit Details</h4>
-            <div className=" input-group input-group-icon iconissue">
-              <input
-                type="text"
-                placeholder="Full Name"
-                // id="username"
-                size="50"
-                name="fullName"
-                onChange={nameChange}
-              />
-              <div className="input-icon">
-                <i className="fa fa-user"></i>
-              </div>
-            </div>
-            <div className="input-group input-group-icon iconissue">
-              {/* <label htmlFor="locationTextField"></label> */}
-              <input
-                // id="locationTextField"
-                type="text"
-                size="50"
-                placeholder="Current Location"
-                name="location"
-                onChange={locationChange}
-              />
-              {/* <input type="email" placeholder="Email Adress"/> */}
-
-              <div className="input-icon">
-                <i className="fa fa-envelope"></i>
-              </div>
-            </div>
-            <div className="input-group input-group-icon">
-              <input
-                type="number"
-                placeholder="Phone Number"
-                size="50"
-                name="phNo"
-                onChange={phonenoChange}
-              />
-              <div className="input-icon">
-                <i className="fa fa-key"></i>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-half">
-              <h4>Date of Birth</h4>
-              <div className="input-group">
-                <div className="col-third">
-                  <input
-                    type="date"
-                    name="day"
-                    size="50"
-                    onChange={dateChange}
-                    style={{ width: "260px" }}
-                  />
+        <div
+          className="form-container container"
+          style={{ display: `${displayForm}`, position: "relative" }}
+        >
+          <form onSubmit={submitHandler}>
+            <div className="row container">
+              <h4>Edit Details</h4>
+              <div className=" input-group input-group-icon iconissue">
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  // id="username"
+                  size="50"
+                  name="fullName"
+                  onChange={nameChange}
+                />
+                <div className="input-icon">
+                  <i className="fa fa-user"></i>
                 </div>
-                {/* <div className="col-third">
+              </div>
+              <div className="input-group input-group-icon iconissue">
+                {/* <label htmlFor="locationTextField"></label> */}
+                <input
+                  // id="locationTextField"
+                  type="text"
+                  size="50"
+                  placeholder="Current Location"
+                  name="location"
+                  onChange={locationChange}
+                />
+                {/* <input type="email" placeholder="Email Adress"/> */}
+
+                <div className="input-icon">
+                  <i className="fa fa-envelope"></i>
+                </div>
+              </div>
+              <div className="input-group input-group-icon">
+                <input
+                  type="number"
+                  placeholder="Phone Number"
+                  size="50"
+                  name="phNo"
+                  onChange={phonenoChange}
+                />
+                <div className="input-icon">
+                  <i className="fa fa-key"></i>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-half">
+                <h4>Date of Birth</h4>
+                <div className="input-group">
+                  <div className="col-third">
+                    <input
+                      type="date"
+                      name="day"
+                      size="50"
+                      onChange={dateChange}
+                      style={{ width: "260px" }}
+                    />
+                  </div>
+                  {/* <div className="col-third">
                   <input type="text" placeholder="MM" name="month" onChange={monthChange}/>
                 </div>
                 <div className="col-third">
                   <input type="text" placeholder="YYYY" name="year"onChange={yearChange} />
                 </div> */}
+                </div>
+              </div>
+              <div className="col-half">
+                <h4>Gender</h4>
+                <div className="input-group">
+                  <input
+                    id="gender-male"
+                    type="radio"
+                    name="gender"
+                    value="male"
+                    onChange={gender}
+                  />
+                  <label htmlFor="gender-male">Male</label>
+                  <input
+                    id="gender-female"
+                    type="radio"
+                    name="gender"
+                    value="female"
+                    onChange={gender}
+                  />
+                  <label htmlFor="gender-female">Female</label>
+                </div>
               </div>
             </div>
-            <div className="col-half">
-              <h4>Gender</h4>
-              <div className="input-group">
-                <input
-                  id="gender-male"
-                  type="radio"
-                  name="gender"
-                  value="male"
-                  onChange={gender}
-                />
-                <label htmlFor="gender-male">Male</label>
-                <input
-                  id="gender-female"
-                  type="radio"
-                  name="gender"
-                  value="female"
-                  onChange={gender}
-                />
-                <label htmlFor="gender-female">Female</label>
-              </div>
-            </div>
-          </div>
 
-          <button className="submit-btn btn btn-primary" onClick={saveChanges}>
-            Save Changes
-          </button>
-          {/* <input type="submit">Save Changes</input> */}
-        </form>
+            <button className="submit-btn btn btn-primary" onClick={saveChanges}>
+              Save Changes
+            </button>
+            {/* <input type="submit">Save Changes</input> */}
+          </form>
+        </div>
+
+        <div className="SkillPanel my-5">
+          <SkillPanel />
+        </div>
       </div>
-
-      <div className="SkillPanel">
-        <SkillPanel />
-      </div>
-
-      <div className="pastJobs">
+      <div className="pastJobs my-2">
         <Pastjobs />
       </div>
+
 
       {/* <EditInfo /> */}
     </>

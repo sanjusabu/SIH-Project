@@ -8,8 +8,26 @@ html {
   font-family: "Noto Sans JP", sans-serif;
 }
 
-body {
+/* body {
   margin: 0;
+} */
+
+.pastJobs {
+  max-width: 90rem;
+  padding: 1rem;
+  margin-left: 6rem;
+  margin-right: 6rem;
+  /* box-shadow: 0 0 13px rgb(0, 0, 0, 0.15); */
+  border-radius: 20px;
+}
+
+.SkillPanel {
+  max-width: 90rem;
+  padding: 1rem;
+  margin-left: 6rem;
+  margin-right: 6rem;
+  box-shadow: 0 0 13px rgb(0, 0, 0, 0.15);
+  border-radius: 20px;
 }
 
 .app {
@@ -21,13 +39,18 @@ body {
   margin: 3rem auto;
 }
 
+.cardsss {
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgb(0, 0, 0, 0.15);
+  padding: 15px 10px;
+}
+
 .form-control {
-  width:100%;
+  width: 100%;
 }
 
 .form-control input,
 .form-control label {
- 
 }
 
 .form-control label {
@@ -82,6 +105,14 @@ body {
   transform: translateX(-100%);
 }
 
+.proffimage {
+  display: flex;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
 .slide-in-left-enter-active {
   transform: translateX(0);
   opacity: 1;
@@ -134,9 +165,23 @@ body {
 }
 .options {
   padding: 1rem 2rem;
-  margin: 1rem;
-  box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem;
+  box-shadow: 0 0 15px rgb(0, 0, 0, 0.2);
+  border-radius: 15px;
 }
+
+.imageprof {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: relative;
+  bottom: 37px; */
+  transform: translateY(-85%);
+}
+
 .ima {
   display: flex;
   justify-content: center;
@@ -176,6 +221,13 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.progresscss {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .logg {
   width: 6rem;
 }

@@ -7,6 +7,10 @@
   font-weight: 600;
 }
 
+.titleee {
+  color: white;
+}
+
 .servicee {
   font-weight: 500;
   color: #111;
@@ -16,9 +20,14 @@
 }
 
 .optionss {
-  padding: 1rem 1.5rem;
-  margin: 1rem;
-  box-shadow: 0 0 20px rgb(0, 0, 0, 0.2);
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 0 15px rgb(0, 0, 0, 0.15);
+  border-radius: 20px;
 }
 
 .proglanguagee {
@@ -27,11 +36,7 @@
   overflow-y: scroll;
 }
 
-.listtt {
-  list-style: none;
-  margin: 3px;
-}
-.containerss {
+/* .containerss {
   display: flex;
   justify-content: center;
-}
+} */

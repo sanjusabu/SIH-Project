@@ -1,13 +1,15 @@
 import { useLocation } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import classes from "./newsearch.module.css";
+import Headers from "../header/header";
+
 
 const Newsearch = () => {
   const location = useLocation();
   console.log(location.state);
   return (
     <>
-      <NavBar />
+      {localStorage.hasOwnProperty("userid") ? <NavBar /> : <Headers />}
 
       <div className="container my-4">
         <div className="jobs">

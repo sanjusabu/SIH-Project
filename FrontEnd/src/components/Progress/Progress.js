@@ -63,7 +63,7 @@ const Progress = () => {
         </Link>
       </div>
       <div className="container">
-        <div className="row">
+        <div className="row progresscss">
           {currJobs.map((data, index) => {
             if (currJobs.length - 1 === index)
               return (

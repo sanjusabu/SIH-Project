@@ -5,16 +5,18 @@ import { useEffect, useState } from "react";
 import { useRequest } from "../../hooks/request-hook";
 import useInput from "../../hooks/useInput";
 import { useNavigate } from "react-router-dom";
+import Headers from "../header/header";
 import LoadingSpinner from '../../Design/UIElements/LoadingSpinner'
 const isSearch = (value) => value.trim() !== "";
 
 const Landingpage = () => {
-  const [loading,setloading] = useState(true)
+  const [loading, setloading] = useState(true)
   const { sendRequest } = useRequest();
   const [data, setData] = useState([]);
   const [jobs, setJobs] = useState([]);
-  
-  const [getSkills,setSkills] = useState([])
+  const [image, setImage] = useState("");
+
+  const [getSkills, setSkills] = useState([])
   const {
     value: Search,
     reset: resetSearch,
@@ -42,93 +44,96 @@ const Landingpage = () => {
             }
           );
           responseData.map((data) => setData(data));
+          setImage(responseData[0].profilePicture);
           // setData(responseData)
           //  setData(responseData.info)
         }
       } catch (err) {
         console.log(err);
       }
-    
+
     };
 
     const fetchSkills = async () => {
       try {
         if (localStorage.hasOwnProperty("userid")) {
-        const responseData = await sendRequest(
-          'http://localhost:5002/skills/getSkills',
-          'POST',
-          JSON.stringify({
-            userid : localStorage.getItem("userid")
-          }),
-          {
-            "Content-Type": "application/json",
-          }
-        );
-        // console.log(responseData)
-        setSkills(responseData)
-        
-      } }catch (err) {
+          const responseData = await sendRequest(
+            'http://localhost:5002/skills/getSkills',
+            'POST',
+            JSON.stringify({
+              userid: localStorage.getItem("userid")
+            }),
+            {
+              "Content-Type": "application/json",
+            }
+          );
+          // console.log(responseData)
+          setSkills(responseData)
+
+        }
+      } catch (err) {
         console.log(err)
       }
-    
-      };
-   
-      fetchUsers();
-      fetchSkills();
-    
-      // console.log(getSkills)
-    }, [sendRequest]);
 
-    // console.log(getSkills,"errfjwfkj")
-    useEffect(()=>{
-    const fetchJobs =async()=>{
+    };
+
+    fetchUsers();
+    fetchSkills();
+
+    // console.log(getSkills)
+  }, [sendRequest]);
+
+  // console.log(getSkills,"errfjwfkj")
+  useEffect(() => {
+    const fetchJobs = async () => {
       // setloading(true)
       try {
         if (localStorage.hasOwnProperty("userid")) {
           // setloading(true)
-        const responseData = await sendRequest(
-          'http://localhost:5002/jobs/recommendjobs',
-          'POST',
-          JSON.stringify({
-            user: localStorage.getItem("userid"),
-            skill : getSkills
-          }),
-          {
-            "Content-Type": "application/json",
-          }
-        );
-        // console.log(responseData)
-       
-        setJobs(responseData)
-        
-      } }catch (err) {
+          const responseData = await sendRequest(
+            'http://localhost:5002/jobs/recommendjobs',
+            'POST',
+            JSON.stringify({
+              user: localStorage.getItem("userid"),
+              skill: getSkills
+            }),
+            {
+              "Content-Type": "application/json",
+            }
+          );
+          // console.log(responseData)
+
+          setJobs(responseData)
+
+        }
+      } catch (err) {
         console.log(err)
       }
     }
     fetchJobs()
   }
-,[sendRequest,getSkills])
+    , [sendRequest, getSkills])
 
 
-    
-    const submitHandler = async (e) => {
-      e.preventDefault();
-      const response = await sendRequest(
-        "http://localhost:5002/jobs/loginsearch",
-        "POST",
-        JSON.stringify({ search: Search, place: Place }),
-        { "Content-Type": "application/json" }
-      );
-      // console.log(response);
-      navigate("/newsearch", { state: response });
-        
-        resetLocation();
-        resetSearch();
-      };
-      
-      return (
-        <>
-      <NavBar />
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    const response = await sendRequest(
+      "http://localhost:5002/jobs/loginsearch",
+      "POST",
+      JSON.stringify({ search: Search, place: Place }),
+      { "Content-Type": "application/json" }
+    );
+    // console.log(response);
+    navigate("/newsearch", { state: response });
+
+    resetLocation();
+    resetSearch();
+  };
+
+  return (
+    <>
+      {localStorage.hasOwnProperty("userid") ? <NavBar /> : <Headers />}
       <div>
         <div className="contain">
           <form
@@ -170,29 +175,28 @@ const Landingpage = () => {
                 </div>
                 {/* {console.log(jobs,'is the jobs ijskjf')} */}
                 {/* {loading && <LoadingSpinner />} */}
-               {/* {!loading && console.log(jobs,'flkfkw') */}
-              {jobs.length!=0 && jobs?.map(data=>
-                <div className="options">
-                  <h3 className="title">{data.company}</h3>
-                  <p className="service">{data.jobtitle}</p>
-                  <h6 className="time">Experience Required:{data.experience} years</h6>
-                 <h6 className="proglanguage">{data.industry}</h6>
-                 <h6>{data.joblocation_address}</h6>
-                 {/* <h6>Skills Preffered : {data.skills.map(dat=> dat+ ',')}</h6> */}
-                </div>)
-               }
-               {!jobs.length && <p>Jobs Loading</p>}
-                
-                
+                {/* {!loading && console.log(jobs,'flkfkw') */}
+                {jobs.length != 0 && jobs?.map(data =>
+                  <div className="options">
+                    <h3 className="title">{data.company}</h3>
+                    <p className="service">{data.jobtitle}</p>
+                    <h6 className="time">Experience Required:{data.experience} years</h6>
+                    <h6 className="proglanguage">{data.industry}</h6>
+                    <h6>{data.joblocation_address}</h6>
+                    {/* <h6>Skills Preffered : {data.skills.map(dat=> dat+ ',')}</h6> */}
+                  </div>)
+                }
+                {!jobs.length && <p>Jobs Loading</p>}
+
+
               </div>
-            </div> 
+            </div>
             <div className="right">
               <h2 className="head">Profile</h2>
               <div className="options">
-                <div className="ima">
-                  <div className="image">
-                    <i className="fa-solid fa-user prof"></i>
-                  </div>
+                <div className="imageprof">
+                  <img className="proffimage" src={image} alt="Loading">
+                  </img>
                 </div>
                 <div className="deta">
                   <h3 className="name">{data.name}</h3>
