@@ -1,5 +1,5 @@
 const Jobs = require("../models/JobModel");
-const CurrJobs = require("../models/CurrJobModel");
+const CurrJobs = require("../models/CurrjobModel");
 const HttpError = require("../models/http-error");
 const express = require("express");
 const fs = require("fs");
