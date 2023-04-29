@@ -29,7 +29,7 @@ const Formd = () => {
       // setEnteredSkill(" ");
       // console.log(EnteredSkill);
       const response = await sendRequest(
-        "http://localhost:5002/jobScore/addJobScore",
+        "https://backend-sih.onrender.com/jobScore/addJobScore",
         "POST",
         JSON.stringify({
           userid: localStorage.getItem("userid"),
@@ -53,7 +53,7 @@ const Formd = () => {
   //     try {
   //       if (localStorage.hasOwnProperty("userid")) {
   //         const responseData = await sendRequest(
-  //           "http://localhost:5002/jobScore/getJobScore",
+  //           "https://backend-sih.onrender.com/jobScore/getJobScore",
   //           "POST",
   //           JSON.stringify({
   //             user: localStorage.getItem("userid"),

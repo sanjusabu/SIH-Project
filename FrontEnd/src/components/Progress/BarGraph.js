@@ -17,7 +17,7 @@ function BarGraph() {
       try {
         if (localStorage.hasOwnProperty("userid")) {
           const responseData = await sendRequest(
-            "http://localhost:5002/jobs/getjobssalary/",
+            "https://backend-sih.onrender.com/jobs/getjobssalary/",
             "POST",
             JSON.stringify({
               userid: localStorage.getItem("userid"),
@@ -37,7 +37,7 @@ function BarGraph() {
       try {
         if (localStorage.hasOwnProperty("userid")) {
           const responseData = await sendRequest(
-            "http://localhost:5002/jobs/getjobsname/",
+            "https://backend-sih.onrender.com/jobs/getjobsname/",
             "POST",
             JSON.stringify({
               userid: localStorage.getItem("userid"),

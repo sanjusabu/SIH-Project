@@ -35,7 +35,7 @@ const Logintech = () => {
     reset: resetotp,
   } = useInput(otpnum);
 
-  const numberClasses = !numberError ? "form-control-plaintext": "form-control-invalid";
+  const numberClasses = !numberError ? "form-control-plaintext" : "form-control-invalid";
   const otpClasses = !otpError ? "form-control-plaintext" : "form-control-invalid";
 
   if (numberisValid && otpisValid) {
@@ -51,7 +51,7 @@ const Logintech = () => {
       return;
     }
     const response = await sendRequest(
-      "http://localhost:5002/users/loginOTP",
+      "https://backend-sih.onrender.com/users/loginOTP",
       "POST",
       JSON.stringify({
         number: numberValue,
@@ -71,8 +71,8 @@ const Logintech = () => {
   };
   return (
     <>
-    {/* {console.log(isError)} */}
-       <ErrorModal error={isError} onClear={clearError} />
+      {/* {console.log(isError)} */}
+      <ErrorModal error={isError} onClear={clearError} />
       <form onSubmit={submitHandler}>
         <br></br>
         <div className={classes.main}>

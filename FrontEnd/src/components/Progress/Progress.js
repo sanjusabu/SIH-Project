@@ -19,7 +19,7 @@ const Progress = () => {
       try {
         if (localStorage.hasOwnProperty("userid")) {
           const responseData = await sendRequest(
-            "http://localhost:5002/jobs/getcurrjobs",
+            "https://backend-sih.onrender.com/jobs/getcurrjobs",
             "POST",
             JSON.stringify({
               userid: localStorage.getItem("userid"),
@@ -37,7 +37,7 @@ const Progress = () => {
     const getCurrJobScore = async () => {
       if (localStorage.hasOwnProperty("userid")) {
         const responseData = await sendRequest(
-          "http://localhost:5002/jobScore/getCurrJobScore",
+          "https://backend-sih.onrender.com/jobScore/getCurrJobScore",
           "POST",
           JSON.stringify({
             userid: localStorage.getItem("userid"),

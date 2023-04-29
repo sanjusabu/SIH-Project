@@ -28,52 +28,52 @@ const Search = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     const response = await sendRequest(
-      "http://localhost:5002/jobs/loginsearch",
+      "https://backend-sih.onrender.com/jobs/loginsearch",
       "POST",
       JSON.stringify({ search: Search, place: Place }),
       { "Content-Type": "application/json" }
     );
     // console.log(response);
     navigate("/newsearch", { state: response });
-      
-      resetLocation();
-      resetSearch();
-    };
+
+    resetLocation();
+    resetSearch();
+  };
 
   return (
     <>
 
-        <div className="contain">
-          <form
-            className="search d-flex my-5"
-            role="search"
-            onSubmit={submitHandler}
-          >
+      <div className="contain">
+        <form
+          className="search d-flex my-5"
+          role="search"
+          onSubmit={submitHandler}
+        >
+          <input
+            className="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            value={Search}
+            onChange={searchChange}
+            autoComplete="on"
+          />
+          <div className="contain">
             <input
-              className="form-control me-2"
+              className="form-control"
               type="search"
-              placeholder="Search"
+              placeholder="Location"
               aria-label="Search"
-              value={Search}
-              onChange={searchChange}
+              value={Place}
+              onChange={searchLocation}
               autoComplete="on"
             />
-            <div className="contain">
-              <input
-                className="form-control"
-                type="search"
-                placeholder="Location"
-                aria-label="Search"
-                value={Place}
-                onChange={searchLocation}
-                autoComplete="on"
-              />
-            </div>
-            <button className="btn btn-outline-success mx-2" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
+          </div>
+          <button className="btn btn-outline-success mx-2" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
       <div>{Loading && <LoadingSpinner />}</div>
 
       {/* <StateList /> */}

@@ -11,7 +11,7 @@ const isSearch = (value) => value.trim() !== "";
 const Landingpage = () => {
   const { sendRequest } = useRequest();
   const [data, setData] = useState([]);
-  const [getSkills,setSkills] = useState([])
+  const [getSkills, setSkills] = useState([])
   const {
     value: Search,
     reset: resetSearch,
@@ -29,7 +29,7 @@ const Landingpage = () => {
       try {
         if (localStorage.hasOwnProperty("userid")) {
           const responseData = await sendRequest(
-            "http://localhost:5002/users/details",
+            "https://backend-sih.onrender.com/users/details",
             "POST",
             JSON.stringify({
               user: localStorage.getItem("userid"),
@@ -45,83 +45,85 @@ const Landingpage = () => {
       } catch (err) {
         console.log(err);
       }
-    
+
     };
 
     const fetchSkills = async () => {
       try {
         if (localStorage.hasOwnProperty("userid")) {
-        const responseData = await sendRequest(
-          'http://localhost:5002/skills/getSkills',
-          'POST',
-          JSON.stringify({
-            userid : localStorage.getItem("userid")
-          }),
-          {
-            "Content-Type": "application/json",
-          }
-        );
-        console.log(responseData)
-        setSkills(responseData)
-        
-      } }catch (err) {
+          const responseData = await sendRequest(
+            'https://backend-sih.onrender.com/skills/getSkills',
+            'POST',
+            JSON.stringify({
+              userid: localStorage.getItem("userid")
+            }),
+            {
+              "Content-Type": "application/json",
+            }
+          );
+          console.log(responseData)
+          setSkills(responseData)
+
+        }
+      } catch (err) {
         console.log(err)
       }
-    
-      };
-   
-      fetchUsers();
-      fetchSkills();
-    
-      // console.log(getSkills)
-    }, [sendRequest]);
 
-    console.log(getSkills,"errfjwfkj")
-    useEffect(()=>{
-    const fetchJobs =async()=>{
-      
+    };
+
+    fetchUsers();
+    fetchSkills();
+
+    // console.log(getSkills)
+  }, [sendRequest]);
+
+  console.log(getSkills, "errfjwfkj")
+  useEffect(() => {
+    const fetchJobs = async () => {
+
       try {
         if (localStorage.hasOwnProperty("userid")) {
-        const responseData = await sendRequest(
-          'http://localhost:5002/jobs/recommendjobs',
-          'POST',
-          JSON.stringify({
-            user: localStorage.getItem("userid"),
-            skill : getSkills
-          }),
-          {
-            "Content-Type": "application/json",
-          }
-        );
-        console.log(responseData)
-        // setSkills(responseData)
-        
-      } }catch (err) {
+          const responseData = await sendRequest(
+            'https://backend-sih.onrender.com/jobs/recommendjobs',
+            'POST',
+            JSON.stringify({
+              user: localStorage.getItem("userid"),
+              skill: getSkills
+            }),
+            {
+              "Content-Type": "application/json",
+            }
+          );
+          console.log(responseData)
+          // setSkills(responseData)
+
+        }
+      } catch (err) {
         console.log(err)
       }
     }
     fetchJobs()
   }
-,[sendRequest,getSkills])
+    , [sendRequest, getSkills])
 
-    
-    const submitHandler = async (e) => {
-      e.preventDefault();
-      const response = await sendRequest(
-        "http://localhost:5002/jobs/loginsearch",
-        "POST",
-        JSON.stringify({ search: Search, place: Place }),
-        { "Content-Type": "application/json" }
-      );
-      console.log(response);
-      navigate("/newsearch", { state: response });
-        
-        resetLocation();
-        resetSearch();
-      };
-      
-      return (
-        <>
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    const response = await sendRequest(
+      "https://backend-sih.onrender.com/jobs/loginsearch",
+      "POST",
+      JSON.stringify({ search: Search, place: Place }),
+      { "Content-Type": "application/json" }
+    );
+    console.log(response);
+    navigate("/newsearch", { state: response });
+
+    resetLocation();
+    resetSearch();
+  };
+
+  return (
+    <>
       <NavBar />
       <div>
         <div className="contain">
@@ -209,10 +211,10 @@ const Landingpage = () => {
           </div>
         </div> */}
         <div className="addjobs d-flex justify-content-center m-4">
-        <Link to="/addnewemployerjobs">
-          <button className="btn btn-primary">Add New Job</button>
-        </Link>
-      </div>
+          <Link to="/addnewemployerjobs">
+            <button className="btn btn-primary">Add New Job</button>
+          </Link>
+        </div>
       </div>
     </>
   );

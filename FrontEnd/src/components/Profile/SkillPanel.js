@@ -36,7 +36,7 @@ function SkillPanel() {
       try {
         if (localStorage.hasOwnProperty("userid")) {
           const responseData = await sendRequest(
-            "http://localhost:5002/skills/getSkills",
+            "https://backend-sih.onrender.com/skills/getSkills",
             "POST",
             JSON.stringify({
               userid: localStorage.getItem("userid"),
@@ -63,7 +63,7 @@ function SkillPanel() {
     setEnteredSkill(" ");
     console.log(EnteredSkill);
     const response = await sendRequest(
-      "http://localhost:5002/skills/addskills",
+      "https://backend-sih.onrender.com/skills/addskills",
       "POST",
       JSON.stringify({
         userid: uid,

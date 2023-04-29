@@ -44,7 +44,7 @@ export default function Profile(props) {
       formData.append("file", fileRef.current.files[0]);
       try {
         const responseData = await sendRequest(
-          "http://localhost:5002/users/updateProfilePicture",
+          "https://backend-sih.onrender.com/users/updateProfilePicture",
           "POST",
           formData
         );
@@ -64,7 +64,7 @@ export default function Profile(props) {
       try {
         if (localStorage.hasOwnProperty("userid")) {
           const responseData = await sendRequest(
-            "http://localhost:5002/users/details",
+            "https://backend-sih.onrender.com/users/details",
             "POST",
             JSON.stringify({
               user: localStorage.getItem("userid"),
@@ -110,7 +110,7 @@ export default function Profile(props) {
     // data.name = EnteredName;
 
     const response = await sendRequest(
-      "http://localhost:5002/users/updateProfile",
+      "https://backend-sih.onrender.com/users/updateProfile",
       "POST",
       JSON.stringify({
         userid: uid,

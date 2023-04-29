@@ -30,7 +30,7 @@ const Formdata = () => {
       // setEnteredSkill(" ");
       // console.log(EnteredSkill);
       const response = await sendRequest(
-        "http://localhost:5002/jobScore/addCurrJobScore",
+        "https://backend-sih.onrender.com/jobScore/addCurrJobScore",
         "POST",
         JSON.stringify({
           userid: localStorage.getItem("userid"),

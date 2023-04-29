@@ -20,7 +20,7 @@ const Addprevjobs = () => {
     console.log(job.compname);
     if (localStorage.hasOwnProperty("userid")) {
       const response = await sendRequest(
-        "http://localhost:5002/jobs/addprevjobs", 
+        "https://backend-sih.onrender.com/jobs/addprevjobs",
         "POST",
         JSON.stringify({
           compname: job.compname,

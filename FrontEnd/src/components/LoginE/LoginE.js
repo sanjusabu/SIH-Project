@@ -10,7 +10,7 @@ const isPassword = (value) => value.trim().length >= 6;
 let formValid = false;
 const Login = () => {
   const auth = useContext(AuthContext);
-  const { isError, sendRequest, clearError,exists } = useRequest();
+  const { isError, sendRequest, clearError, exists } = useRequest();
 
   const {
     value: emailValue,
@@ -50,7 +50,7 @@ const Login = () => {
       return;
     }
     const response = await sendRequest(
-      "http://localhost:5002/users/login",
+      "https://backend-sih.onrender.com/users/login",
       "POST",
       JSON.stringify({
         email: emailValue,
@@ -69,8 +69,8 @@ const Login = () => {
   };
   return (
     <>
-    {console.log(isError)}
-       <ErrorModal error={isError} onClear={clearError} />
+      {console.log(isError)}
+      <ErrorModal error={isError} onClear={clearError} />
       <form onSubmit={submitHandler}>
         <br></br>
         <div className={classes.main}>

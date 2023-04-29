@@ -34,7 +34,7 @@ const Landingpage = () => {
       try {
         if (localStorage.hasOwnProperty("userid")) {
           const responseData = await sendRequest(
-            "http://localhost:5002/users/details",
+            "https://backend-sih.onrender.com/users/details",
             "POST",
             JSON.stringify({
               user: localStorage.getItem("userid"),
@@ -58,7 +58,7 @@ const Landingpage = () => {
       try {
         if (localStorage.hasOwnProperty("userid")) {
           const responseData = await sendRequest(
-            'http://localhost:5002/skills/getSkills',
+            'https://backend-sih.onrender.com/skills/getSkills',
             'POST',
             JSON.stringify({
               userid: localStorage.getItem("userid")
@@ -91,7 +91,7 @@ const Landingpage = () => {
         if (localStorage.hasOwnProperty("userid")) {
           // setloading(true)
           const responseData = await sendRequest(
-            'http://localhost:5002/jobs/recommendjobs',
+            'https://backend-sih.onrender.com/jobs/recommendjobs',
             'POST',
             JSON.stringify({
               user: localStorage.getItem("userid"),
@@ -119,7 +119,7 @@ const Landingpage = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     const response = await sendRequest(
-      "http://localhost:5002/jobs/loginsearch",
+      "https://backend-sih.onrender.com/jobs/loginsearch",
       "POST",
       JSON.stringify({ search: Search, place: Place }),
       { "Content-Type": "application/json" }

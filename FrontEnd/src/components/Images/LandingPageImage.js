@@ -32,7 +32,7 @@ function LandingPageImage(props) {
     e.preventDefault();
     console.log(skillarr[e.target.value]);
     const response = await sendRequest(
-      "http://localhost:5002/nontc/showjobs",
+      "https://backend-sih.onrender.com/nontc/showjobs",
       "POST",
       JSON.stringify({
         clicked: skillarr[e.target.value]

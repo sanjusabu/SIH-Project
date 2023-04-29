@@ -20,7 +20,7 @@ const Addcurrjobs = () => {
     e.preventDefault();
     if (localStorage.hasOwnProperty("userid")) {
       const response = await sendRequest(
-        "http://localhost:5002/jobs/addcurrjobs",
+        "https://backend-sih.onrender.com/jobs/addcurrjobs",
         "POST",
         JSON.stringify({
           compname: addcurrjob.compname,

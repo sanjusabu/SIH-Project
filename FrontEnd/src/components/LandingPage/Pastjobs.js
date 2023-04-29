@@ -14,7 +14,7 @@ const Pastjobs = () => {
       try {
         if (localStorage.hasOwnProperty("userid")) {
           const responseData = await sendRequest(
-            "http://localhost:5002/jobs/getprevjobs",
+            "https://backend-sih.onrender.com/jobs/getprevjobs",
             "POST",
             JSON.stringify({
               userid: localStorage.getItem("userid"),
@@ -33,25 +33,25 @@ const Pastjobs = () => {
       }
     };
     const getJobScore = async () => {
-        if (localStorage.hasOwnProperty("userid")) {
-          const responseData = await sendRequest(
-            "http://localhost:5002/jobScore/getJobScore",
-            "POST",
-            JSON.stringify({
-              userid: localStorage.getItem("userid"),
-            }),
-            {
-              "Content-Type": "application/json",
-            }
-          );
-          setScore(responseData);
-          console.log('hgygyg',responseData);
-        }
+      if (localStorage.hasOwnProperty("userid")) {
+        const responseData = await sendRequest(
+          "https://backend-sih.onrender.com/jobScore/getJobScore",
+          "POST",
+          JSON.stringify({
+            userid: localStorage.getItem("userid"),
+          }),
+          {
+            "Content-Type": "application/json",
+          }
+        );
+        setScore(responseData);
+        console.log('hgygyg', responseData);
+      }
     };
     getJobScore();
     fetchJobs();
   }, [sendRequest]);
-let i=0;
+  let i = 0;
   return (
     <>
       <div className="addjobs d-flex justify-content-center m-4">

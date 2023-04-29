@@ -8,7 +8,7 @@ const Specialities = () => {
 
   //     const fetchTop = async()=>{
   //       const responseData = await sendRequest(
-  //       "http://localhost:5002/jobs/topjobs",
+  //       "https://backend-sih.onrender.com/jobs/topjobs",
   //       'GET',
   //       {
   //         "Content-Type": "application/json",
